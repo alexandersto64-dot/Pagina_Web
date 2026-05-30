@@ -56,7 +56,7 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   }
 
-  /* Quitar menú "Plantilla" de la navegación principal (texto de plantilla, no es profesional) */
+
   .nav-template-menu { display: none !important; }
 
   /* Hero / Slider */
@@ -154,7 +154,7 @@
     margin: 0;
   }
 
-  /* Footer mejorado - links sociales sin kimarotec */
+
   .social ul li a { color: #ccc; }
   .social ul li a:hover { color: var(--sofbe-primary); }
 
@@ -262,7 +262,7 @@
         <img alt="SOFBE Inmobiliaria" src="assets/img/logo.png"/>
       </a>
     </div>
-    <div class="collapse navbar-collapse yamm" id="navigation">
+    <div class="collapse navbar-collapse" id="navigation">
       <div class="button navbar-right">
         <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.45s"
                 onclick="window.location.href='register.html'">Iniciar sesión</button>
@@ -889,8 +889,8 @@
     <div class="container">
       <div class="row">
         <div class="pull-left">
-          <span>&copy; 2026 <a href="index.html">SOFBE Inmobiliaria</a> — Todos los derechos reservados | RUC: 20xxxxxxxxx</span>
-        </div>
+<span>&copy; 2026 <a href="index.html">SOFBE Inmobiliaria</a> — Todos los derechos reservados</span>
+</div>
         <div class="bottom-menu pull-right">
           <ul>
             <li><a href="index.html">Inicio</a></li>
@@ -917,6 +917,51 @@
 <script src="assets/js/icheck.min.js"></script>
 <script src="assets/js/price-range.js"></script>
 <script src="assets/js/main.js"></script>
+<!-- Cursor personalizado SOFBE -->
+<div id="sofbe-cursor"></div>
+<div id="sofbe-cursor-ring"></div>
+<script>
+(function() {
+    var dot  = document.getElementById('sofbe-cursor');
+    var ring = document.getElementById('sofbe-cursor-ring');
+    if (!dot || !ring) return;
+    var mx = 0, my = 0, rx = 0, ry = 0, activated = false;
+    document.addEventListener('mousemove', function(e) {
+        mx = e.clientX; my = e.clientY;
+        dot.style.left = mx + 'px';
+        dot.style.top  = my + 'px';
+        if (!activated) {
+            document.body.classList.add('sofbe-cursor-active');
+            activated = true;
+        }
+    });
+    (function loop() {
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        ring.style.left = rx + 'px';
+        ring.style.top  = ry + 'px';
+        requestAnimationFrame(loop);
+    })();
+    document.querySelectorAll('a, button, .proerty-item, .navbar-brand, .btn, input[type="submit"]').forEach(function(el) {
+        el.addEventListener('mouseenter', function() {
+            dot.classList.add('on-link');
+            ring.classList.add('on-link');
+        });
+        el.addEventListener('mouseleave', function() {
+            dot.classList.remove('on-link');
+            ring.classList.remove('on-link');
+        });
+    });
+    document.addEventListener('mousedown', function() {
+        dot.classList.add('expanded');
+        ring.classList.add('expanded');
+    });
+    document.addEventListener('mouseup', function() {
+        dot.classList.remove('expanded');
+        ring.classList.remove('expanded');
+    });
+})();
+</script>
 
 <!-- Script de contadores animados mejorado -->
 <script>
