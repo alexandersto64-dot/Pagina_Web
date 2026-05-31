@@ -1,0 +1,7 @@
+[build]
+  publish = "garo-estate-español"
+
+[[redirects]]
+  from = "/"
+  to = "/intro.html"
+  status = 200
