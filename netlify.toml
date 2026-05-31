@@ -1,5 +1,5 @@
 [build]
-  publish = "garo-estate-espanol"
+  publish = "garo-estate-español"
 [[redirects]]
   from = "/"
   to = "/intro.html"
