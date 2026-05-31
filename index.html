@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html class="no-js" lang="es">
 <head>
+<style>
+</style>
 <meta charset="utf-8"/>
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -15,6 +17,7 @@
 
 <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet"/>
 <link href="assets/css/normalize.css" rel="stylesheet"/>
 <link href="assets/css/font-awesome.min.css" rel="stylesheet"/>
 <link href="assets/css/fontello.css" rel="stylesheet"/>
@@ -217,10 +220,6 @@
 </head>
 <body>
 
-<!-- Precargador -->
-<div id="preloader">
-  <div id="status"> </div>
-</div>
 
 <!-- ===== BARRA SUPERIOR ===== -->
 <div class="header-connect">
@@ -307,7 +306,7 @@
           <form action="properties.html" method="get" class="form-inline">
             <button class="btn toggle-btn" type="button"><i class="fa fa-bars"></i></button>
             <div class="form-group">
-              <input class="form-control" placeholder="Buscar por palabra clave..." type="text" name="keyword"/>
+              <input class="form-control" placeholder="Buscar por palabra clave..." type="text" name="q"/>
             </div>
             <div class="form-group">
               <select class="selectpicker" data-live-search="true" name="ciudad" title="Selecciona tu ciudad">
@@ -405,11 +404,11 @@
         <div class="col-sm-6 col-md-3 p0">
           <div class="box-two proerty-item">
             <div class="item-thumb">
-              <a href="property-1.html"><img src="assets/img/demo/property-1.jpg" alt="Hermosa villa con jardín - Nuevo Chimbote"/></a>
+              <a href="property.html"><img src="assets/img/demo/property-1.jpg" alt="Hermosa villa con jardín - Nuevo Chimbote"/></a>
               <small class="proerty-status">Venta</small>
             </div>
             <div class="item-entry overflow">
-              <h5><a href="property-1.html">Hermosa villa con jardín</a></h5>
+              <h5><a href="property.html">Hermosa villa con jardín</a></h5>
               <div class="dot-hr"></div>
               <span class="pull-left"><i class="fa fa-bed"></i> 3 &nbsp;<i class="fa fa-tint"></i> 2 &nbsp;<b>120 m²</b></span>
               <span class="proerty-price pull-right">S/ 850,000</span>
@@ -420,11 +419,11 @@
         <div class="col-sm-6 col-md-3 p0">
           <div class="box-two proerty-item">
             <div class="item-thumb">
-              <a href="property-2.html"><img src="assets/img/demo/property-2.jpg" alt="Elegante villa moderna - Chimbote"/></a>
+              <a href="property.html"><img src="assets/img/demo/property-2.jpg" alt="Elegante villa moderna - Chimbote"/></a>
               <small class="proerty-status">Venta</small>
             </div>
             <div class="item-entry overflow">
-              <h5><a href="property-2.html">Elegante villa moderna</a></h5>
+              <h5><a href="property.html">Elegante villa moderna</a></h5>
               <div class="dot-hr"></div>
               <span class="pull-left"><i class="fa fa-bed"></i> 4 &nbsp;<i class="fa fa-tint"></i> 3 &nbsp;<b>150 m²</b></span>
               <span class="proerty-price pull-right">S/ 1,250,000</span>
@@ -435,11 +434,11 @@
         <div class="col-sm-6 col-md-3 p0">
           <div class="box-two proerty-item">
             <div class="item-thumb">
-              <a href="property-3.html"><img src="assets/img/demo/property-3.jpg" alt="Espectacular residencia privada - Nuevo Chimbote"/></a>
+              <a href="property.html"><img src="assets/img/demo/property-3.jpg" alt="Espectacular residencia privada - Nuevo Chimbote"/></a>
               <small class="proerty-status">Venta</small>
             </div>
             <div class="item-entry overflow">
-              <h5><a href="property-3.html">Espectacular residencia privada</a></h5>
+              <h5><a href="property.html">Espectacular residencia privada</a></h5>
               <div class="dot-hr"></div>
               <span class="pull-left"><i class="fa fa-bed"></i> 5 &nbsp;<i class="fa fa-tint"></i> 4 &nbsp;<b>280 m²</b></span>
               <span class="proerty-price pull-right">S/ 2,100,000</span>
@@ -450,11 +449,11 @@
         <div class="col-sm-6 col-md-3 p0">
           <div class="box-two proerty-item">
             <div class="item-thumb">
-              <a href="property-1.html"><img src="assets/img/demo/property-4.jpg" alt="Villa de lujo - Áncash"/></a>
+              <a href="property.html"><img src="assets/img/demo/property-4.jpg" alt="Villa de lujo - Áncash"/></a>
               <small class="proerty-status">Venta</small>
             </div>
             <div class="item-entry overflow">
-              <h5><a href="property-1.html">Villa de lujo incomparable</a></h5>
+              <h5><a href="property.html">Villa de lujo incomparable</a></h5>
               <div class="dot-hr"></div>
               <span class="pull-left"><i class="fa fa-bed"></i> 6 &nbsp;<i class="fa fa-tint"></i> 5 &nbsp;<b>420 m²</b></span>
               <span class="proerty-price pull-right">S/ 3,500,000</span>
@@ -465,11 +464,11 @@
         <div class="col-sm-6 col-md-3 p0">
           <div class="box-two proerty-item">
             <div class="item-thumb">
-              <a href="property-3.html"><img src="assets/img/demo/property-2.jpg" alt="Villa en alquiler - Nuevo Chimbote"/></a>
+              <a href="property.html"><img src="assets/img/demo/property-2.jpg" alt="Villa en alquiler - Nuevo Chimbote"/></a>
               <small class="proerty-status alquiler">Alquiler</small>
             </div>
             <div class="item-entry overflow">
-              <h5><a href="property-3.html">Villa sofisticada y acogedora</a></h5>
+              <h5><a href="property.html">Villa sofisticada y acogedora</a></h5>
               <div class="dot-hr"></div>
               <span class="pull-left"><i class="fa fa-bed"></i> 3 &nbsp;<i class="fa fa-tint"></i> 2 &nbsp;<b>110 m²</b></span>
               <span class="proerty-price pull-right">S/ 1,800/mes</span>
@@ -480,11 +479,11 @@
         <div class="col-sm-6 col-md-3 p0">
           <div class="box-two proerty-item">
             <div class="item-thumb">
-              <a href="property-2.html"><img src="assets/img/demo/property-4.jpg" alt="Villa moderna en alquiler - Chimbote"/></a>
+              <a href="property.html"><img src="assets/img/demo/property-4.jpg" alt="Villa moderna en alquiler - Chimbote"/></a>
               <small class="proerty-status alquiler">Alquiler</small>
             </div>
             <div class="item-entry overflow">
-              <h5><a href="property-2.html">Villa moderna rodeada de naturaleza</a></h5>
+              <h5><a href="property.html">Villa moderna rodeada de naturaleza</a></h5>
               <div class="dot-hr"></div>
               <span class="pull-left"><i class="fa fa-bed"></i> 4 &nbsp;<i class="fa fa-tint"></i> 2 &nbsp;<b>160 m²</b></span>
               <span class="proerty-price pull-right">S/ 2,500/mes</span>
@@ -495,11 +494,11 @@
         <div class="col-sm-6 col-md-3 p0">
           <div class="box-two proerty-item">
             <div class="item-thumb">
-              <a href="property-1.html"><img src="assets/img/demo/property-3.jpg" alt="Villa familiar en venta - Áncash"/></a>
+              <a href="property.html"><img src="assets/img/demo/property-3.jpg" alt="Villa familiar en venta - Áncash"/></a>
               <small class="proerty-status">Venta</small>
             </div>
             <div class="item-entry overflow">
-              <h5><a href="property-1.html">Impresionante villa familiar</a></h5>
+              <h5><a href="property.html">Impresionante villa familiar</a></h5>
               <div class="dot-hr"></div>
               <span class="pull-left"><i class="fa fa-bed"></i> 4 &nbsp;<i class="fa fa-tint"></i> 3 &nbsp;<b>135 m²</b></span>
               <span class="proerty-price pull-right">S/ 780,000</span>

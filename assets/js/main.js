@@ -1,8 +1,47 @@
-$(window).load(function () { // makes sure the whole site is loaded
-    $('#status').fadeOut(); // will first fade out the loading animation
-    $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
-    $('body').delay(350).css({'overflow': 'visible'});
-})
+// ===== SOFBE EPIC PRELOADER =====
+(function() {
+    function dismissPreloader() {
+        var pre = document.getElementById('preloader');
+        if (!pre) return;
+        // Use the CSS class which properly overrides all !important rules
+        pre.classList.add('sbl-hide');
+        document.body.style.overflow = '';
+        document.body.style.removeProperty('overflow');
+        document.documentElement.style.overflow = '';
+    }
+
+    function startCounter() {
+        var pre   = document.getElementById('preloader');
+        var pctEl = document.getElementById('sbl-pct');
+        var barEl = document.getElementById('sbl-bar');
+        if (!pre) return;
+
+        var n = 0;
+        var target = 100;
+        var interval = 3000 / target; // 3 seconds
+        var counter = setInterval(function() {
+            n++;
+            if (pctEl) pctEl.textContent = n + '%';
+            if (barEl) barEl.style.width = n + '%';
+            if (n >= target) {
+                clearInterval(counter);
+                dismissPreloader();
+            }
+        }, interval);
+
+        // Hard safety: force close at 4s
+        setTimeout(function() {
+            clearInterval(counter);
+            dismissPreloader();
+        }, 4000);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', startCounter);
+    } else {
+        startCounter();
+    }
+})();
 $(document).ready(function () {
 
     

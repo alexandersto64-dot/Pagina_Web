@@ -17,6 +17,7 @@
 <!-- Place favicon.ico and apple-touch-icon.png en the root directory -->
 <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <link href="favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet"/>
 <link href="assets/css/normalize.css" rel="stylesheet"/>
 <link href="assets/css/font-awesome.min.css" rel="stylesheet"/>
 <link href="assets/css/fontello.css" rel="stylesheet"/>
@@ -34,9 +35,6 @@
 <link href="assets/css/responsive.css" rel="stylesheet"/>
 </head>
 <body>
-<div id="preloader">
-<div id="status"> </div>
-</div>
 <!-- Body content -->
 <div class="header-connect">
 <div class="container">
@@ -124,28 +122,29 @@
 <fieldset>
 <div class="row">
 <div class="col-xs-12">
-<input class="form-control" placeholder="Palabra clave" type="text"/>
+<input class="form-control" id="search-keyword" placeholder="Palabra clave" type="text"/>
 </div>
 </div>
 </fieldset>
 <fieldset>
 <div class="row">
 <div class="col-xs-6">
-<select class="selectpicker" data-live-search="true" data-live-search-style="begins" id="lunchBegins" title="Selecciona tu ciudad">
-<option>New york, CA</option>
-<option>Paris</option>
-<option>Casablanca</option>
-<option>Tokyo</option>
-<option>Marraekch</option>
-<option>kyoto , shibua</option>
+<select class="selectpicker" data-live-search="true" data-live-search-style="begins" id="lunchBegins" name="ciudad" title="Selecciona tu ciudad">
+<option value="Chimbote">Chimbote</option>
+<option value="Nuevo Chimbote">Nuevo Chimbote</option>
+<option value="Coishco">Coishco</option>
+<option value="Santa">Santa</option>
+<option value="Casma">Casma</option>
+<option value="Huarmey">Huarmey</option>
+<option value="Huaraz">Huaraz</option>
+<option value="Caraz">Caraz</option>
 </select>
 </div>
 <div class="col-xs-6">
-<select class="selectpicker show-tick form-control" id="basic">
-<option> -Estado- </option>
-<option>Alquilar </option>
-<option>Comprar</option>
-<option>Usado</option>
+<select class="selectpicker show-tick form-control" id="basic" name="estado">
+<option value=""> -Tipo de operación- </option>
+<option value="venta">En Venta</option>
+<option value="alquiler">En Alquiler</option>
 </select>
 </div>
 </div>
@@ -341,8 +340,8 @@
 <select id="items_per_page" name="per_page">
 <option value="3">3</option>
 <option value="6">6</option>
-<option value="9">9</option>
-<option selected="selected" value="12">12</option>
+<option value="9" selected="selected">9</option>
+<option value="12">12</option>
 <option value="15">15</option>
 <option value="30">30</option>
 <option value="45">45</option>
@@ -358,179 +357,191 @@
 </div>
 <div class="col-md-12 clear">
 <div class="proerty-th" id="list-type">
-<div class="col-sm-6 col-md-4 p0">
+<!-- SOFBE Properties - Auto generadas con datos reales -->
+<div class="col-sm-6 col-md-4 p0 prop-card" data-titulo="casa familiar en nuevo chimbote" data-ciudad="Nuevo Chimbote" data-estado="venta" data-precio="320000" data-area="180" data-camas="4" data-tipo="casa">
 <div class="box-two proerty-item">
 <div class="item-thumb">
-<a href="property-1.html"><img src="assets/img/demo/property-3.jpg"/></a>
+<a href="property.html"><img src="assets/img/demo/property-1.jpg" alt="Casa Familiar en Nuevo Chimbote"/></a>
+<small class="proerty-status venta">En Venta</small>
 </div>
 <div class="item-entry overflow">
-<h5><a href="property-1.html"> Hermosa villa </a></h5>
+<h5><a href="property.html">Casa Familiar en Nuevo Chimbote</a></h5>
 <div class="dot-hr"></div>
-<span class="pull-left"><b> Área:</b> 120m </span>
-<span class="proerty-price pull-right"> $ 300,000</span>
-<p style="display: none;">Suspendisse ultricies Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium ...</p>
+<span class="pull-left"><b>Área:</b> 180m²</span>
+<span class="proerty-price pull-right">S/ 320,000</span>
+<p class="prop-desc" style="display:none;">Amplia casa familiar de dos pisos en urb. San Luis. Sala, comedor, cocina moderna, jardín y cochera para 2 autos.</p>
 <div class="property-icon">
-<img src="assets/img/icon/bed.png"/>(5)|
-                                                <img src="assets/img/icon/shawer.png"/>(2)|
-                                                <img src="assets/img/icon/cars.png"/>(1)  
-                                            </div>
+<img src="assets/img/icon/bed.png"/>(4)|
+<img src="assets/img/icon/shawer.png"/>(2)|
+<img src="assets/img/icon/cars.png"/>(1)
 </div>
 </div>
 </div>
-<div class="col-sm-6 col-md-4 p0">
+</div>
+<div class="col-sm-6 col-md-4 p0 prop-card" data-titulo="departamento en chimbote centro" data-ciudad="Chimbote" data-estado="venta" data-precio="185000" data-area="90" data-camas="3" data-tipo="departamento">
 <div class="box-two proerty-item">
 <div class="item-thumb">
-<a href="property-1.html"><img src="assets/img/demo/property-2.jpg"/></a>
+<a href="property.html"><img src="assets/img/demo/property-2.jpg" alt="Departamento en Chimbote Centro"/></a>
+<small class="proerty-status venta">En Venta</small>
 </div>
 <div class="item-entry overflow">
-<h5><a href="property-1.html"> Hermosa villa </a></h5>
+<h5><a href="property.html">Departamento en Chimbote Centro</a></h5>
 <div class="dot-hr"></div>
-<span class="pull-left"><b> Área:</b> 120m </span>
-<span class="proerty-price pull-right"> $ 300,000</span>
-<p style="display: none;">Suspendisse ultricies Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium ...</p>
+<span class="pull-left"><b>Área:</b> 90m²</span>
+<span class="proerty-price pull-right">S/ 185,000</span>
+<p class="prop-desc" style="display:none;">Moderno departamento de 3 dormitorios a 2 cuadras del malecón. Vista al mar, cocina equipada, balcón amplio.</p>
 <div class="property-icon">
-<img src="assets/img/icon/bed.png"/>(5)|
-                                                <img src="assets/img/icon/shawer.png"/>(2)|
-                                                <img src="assets/img/icon/cars.png"/>(1)  
-                                            </div>
+<img src="assets/img/icon/bed.png"/>(3)|
+<img src="assets/img/icon/shawer.png"/>(2)|
+<img src="assets/img/icon/cars.png"/>(1)
 </div>
 </div>
 </div>
-<div class="col-sm-6 col-md-4 p0">
+</div>
+<div class="col-sm-6 col-md-4 p0 prop-card" data-titulo="villa de lujo en playa vesique" data-ciudad="Chimbote" data-estado="venta" data-precio="850000" data-area="350" data-camas="5" data-tipo="villa">
 <div class="box-two proerty-item">
 <div class="item-thumb">
-<a href="property-1.html"><img src="assets/img/demo/property-1.jpg"/></a>
+<a href="property.html"><img src="assets/img/demo/property-3.jpg" alt="Villa de Lujo en Playa Vesique"/></a>
+<small class="proerty-status venta">En Venta</small>
 </div>
 <div class="item-entry overflow">
-<h5><a href="property-1.html"> Hermosa villa </a></h5>
+<h5><a href="property.html">Villa de Lujo en Playa Vesique</a></h5>
 <div class="dot-hr"></div>
-<span class="pull-left"><b> Área:</b> 120m </span>
-<span class="proerty-price pull-right"> $ 300,000</span>
-<p style="display: none;">Suspendisse ultricies Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium ...</p>
+<span class="pull-left"><b>Área:</b> 350m²</span>
+<span class="proerty-price pull-right">S/ 850,000</span>
+<p class="prop-desc" style="display:none;">Exclusiva villa frente al mar en Playa Vesique. 5 dormitorios, piscina, terraza panorámica y parrillas.</p>
 <div class="property-icon">
 <img src="assets/img/icon/bed.png"/>(5)|
-                                                <img src="assets/img/icon/shawer.png"/>(2)|
-                                                <img src="assets/img/icon/cars.png"/>(1)  
-                                            </div>
+<img src="assets/img/icon/shawer.png"/>(4)|
+<img src="assets/img/icon/cars.png"/>(1)
 </div>
 </div>
 </div>
-<div class="col-sm-6 col-md-4 p0">
+</div>
+<div class="col-sm-6 col-md-4 p0 prop-card" data-titulo="casa en urb. casuarinas" data-ciudad="Nuevo Chimbote" data-estado="venta" data-precio="265000" data-area="140" data-camas="3" data-tipo="casa">
 <div class="box-two proerty-item">
 <div class="item-thumb">
-<a href="property-1.html"><img src="assets/img/demo/property-3.jpg"/></a>
+<a href="property.html"><img src="assets/img/demo/property-4.jpg" alt="Casa en Urb. Casuarinas"/></a>
+<small class="proerty-status venta">En Venta</small>
 </div>
 <div class="item-entry overflow">
-<h5><a href="property-1.html"> Hermosa villa </a></h5>
+<h5><a href="property.html">Casa en Urb. Casuarinas</a></h5>
 <div class="dot-hr"></div>
-<span class="pull-left"><b> Área:</b> 120m </span>
-<span class="proerty-price pull-right"> $ 300,000</span>
-<p style="display: none;">Suspendisse ultricies Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium ...</p>
+<span class="pull-left"><b>Área:</b> 140m²</span>
+<span class="proerty-price pull-right">S/ 265,000</span>
+<p class="prop-desc" style="display:none;">Cómoda casa en urb. cerrada con seguridad 24/7. Cerca de colegios, centros comerciales y hospitales.</p>
 <div class="property-icon">
-<img src="assets/img/icon/bed.png"/>(5)|
-                                                <img src="assets/img/icon/shawer.png"/>(2)|
-                                                <img src="assets/img/icon/cars.png"/>(1)  
-                                            </div>
+<img src="assets/img/icon/bed.png"/>(3)|
+<img src="assets/img/icon/shawer.png"/>(2)|
+<img src="assets/img/icon/cars.png"/>(1)
 </div>
 </div>
 </div>
-<div class="col-sm-6 col-md-4 p0">
+</div>
+<div class="col-sm-6 col-md-4 p0 prop-card" data-titulo="local comercial en av. pardo" data-ciudad="Chimbote" data-estado="venta" data-precio="1200000" data-area="220" data-camas="0" data-tipo="local comercial">
 <div class="box-two proerty-item">
 <div class="item-thumb">
-<a href="property-1.html"><img src="assets/img/demo/property-1.jpg"/></a>
+<a href="property.html"><img src="assets/img/demo/property-1.jpg" alt="Local Comercial en Av. Pardo"/></a>
+<small class="proerty-status venta">En Venta</small>
 </div>
 <div class="item-entry overflow">
-<h5><a href="property-1.html"> Hermosa villa </a></h5>
+<h5><a href="property.html">Local Comercial en Av. Pardo</a></h5>
 <div class="dot-hr"></div>
-<span class="pull-left"><b> Área:</b> 120m </span>
-<span class="proerty-price pull-right"> $ 300,000</span>
-<p style="display: none;">Suspendisse ultricies Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium ...</p>
+<span class="pull-left"><b>Área:</b> 220m²</span>
+<span class="proerty-price pull-right">S/ 1,200,000</span>
+<p class="prop-desc" style="display:none;">Excelente local comercial en la av. más transitada de Chimbote. Ideal para tienda, banco o restaurante.</p>
 <div class="property-icon">
-<img src="assets/img/icon/bed.png"/>(5)|
-                                                <img src="assets/img/icon/shawer.png"/>(2)|
-                                                <img src="assets/img/icon/cars.png"/>(1)  
-                                            </div>
+<img src="assets/img/icon/bed.png"/>(—)|
+<img src="assets/img/icon/shawer.png"/>(2)|
+<img src="assets/img/icon/cars.png"/>(1)
 </div>
 </div>
 </div>
-<div class="col-sm-6 col-md-4 p0">
+</div>
+<div class="col-sm-6 col-md-4 p0 prop-card" data-titulo="departamento en alquiler - centro" data-ciudad="Chimbote" data-estado="alquiler" data-precio="1800" data-area="75" data-camas="2" data-tipo="departamento">
 <div class="box-two proerty-item">
 <div class="item-thumb">
-<a href="property-1.html"><img src="assets/img/demo/property-2.jpg"/></a>
+<a href="property.html"><img src="assets/img/demo/property-2.jpg" alt="Departamento en Alquiler - Centro"/></a>
+<small class="proerty-status alquiler">En Alquiler</small>
 </div>
 <div class="item-entry overflow">
-<h5><a href="property-1.html"> Hermosa villa </a></h5>
+<h5><a href="property.html">Departamento en Alquiler - Centro</a></h5>
 <div class="dot-hr"></div>
-<span class="pull-left"><b> Área:</b> 120m </span>
-<span class="proerty-price pull-right"> $ 300,000</span>
-<p style="display: none;">Suspendisse ultricies Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium ...</p>
+<span class="pull-left"><b>Área:</b> 75m²</span>
+<span class="proerty-price pull-right">S/ 1,800/mes</span>
+<p class="prop-desc" style="display:none;">Departamento amoblado de 2 dormitorios en el centro de Chimbote. Incluye agua y vigilancia.</p>
 <div class="property-icon">
-<img src="assets/img/icon/bed.png"/>(5)|
-                                                <img src="assets/img/icon/shawer.png"/>(2)|
-                                                <img src="assets/img/icon/cars.png"/>(1)  
-                                            </div>
+<img src="assets/img/icon/bed.png"/>(2)|
+<img src="assets/img/icon/shawer.png"/>(1)|
+<img src="assets/img/icon/cars.png"/>(1)
 </div>
 </div>
 </div>
-<div class="col-sm-6 col-md-4 p0">
+</div>
+<div class="col-sm-6 col-md-4 p0 prop-card" data-titulo="casa en alquiler - nuevo chimbote" data-ciudad="Nuevo Chimbote" data-estado="alquiler" data-precio="2500" data-area="160" data-camas="4" data-tipo="casa">
 <div class="box-two proerty-item">
 <div class="item-thumb">
-<a href="property-1.html"><img src="assets/img/demo/property-3.jpg"/></a>
+<a href="property.html"><img src="assets/img/demo/property-3.jpg" alt="Casa en Alquiler - Nuevo Chimbote"/></a>
+<small class="proerty-status alquiler">En Alquiler</small>
 </div>
 <div class="item-entry overflow">
-<h5><a href="property-1.html"> Hermosa villa </a></h5>
+<h5><a href="property.html">Casa en Alquiler - Nuevo Chimbote</a></h5>
 <div class="dot-hr"></div>
-<span class="pull-left"><b> Área:</b> 120m </span>
-<span class="proerty-price pull-right"> $ 300,000</span>
-<p style="display: none;">Suspendisse ultricies Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium ...</p>
+<span class="pull-left"><b>Área:</b> 160m²</span>
+<span class="proerty-price pull-right">S/ 2,500/mes</span>
+<p class="prop-desc" style="display:none;">Amplia casa de 4 dormitorios en zona residencial. Jardín, cochera y cerca del MegaPlaza.</p>
 <div class="property-icon">
-<img src="assets/img/icon/bed.png"/>(5)|
-                                                <img src="assets/img/icon/shawer.png"/>(2)|
-                                                <img src="assets/img/icon/cars.png"/>(1)  
-                                            </div>
+<img src="assets/img/icon/bed.png"/>(4)|
+<img src="assets/img/icon/shawer.png"/>(2)|
+<img src="assets/img/icon/cars.png"/>(1)
 </div>
 </div>
 </div>
-<div class="col-sm-6 col-md-4 p0">
+</div>
+<div class="col-sm-6 col-md-4 p0 prop-card" data-titulo="terreno en coishco" data-ciudad="Coishco" data-estado="venta" data-precio="95000" data-area="300" data-camas="0" data-tipo="terreno">
 <div class="box-two proerty-item">
 <div class="item-thumb">
-<a href="property-1.html"><img src="assets/img/demo/property-2.jpg"/></a>
+<a href="property.html"><img src="assets/img/demo/property-4.jpg" alt="Terreno en Coishco"/></a>
+<small class="proerty-status venta">En Venta</small>
 </div>
 <div class="item-entry overflow">
-<h5><a href="property-1.html"> Hermosa villa </a></h5>
+<h5><a href="property.html">Terreno en Coishco</a></h5>
 <div class="dot-hr"></div>
-<span class="pull-left"><b> Área:</b> 120m </span>
-<span class="proerty-price pull-right"> $ 300,000</span>
-<p style="display: none;">Suspendisse ultricies Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium ...</p>
+<span class="pull-left"><b>Área:</b> 300m²</span>
+<span class="proerty-price pull-right">S/ 95,000</span>
+<p class="prop-desc" style="display:none;">Terreno plano de 300m² con vista al océano en Coishco. Todos los servicios disponibles.</p>
 <div class="property-icon">
-<img src="assets/img/icon/bed.png"/>(5)|
-                                                <img src="assets/img/icon/shawer.png"/>(2)|
-                                                <img src="assets/img/icon/cars.png"/>(1)  
-                                            </div>
+<img src="assets/img/icon/bed.png"/>(—)|
+<img src="assets/img/icon/shawer.png"/>(—)|
+<img src="assets/img/icon/cars.png"/>(1)
 </div>
 </div>
 </div>
-<div class="col-sm-6 col-md-4 p0">
+</div>
+<div class="col-sm-6 col-md-4 p0 prop-card" data-titulo="casa en casma" data-ciudad="Casma" data-estado="venta" data-precio="210000" data-area="120" data-camas="3" data-tipo="casa">
 <div class="box-two proerty-item">
 <div class="item-thumb">
-<a href="property-1.html"><img src="assets/img/demo/property-1.jpg"/></a>
+<a href="property.html"><img src="assets/img/demo/property-1.jpg" alt="Casa en Casma"/></a>
+<small class="proerty-status venta">En Venta</small>
 </div>
 <div class="item-entry overflow">
-<h5><a href="property-1.html"> Hermosa villa </a></h5>
+<h5><a href="property.html">Casa en Casma</a></h5>
 <div class="dot-hr"></div>
-<span class="pull-left"><b> Área:</b> 120m </span>
-<span class="proerty-price pull-right"> $ 300,000</span>
-<p style="display: none;">Suspendisse ultricies Suspendisse ultricies Nulla quis dapibus nisl. Suspendisse ultricies commodo arcu nec pretium ...</p>
+<span class="pull-left"><b>Área:</b> 120m²</span>
+<span class="proerty-price pull-right">S/ 210,000</span>
+<p class="prop-desc" style="display:none;">Casa de un piso con amplio jardín en Casma. Perfecta para familias, a 5 min del centro.</p>
 <div class="property-icon">
-<img src="assets/img/icon/bed.png"/>(5)|
-                                                <img src="assets/img/icon/shawer.png"/>(2)|
-                                                <img src="assets/img/icon/cars.png"/>(1)  
-                                            </div>
+<img src="assets/img/icon/bed.png"/>(3)|
+<img src="assets/img/icon/shawer.png"/>(2)|
+<img src="assets/img/icon/cars.png"/>(1)
 </div>
 </div>
 </div>
 </div>
+
 </div>
+</div>
+<div class="col-md-12" id="no-results" style="display:none;"><p class="text-center" style="padding:40px;color:#888;">No se encontraron propiedades con esos criterios.</p></div>
 <div class="col-md-12">
 <div class="pull-right">
 <div class="pagination">
@@ -725,6 +736,228 @@
     document.addEventListener('mouseup', function() {
         dot.classList.remove('expanded');
         ring.classList.remove('expanded');
+    });
+})();
+</script>
+
+<script>
+// ===== SOFBE ENGINE: Búsqueda + Orden + Paginación =====
+(function() {
+    var currentPage = 1;
+    var perPage = 9; // default shown
+    var sortField = 'date';
+    var sortDir = 'asc';
+    var allCards = [];
+    var visibleCards = [];
+
+    function getUrlParam(name) {
+        return new URL(window.location.href).searchParams.get(name) || '';
+    }
+
+    // ---- SORTING ----
+    function sortCards(cards) {
+        return cards.slice().sort(function(a, b) {
+            if (sortField === 'price') {
+                var pa = parseInt(a.getAttribute('data-precio') || 0);
+                var pb = parseInt(b.getAttribute('data-precio') || 0);
+                return sortDir === 'asc' ? pa - pb : pb - pa;
+            } else {
+                // date = original DOM order (index)
+                var ia = allCards.indexOf(a);
+                var ib = allCards.indexOf(b);
+                return sortDir === 'asc' ? ia - ib : ib - ia;
+            }
+        });
+    }
+
+    // ---- FILTER ----
+    function getVisible() {
+        var keyword = (document.getElementById('search-keyword') ? document.getElementById('search-keyword').value : '').toLowerCase().trim();
+        var ciudad  = (document.getElementById('lunchBegins')    ? document.getElementById('lunchBegins').value   : '').toLowerCase().trim();
+        var estado  = (document.getElementById('basic')          ? document.getElementById('basic').value         : '').toLowerCase().trim();
+
+        return allCards.filter(function(card) {
+            var titulo  = (card.getAttribute('data-titulo')  || '').toLowerCase();
+            var cCiudad = (card.getAttribute('data-ciudad')  || '').toLowerCase();
+            var cEstado = (card.getAttribute('data-estado')  || '').toLowerCase();
+
+            var matchK = !keyword || titulo.includes(keyword) || cCiudad.includes(keyword);
+            var matchC = !ciudad  || cCiudad.includes(ciudad);
+            var matchE = !estado  || cEstado === estado;
+
+            return matchK && matchC && matchE;
+        });
+    }
+
+    // ---- RENDER PAGE ----
+    function renderPage() {
+        visibleCards = sortCards(getVisible());
+        currentPage = Math.min(currentPage, Math.max(1, Math.ceil(visibleCards.length / perPage)));
+
+        var start = (currentPage - 1) * perPage;
+        var end   = start + perPage;
+
+        // Hide all, show only current page slice
+        allCards.forEach(function(c) { c.style.display = 'none'; });
+        visibleCards.slice(start, end).forEach(function(c) { c.style.display = ''; });
+
+        // No-results message
+        var noResults = document.getElementById('no-results');
+        if (noResults) noResults.style.display = visibleCards.length === 0 ? 'block' : 'none';
+
+        renderPagination(visibleCards.length);
+        updateSortUI();
+    }
+
+    // ---- PAGINATION ----
+    function renderPagination(total) {
+        var totalPages = Math.max(1, Math.ceil(total / perPage));
+        var paginationEl = document.querySelector('.pagination ul');
+        if (!paginationEl) return;
+
+        var html = '';
+        // Anterior
+        html += '<li class="' + (currentPage === 1 ? 'disabled' : '') + '"><a href="javascript:void(0);" data-page="prev">Anterior</a></li>';
+
+        // Page numbers (show max 5 around current)
+        var start = Math.max(1, currentPage - 2);
+        var end   = Math.min(totalPages, currentPage + 2);
+        if (start > 1) html += '<li><a href="javascript:void(0);" data-page="1">1</a></li>';
+        if (start > 2) html += '<li class="disabled"><span>…</span></li>';
+
+        for (var i = start; i <= end; i++) {
+            html += '<li class="' + (i === currentPage ? 'active' : '') + '"><a href="javascript:void(0);" data-page="' + i + '">' + i + '</a></li>';
+        }
+
+        if (end < totalPages - 1) html += '<li class="disabled"><span>…</span></li>';
+        if (end < totalPages) html += '<li><a href="javascript:void(0);" data-page="' + totalPages + '">' + totalPages + '</a></li>';
+
+        // Siguiente
+        html += '<li class="' + (currentPage === totalPages ? 'disabled' : '') + '"><a href="javascript:void(0);" data-page="next">Siguiente</a></li>';
+
+        paginationEl.innerHTML = html;
+
+        // Bind clicks
+        paginationEl.querySelectorAll('a[data-page]').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var p = this.getAttribute('data-page');
+                if (p === 'prev') { if (currentPage > 1) currentPage--; }
+                else if (p === 'next') { if (currentPage < totalPages) currentPage++; }
+                else { currentPage = parseInt(p); }
+                renderPage();
+                window.scrollTo({ top: document.querySelector('.properties-page') ? document.querySelector('.properties-page').offsetTop - 80 : 0, behavior: 'smooth' });
+            });
+        });
+    }
+
+    // ---- SORT UI UPDATE ----
+    function updateSortUI() {
+        var dateBtn  = document.querySelector('.order_by_date');
+        var priceBtn = document.querySelector('.order_by_price');
+        if (dateBtn)  dateBtn.parentElement.classList.toggle('active', sortField === 'date');
+        if (priceBtn) priceBtn.parentElement.classList.toggle('active', sortField === 'price');
+
+        if (dateBtn) {
+            dateBtn.innerHTML = 'Fecha de Propiedad <i class="fa fa-sort-amount-' + (sortField === 'date' ? (sortDir === 'asc' ? 'asc' : 'desc') : 'asc') + '"></i>';
+        }
+        if (priceBtn) {
+            priceBtn.innerHTML = 'Precio de Propiedad <i class="fa fa-sort-numeric-' + (sortField === 'price' ? (sortDir === 'asc' ? 'asc' : 'desc') : 'desc') + '"></i>';
+        }
+    }
+
+    // ---- INIT ----
+    window.addEventListener('DOMContentLoaded', function() {
+        allCards = Array.from(document.querySelectorAll('.prop-card'));
+
+        // Per-page selector
+        var perPageSel = document.getElementById('items_per_page');
+        if (perPageSel) {
+            // Set default to 9 (we have 9 properties)
+            perPageSel.value = '9';
+            perPage = 9;
+            perPageSel.addEventListener('change', function() {
+                perPage = parseInt(this.value) || 9;
+                currentPage = 1;
+                renderPage();
+            });
+        }
+
+        // Sort by date
+        var dateBtn = document.querySelector('.order_by_date');
+        if (dateBtn) {
+            dateBtn.addEventListener('click', function() {
+                if (sortField === 'date') { sortDir = sortDir === 'asc' ? 'desc' : 'asc'; }
+                else { sortField = 'date'; sortDir = 'asc'; }
+                currentPage = 1;
+                renderPage();
+            });
+        }
+
+        // Sort by price
+        var priceBtn = document.querySelector('.order_by_price');
+        if (priceBtn) {
+            priceBtn.addEventListener('click', function() {
+                if (sortField === 'price') { sortDir = sortDir === 'asc' ? 'desc' : 'asc'; }
+                else { sortField = 'price'; sortDir = 'desc'; }
+                currentPage = 1;
+                renderPage();
+            });
+        }
+
+        // Search button
+        var searchBtn = document.querySelector('.largesearch-btn, .large-search-btn');
+        if (searchBtn) {
+            searchBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                currentPage = 1;
+                renderPage();
+            });
+        }
+
+        // Keyword Enter
+        var kw = document.getElementById('search-keyword');
+        if (kw) {
+            kw.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') { e.preventDefault(); currentPage = 1; renderPage(); }
+            });
+        }
+
+        // URL params from index.html
+        var urlCiudad  = getUrlParam('ciudad');
+        var urlEstado  = getUrlParam('tipo');
+        var urlKeyword = getUrlParam('q');
+
+        if (urlKeyword) {
+            var kwEl = document.getElementById('search-keyword');
+            if (kwEl) kwEl.value = urlKeyword;
+        }
+
+        if (urlCiudad || urlEstado) {
+            setTimeout(function() {
+                if (urlCiudad) {
+                    var sel = document.getElementById('lunchBegins');
+                    if (sel) {
+                        for (var i = 0; i < sel.options.length; i++) {
+                            if (sel.options[i].value === urlCiudad) { sel.selectedIndex = i; break; }
+                        }
+                        if (window.$ && $(sel).selectpicker) $(sel).selectpicker('refresh');
+                    }
+                }
+                if (urlEstado) {
+                    var sel2 = document.getElementById('basic');
+                    if (sel2) {
+                        for (var i = 0; i < sel2.options.length; i++) {
+                            if (sel2.options[i].value === urlEstado) { sel2.selectedIndex = i; break; }
+                        }
+                        if (window.$ && $(sel2).selectpicker) $(sel2).selectpicker('refresh');
+                    }
+                }
+                currentPage = 1;
+                renderPage();
+            }, 450);
+        } else {
+            renderPage();
+        }
     });
 })();
 </script>
