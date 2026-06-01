@@ -16,6 +16,10 @@
 <!-- Place favicon.ico and apple-touch-icon.png en the root directory -->
 <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <link href="favicon.ico" rel="icon" type="image/x-icon"/>
+<<<<<<< HEAD
+=======
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet"/>
+>>>>>>> 0a721696e44ed13c909a89cb7f245947df27c53a
 <link href="assets/css/normalize.css" rel="stylesheet"/>
 <link href="assets/css/font-awesome.min.css" rel="stylesheet"/>
 <link href="assets/css/fontello.css" rel="stylesheet"/>
@@ -31,11 +35,132 @@
 <link href="assets/css/owl.transitions.css" rel="stylesheet"/>
 <link href="assets/css/style.css" rel="stylesheet"/>
 <link href="assets/css/responsive.css" rel="stylesheet"/>
+<<<<<<< HEAD
 </head>
 <body>
 <div id="preloader">
 <div id="status"> </div>
 </div>
+=======
+<!--
+  FIREBASE: Para activar el Login/Registro:
+  1. Ve a https://console.firebase.google.com
+  2. Crea un proyecto → Authentication → Habilita Email/Password (y Google si deseas)
+  3. Ve a Configuración del proyecto → Agrega app web → Copia tu firebaseConfig
+  4. Reemplaza los valores TU-xxx-AQUI de abajo con tu configuración real
+-->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey:            "TU-API-KEY-AQUI",
+    authDomain:        "TU-PROJECT-ID.firebaseapp.com",
+    projectId:         "TU-PROJECT-ID",
+    storageBucket:     "TU-PROJECT-ID.appspot.com",
+    messagingSenderId: "TU-MESSAGING-SENDER-ID",
+    appId:             "TU-APP-ID"
+  };
+
+  const app  = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // ---- Helpers ----
+  function showMsg(elId, msg, isError) {
+    var el = document.getElementById(elId);
+    if (!el) return;
+    el.textContent = msg;
+    el.style.display = 'block';
+    el.style.background = isError ? '#f8d7da' : '#d4edda';
+    el.style.color      = isError ? '#721c24' : '#155724';
+    el.style.border     = isError ? '1px solid #f5c6cb' : '1px solid #c3e6cb';
+  }
+
+  function firebaseError(code) {
+    var msgs = {
+      'auth/email-already-in-use':    'Este correo ya está registrado.',
+      'auth/invalid-email':           'Correo electrónico inválido.',
+      'auth/weak-password':           'La contraseña debe tener al menos 6 caracteres.',
+      'auth/user-not-found':          'No existe una cuenta con ese correo.',
+      'auth/wrong-password':          'Contraseña incorrecta.',
+      'auth/too-many-requests':       'Demasiados intentos. Espera unos minutos.',
+      'auth/popup-closed-by-user':    'Ventana cerrada antes de completar el inicio de sesión.',
+      'auth/configuration-not-found': 'Firebase aún no configurado. Sigue las instrucciones en el código.',
+    };
+    return msgs[code] || 'Error inesperado. Intenta de nuevo.';
+  }
+
+  // ---- Registro ----
+  var btnRegister = document.getElementById('btn-register');
+  if (btnRegister) {
+    btnRegister.addEventListener('click', function() {
+      var name  = document.getElementById('reg-name').value.trim();
+      var email = document.getElementById('reg-email').value.trim();
+      var pass  = document.getElementById('reg-password').value;
+      if (!name || !email || !pass) { showMsg('reg-msg', 'Completa todos los campos.', true); return; }
+      btnRegister.disabled = true;
+      createUserWithEmailAndPassword(auth, email, pass)
+        .then(function(cred) {
+          showMsg('reg-msg', '¡Cuenta creada! Redirigiendo...', false);
+          setTimeout(function(){ window.location.href = 'index.html'; }, 1500);
+        })
+        .catch(function(err) {
+          showMsg('reg-msg', firebaseError(err.code), true);
+          btnRegister.disabled = false;
+        });
+    });
+  }
+
+  // ---- Login ----
+  var btnLogin = document.getElementById('btn-login');
+  if (btnLogin) {
+    btnLogin.addEventListener('click', function() {
+      var email = document.getElementById('login-email').value.trim();
+      var pass  = document.getElementById('login-password').value;
+      if (!email || !pass) { showMsg('login-msg', 'Completa todos los campos.', true); return; }
+      btnLogin.disabled = true;
+      signInWithEmailAndPassword(auth, email, pass)
+        .then(function() {
+          showMsg('login-msg', '¡Bienvenido! Redirigiendo...', false);
+          setTimeout(function(){ window.location.href = 'index.html'; }, 1200);
+        })
+        .catch(function(err) {
+          showMsg('login-msg', firebaseError(err.code), true);
+          btnLogin.disabled = false;
+        });
+    });
+  }
+
+  // ---- Google Login ----
+  var btnGoogle = document.getElementById('btn-google');
+  if (btnGoogle) {
+    btnGoogle.addEventListener('click', function() {
+      var provider = new GoogleAuthProvider();
+      signInWithPopup(auth, provider)
+        .then(function() {
+          window.location.href = 'index.html';
+        })
+        .catch(function(err) {
+          showMsg('login-msg', firebaseError(err.code), true);
+        });
+    });
+  }
+
+  // ---- Si ya está logueado, redirige ----
+  onAuthStateChanged(auth, function(user) {
+    if (user) {
+      var isRegisterPage = window.location.href.indexOf('register.html') !== -1;
+      if (isRegisterPage) window.location.href = 'index.html';
+    }
+  });
+
+  window.__sofbeSignOut = function() {
+    signOut(auth).then(function(){ window.location.href = 'index.html'; });
+  };
+</script>
+</head>
+<body>
+>>>>>>> 0a721696e44ed13c909a89cb7f245947df27c53a
 <!-- Body content -->
 <div class="header-connect">
 <div class="container">
@@ -43,18 +168,30 @@
 <div class="col-md-6 col-sm-8 col-xs-12">
 <div class="header-half header-call">
 <p>
+<<<<<<< HEAD
 <span><i class="pe-7s-call"></i> +51 900 000 000</span>
 <span><i class="pe-7s-mail"></i> inmobiliaria@sofbe.com</span>
+=======
+<span><i class="pe-7s-call"></i> +51 TU-NUMERO-AQUI</span>
+<span><i class="pe-7s-mail"></i> TU-CORREO@sofbe.com</span>
+>>>>>>> 0a721696e44ed13c909a89cb7f245947df27c53a
 </p>
 </div>
 </div>
 <div class="col-md-3 col-md-offset-3 col-sm-4 col-xs-12">
 <div class="header-half header-social">
 <ul class="list-inline">
+<<<<<<< HEAD
 <li><a href="https://www.facebook.com/sofbe" target="_blank" rel="noopener" title="Facebook"><i class="fa fa-facebook"></i></a></li>
 <li><a href="https://www.instagram.com/sofbe" target="_blank" rel="noopener" title="Instagram"><i class="fa fa-instagram"></i></a></li>
 <li><a href="https://www.linkedin.com/company/sofbe" target="_blank" rel="noopener" title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
 <li><a href="https://wa.me/51900000000" target="_blank" rel="noopener" title="WhatsApp"><i class="fa fa-whatsapp"></i></a></li>
+=======
+<li><a href="https://www.facebook.com/TU-PAGINA-AQUI" target="_blank" rel="noopener" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+<li><a href="https://www.instagram.com/TU-CUENTA-AQUI" target="_blank" rel="noopener" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+<li><a href="https://www.linkedin.com/company/TU-EMPRESA-AQUI" target="_blank" rel="noopener" title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+<li><a href="https://wa.me/51TUNUMEROAQUI" target="_blank" rel="noopener" title="WhatsApp"><i class="fa fa-whatsapp"></i></a></li>
+>>>>>>> 0a721696e44ed13c909a89cb7f245947df27c53a
 </ul>
 </div>
 </div>
@@ -71,7 +208,11 @@
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
+<<<<<<< HEAD
 <a class="navbar-brand" href="index.html"><img alt="SOFBE Inmobiliaria" src="assets/img/logo.png"/></a>
+=======
+<a class="navbar-brand" href="home.html"><img alt="SOFBE Inmobiliaria" src="assets/img/logo.png"/></a>
+>>>>>>> 0a721696e44ed13c909a89cb7f245947df27c53a
 </div>
 <div class="collapse navbar-collapse" id="navigation">
 <div class="button navbar-right">
@@ -79,7 +220,11 @@
 <button class="navbar-btn nav-button wow fadeInRight" data-wow-delay="0.48s" onclick="window.location.href='submit-property.html'">Publicar propiedad</button>
 </div>
 <ul class="main-nav nav navbar-nav navbar-right">
+<<<<<<< HEAD
 <li class="wow fadeInDown" data-wow-delay="0.1s"><a href="index.html">Inicio</a></li>
+=======
+<li class="wow fadeInDown" data-wow-delay="0.1s"><a href="home.html">Inicio</a></li>
+>>>>>>> 0a721696e44ed13c909a89cb7f245947df27c53a
 <li class="wow fadeInDown" data-wow-delay="0.2s"><a href="properties.html">Propiedades</a></li>
 <li class="dropdown wow fadeInDown" data-wow-delay="0.3s">
 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Servicios <b class="caret"></b></a>
@@ -111,10 +256,18 @@
 <!-- register-area -->
 <div class="register-area" style="background-color: rgb(249, 249, 249);">
 <div class="container">
+<<<<<<< HEAD
+=======
+
+<div id="reg-msg" style="display:none; padding:12px 16px; border-radius:4px; margin-bottom:16px; font-size:14px;"></div>
+<div id="login-msg" style="display:none; padding:12px 16px; border-radius:4px; margin-bottom:16px; font-size:14px;"></div>
+
+>>>>>>> 0a721696e44ed13c909a89cb7f245947df27c53a
 <div class="col-md-6">
 <div class="box-for overflow">
 <div class="col-md-12 col-xs-12 register-blocks">
 <h2>Nueva cuenta:</h2>
+<<<<<<< HEAD
 <form action="" method="post">
 <div class="form-group">
 <label for="name">Nombre</label>
@@ -158,10 +311,63 @@
 <a class="login-social" href="#"><i class="fa fa-facebook"></i> Facebook</a>
 <a class="login-social" href="#"><i class="fa fa-google-plus"></i> Gmail</a>
 <a class="login-social" href="#"><i class="fa fa-twitter"></i> Twitter</a>
+=======
+<div class="form-group">
+<label for="reg-name">Nombre completo <span style="color:#E8180C">*</span></label>
+<input class="form-control" id="reg-name" type="text" placeholder="Tu nombre completo"/>
+</div>
+<div class="form-group">
+<label for="reg-email">Correo electrónico <span style="color:#E8180C">*</span></label>
+<input class="form-control" id="reg-email" type="email" placeholder="tucorreo@ejemplo.com"/>
+</div>
+<div class="form-group">
+<label for="reg-password">Contraseña <span style="color:#E8180C">*</span></label>
+<input class="form-control" id="reg-password" type="password" placeholder="Mínimo 6 caracteres"/>
+</div>
+<div class="text-center">
+<button class="btn btn-default" id="btn-register" type="button">
+  <i class="fa fa-user-plus"></i> Registrarse
+</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="col-md-6">
+<div class="box-for overflow">
+<div class="col-md-12 col-xs-12 login-blocks">
+<h2>Iniciar sesión:</h2>
+<div class="form-group">
+<label for="login-email">Correo electrónico <span style="color:#E8180C">*</span></label>
+<input class="form-control" id="login-email" type="email" placeholder="tucorreo@ejemplo.com"/>
+</div>
+<div class="form-group">
+<label for="login-password">Contraseña <span style="color:#E8180C">*</span></label>
+<input class="form-control" id="login-password" type="password" placeholder="Tu contraseña"/>
+</div>
+<div class="text-center">
+<button class="btn btn-default" id="btn-login" type="button">
+  <i class="fa fa-sign-in"></i> Iniciar sesión
+</button>
+</div>
+<br/>
+<h2>O ingresa con:</h2>
+<p>
+<button id="btn-google" class="login-social" type="button" style="background:none; border:none; cursor:pointer; padding:0;">
+  <i class="fa fa-google-plus"></i> Google
+</button>
+</p>
+<p style="margin-top:10px; font-size:13px; color:#888;">
+  <a href="change-password.html">¿Olvidaste tu contraseña?</a>
+>>>>>>> 0a721696e44ed13c909a89cb7f245947df27c53a
 </p>
 </div>
 </div>
 </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0a721696e44ed13c909a89cb7f245947df27c53a
 </div>
 </div>
 <!-- Footer area-->
@@ -177,8 +383,13 @@
 <p>Tu socio de confianza en bienes raíces. Más de 10 años de experiencia en el mercado.</p>
 <ul class="footer-adress">
 <li><i class="pe-7s-map-marker strong"> </i> Av. José Pardo 908, Nuevo Chimbote, Perú</li>
+<<<<<<< HEAD
 <li><i class="pe-7s-mail strong"> </i> inmobiliaria@sofbe.com</li>
 <li><i class="pe-7s-call strong"> </i> +51 900 000 000</li>
+=======
+<li><i class="pe-7s-mail strong"> </i> TU-CORREO@sofbe.com</li>
+<li><i class="pe-7s-call strong"> </i> +51 TU-NUMERO-AQUI</li>
+>>>>>>> 0a721696e44ed13c909a89cb7f245947df27c53a
 </ul>
 </div>
 </div>
@@ -256,10 +467,17 @@
 </form>
 <div class="social pull-right">
 <ul>
+<<<<<<< HEAD
 <li><a class="wow fadeInUp animated" href="https://www.facebook.com/sofbe" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a></li>
 <li><a class="wow fadeInUp animated" data-wow-delay="0.2s" href="https://www.instagram.com/sofbe" target="_blank" rel="noopener"><i class="fa fa-instagram"></i></a></li>
 <li><a class="wow fadeInUp animated" data-wow-delay="0.3s" href="https://www.linkedin.com/company/sofbe" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a></li>
 <li><a class="wow fadeInUp animated" data-wow-delay="0.4s" href="https://wa.me/51900000000" target="_blank" rel="noopener"><i class="fa fa-whatsapp"></i></a></li>
+=======
+<li><a class="wow fadeInUp animated" href="https://www.facebook.com/TU-PAGINA-AQUI" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a></li>
+<li><a class="wow fadeInUp animated" data-wow-delay="0.2s" href="https://www.instagram.com/TU-CUENTA-AQUI" target="_blank" rel="noopener"><i class="fa fa-instagram"></i></a></li>
+<li><a class="wow fadeInUp animated" data-wow-delay="0.3s" href="https://www.linkedin.com/company/TU-EMPRESA-AQUI" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a></li>
+<li><a class="wow fadeInUp animated" data-wow-delay="0.4s" href="https://wa.me/51TUNUMEROAQUI" target="_blank" rel="noopener"><i class="fa fa-whatsapp"></i></a></li>
+>>>>>>> 0a721696e44ed13c909a89cb7f245947df27c53a
 <li><a class="wow fadeInUp animated" data-wow-delay="0.6s" href="https://www.youtube.com/@sofbe" target="_blank" rel="noopener"><i class="fa fa-youtube"></i></a></li>
 </ul>
 </div>
@@ -272,7 +490,11 @@
 <div class="container">
 <div class="row">
 <div class="pull-left">
+<<<<<<< HEAD
 <span>&copy; 2026 <a href="index.html">SOFBE Inmobiliaria</a> — Todos los derechos reservados</span>
+=======
+<span>&copy; 2026 <a href="home.html">SOFBE Inmobiliaria</a> — Todos los derechos reservados</span>
+>>>>>>> 0a721696e44ed13c909a89cb7f245947df27c53a
 </div>
 <div class="bottom-menu pull-right">
 <ul>

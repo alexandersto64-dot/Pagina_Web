@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<title>SOFBE | Bienvenido</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800" rel="stylesheet" type="text/css"/>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 100%; height: 100%; overflow: hidden; background: #0a0a0a; }
+
+  /* ===== PRELOADER ===== */
+  #preloader {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw; height: 100vh;
+    background: #0a0a0a;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+  }
+  #preloader.sbl-hide {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+  #sofbe-loader-inner {
+    position: relative;
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* Top bar */
+  .sbl-top-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: #E8180C;
+    z-index: 10;
+  }
+  .sbl-top-bar::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 0;
+    width: 40%; height: 100%;
+    background: rgba(255,255,255,0.2);
+  }
+
+  /* Corners */
+  .sbl-corner { position: absolute; width: 22px; height: 22px; z-index: 10; }
+  .sbl-tl { top: 16px; left: 16px; border-top: 2px solid #E8180C; border-left: 2px solid #E8180C; }
+  .sbl-tr { top: 16px; right: 16px; border-top: 2px solid #E8180C; border-right: 2px solid #E8180C; }
+  .sbl-bl { bottom: 16px; left: 16px; border-bottom: 2px solid #E8180C; border-left: 2px solid #E8180C; }
+  .sbl-br { bottom: 16px; right: 16px; border-bottom: 2px solid #E8180C; border-right: 2px solid #E8180C; }
+
+  /* Side slashes */
+  .sbl-slash-left {
+    position: absolute;
+    left: -40px; top: 0; bottom: 0;
+    width: 220px;
+    background: #E8180C;
+    clip-path: polygon(0 0, 58% 0, 100% 100%, 42% 100%);
+    opacity: 0.82;
+    z-index: 1;
+  }
+  .sbl-slash-right {
+    position: absolute;
+    right: -40px; top: 0; bottom: 0;
+    width: 220px;
+    background: #E8180C;
+    clip-path: polygon(42% 0, 100% 0, 58% 100%, 0 100%);
+    opacity: 0.82;
+    z-index: 1;
+  }
+
+  /* Scanline */
+  @keyframes sbl-scanline { 0% { top: -3%; } 100% { top: 103%; } }
+  .sbl-scanline {
+    position: absolute;
+    left: 0; right: 0;
+    height: 2px;
+    background: rgba(255,255,255,0.04);
+    animation: sbl-scanline 4s linear infinite;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* BG X */
+  @keyframes sbl-xpulse { 0%,100% { opacity: 0.06; } 50% { opacity: 0.14; } }
+  .sbl-bg-x {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 2;
+  }
+  .sbl-bg-x svg { width: min(85vw, 500px); animation: sbl-xpulse 3s ease-in-out infinite; }
+
+  /* Logo */
+  @keyframes sbl-slideL { 0% { transform: translateX(-100px) skewX(-6deg); opacity: 0; } 100% { transform: translateX(0) skewX(-6deg); opacity: 1; } }
+  @keyframes sbl-slideR { 0% { transform: translateX(100px) skewX(-6deg); opacity: 0; } 100% { transform: translateX(0) skewX(-6deg); opacity: 1; } }
+  @keyframes sbl-fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+
+  .sbl-logo-block {
+    position: relative; z-index: 10;
+    text-align: center; margin-bottom: 28px;
+  }
+  .sbl-logo-pre {
+    font-family: 'Oswald', 'Open Sans', sans-serif;
+    font-size: 11px; letter-spacing: 5px;
+    color: #E8180C; text-transform: uppercase;
+    margin-bottom: 8px;
+    animation: sbl-fadeUp 0.6s ease both;
+  }
+  .sbl-logo-main {
+    display: flex; align-items: center; justify-content: center; line-height: 1;
+  }
+  .sbl-logo-s {
+    font-family: 'Oswald', 'Open Sans', sans-serif;
+    font-size: clamp(52px, 10vw, 80px); font-weight: 700;
+    color: #fff; letter-spacing: -2px;
+    animation: sbl-slideL 0.7s cubic-bezier(.22,.68,0,1.2) 0.1s both;
+    text-shadow: 4px 0 0 #E8180C;
+  }
+  .sbl-logo-ofbe {
+    font-family: 'Oswald', 'Open Sans', sans-serif;
+    font-size: clamp(52px, 10vw, 80px); font-weight: 700;
+    color: #fff; letter-spacing: -2px;
+    animation: sbl-slideR 0.7s cubic-bezier(.22,.68,0,1.2) 0.2s both;
+  }
+  .sbl-logo-slash {
+    width: 6px; height: clamp(62px, 12vw, 96px);
+    background: #E8180C; transform: skewX(-18deg);
+    margin: 0 8px;
+    animation: sbl-fadeUp 0.4s ease 0.15s both;
+    flex-shrink: 0;
+  }
+  .sbl-logo-sub {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px; letter-spacing: 3px;
+    color: rgba(255,255,255,0.45); text-transform: uppercase;
+    margin-top: 8px;
+    animation: sbl-fadeUp 0.6s ease 0.4s both;
+  }
+
+  /* Stats */
+  .sbl-stats-row {
+    position: relative; z-index: 10;
+    display: flex; gap: 1px;
+    margin-bottom: 28px;
+    animation: sbl-fadeUp 0.6s ease 0.5s both;
+  }
+  .sbl-stat-block {
+    background: rgba(255,255,255,0.04);
+    border: 0.5px solid rgba(255,255,255,0.1);
+    padding: 10px 18px; text-align: center; min-width: 80px;
+  }
+  .sbl-stat-block:first-child { border-left: 2px solid #E8180C; }
+  .sbl-stat-num {
+    font-family: 'Oswald', 'Open Sans', sans-serif;
+    font-size: 22px; color: #E8180C;
+    display: block; line-height: 1;
+  }
+  .sbl-stat-label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 9px; letter-spacing: 2px;
+    color: rgba(255,255,255,0.4); text-transform: uppercase;
+    margin-top: 3px; display: block;
+  }
+
+  /* Progress bar */
+  .sbl-progress-area {
+    position: relative; z-index: 10;
+    width: min(400px, 80vw);
+    animation: sbl-fadeUp 0.6s ease 0.6s both;
+  }
+  .sbl-progress-header {
+    display: flex; justify-content: space-between; margin-bottom: 6px;
+  }
+  .sbl-progress-label {
+    font-family: 'Oswald', 'Open Sans', sans-serif;
+    font-size: 10px; letter-spacing: 3px;
+    color: rgba(255,255,255,0.35); text-transform: uppercase;
+  }
+  .sbl-progress-pct {
+    font-family: 'Oswald', 'Open Sans', sans-serif;
+    font-size: 10px; letter-spacing: 2px; color: #E8180C;
+  }
+  .sbl-progress-track {
+    width: 100%; height: 3px;
+    background: rgba(255,255,255,0.08);
+    position: relative; overflow: hidden;
+  }
+  .sbl-progress-fill {
+    height: 100%; background: #E8180C; width: 0%;
+    position: relative;
+    transition: width 0.1s linear;
+  }
+  .sbl-progress-fill::after {
+    content: '';
+    position: absolute; right: 0; top: 0; bottom: 0;
+    width: 16px; background: rgba(255,255,255,0.45);
+  }
+</style>
+</head>
+<body>
+
+<div id="preloader">
+  <div id="sofbe-loader-inner">
+    <div class="sbl-top-bar"></div>
+    <div class="sbl-corner sbl-tl"></div>
+    <div class="sbl-corner sbl-tr"></div>
+    <div class="sbl-corner sbl-bl"></div>
+    <div class="sbl-corner sbl-br"></div>
+    <div class="sbl-slash-left"></div>
+    <div class="sbl-slash-right"></div>
+    <div class="sbl-scanline"></div>
+    <div class="sbl-bg-x">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="10" y1="10" x2="190" y2="190" stroke="white" stroke-width="28"/>
+        <line x1="190" y1="10" x2="10" y2="190" stroke="white" stroke-width="28"/>
+      </svg>
+    </div>
+    <div class="sbl-logo-block">
+      <div class="sbl-logo-pre">&#9632; Inmobiliaria &#9632;</div>
+      <div class="sbl-logo-main">
+        <span class="sbl-logo-s">S</span>
+        <div class="sbl-logo-slash"></div>
+        <span class="sbl-logo-ofbe">OFBE</span>
+      </div>
+      <div class="sbl-logo-sub">Tu propiedad ideal te está esperando</div>
+    </div>
+    <div class="sbl-stats-row">
+      <div class="sbl-stat-block">
+        <span class="sbl-stat-num">+500</span>
+        <span class="sbl-stat-label">Propiedades</span>
+      </div>
+      <div class="sbl-stat-block">
+        <span class="sbl-stat-num">10+</span>
+        <span class="sbl-stat-label">Ciudades</span>
+      </div>
+      <div class="sbl-stat-block">
+        <span class="sbl-stat-num">98%</span>
+        <span class="sbl-stat-label">Satisfacción</span>
+      </div>
+      <div class="sbl-stat-block">
+        <span class="sbl-stat-num">12+</span>
+        <span class="sbl-stat-label">Años</span>
+      </div>
+    </div>
+    <div class="sbl-progress-area">
+      <div class="sbl-progress-header">
+        <span class="sbl-progress-label">Cargando sistema</span>
+        <span class="sbl-progress-pct" id="sbl-pct">0%</span>
+      </div>
+      <div class="sbl-progress-track">
+        <div class="sbl-progress-fill" id="sbl-bar"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var bar  = document.getElementById('sbl-bar');
+  var pct  = document.getElementById('sbl-pct');
+  var loader = document.getElementById('preloader');
+  var current = 0;
+  var duration = 3200; // ms total
+  var interval = 40;   // ms per tick
+  var steps = duration / interval;
+  var increment = 100 / steps;
+
+  var timer = setInterval(function() {
+    current += increment;
+    if (current >= 100) {
+      current = 100;
+      clearInterval(timer);
+      bar.style.width = '100%';
+      pct.textContent = '100%';
+      // Fade out and redirect
+      setTimeout(function() {
+        loader.classList.add('sbl-hide');
+        setTimeout(function() {
+          window.location.href = 'index.html';
+        }, 850);
+      }, 400);
+    } else {
+      bar.style.width = current.toFixed(1) + '%';
+      pct.textContent = Math.floor(current) + '%';
+    }
+  }, interval);
+})();
+</script>
+
+</body>
+</html>
