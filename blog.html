@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="es"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="es"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="es"> <![endif]-->
@@ -8,15 +7,12 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<title>SOFBE | Página de blog completa</title>
-<meta content="SOFBE es una plantilla de bienes raíces" name="description"/>
-<meta content="SOFBE" name="author"/>
-<meta content="html5, css, bootstrap, propiedad, tema de bienes raíces, plantilla bootstrap" name="keyword"/>
+<title>SOFBE | Blog Inmobiliario</title>
+<meta content="Blog inmobiliario de SOFBE - Noticias, consejos y tendencias del mercado de bienes raíces en Chimbote y Nuevo Chimbote." name="description"/>
+<meta content="SOFBE, blog inmobiliario, bienes raíces, propiedades, Chimbote" name="keyword"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800" rel="stylesheet" type="text/css"/>
-<!-- Coloca favicon.ico y apple-touch-icon.png en el directorio raíz -->
 <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
-<link href="favicon.ico" rel="icon" type="image/x-icon"/>
 <link href="assets/css/normalize.css" rel="stylesheet"/>
 <link href="assets/css/font-awesome.min.css" rel="stylesheet"/>
 <link href="assets/css/fontello.css" rel="stylesheet"/>
@@ -25,19 +21,335 @@
 <link href="assets/css/animate.css" media="screen" rel="stylesheet"/>
 <link href="assets/css/bootstrap-select.min.css" rel="stylesheet"/>
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="assets/css/icheck.min_all.css" rel="stylesheet"/>
-<link href="assets/css/price-range.css" rel="stylesheet"/>
 <link href="assets/css/owl.carousel.css" rel="stylesheet"/>
 <link href="assets/css/owl.theme.css" rel="stylesheet"/>
-<link href="assets/css/owl.transitions.css" rel="stylesheet"/>
 <link href="assets/css/style.css" rel="stylesheet"/>
 <link href="assets/css/responsive.css" rel="stylesheet"/>
+<style>
+  /* Blog específico */
+  .blog-page-header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 60px 0 40px;
+    margin-bottom: 0;
+  }
+  .blog-page-header h2 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0 0 8px;
+    text-transform: uppercase;
+  }
+  .blog-page-header p {
+    color: #aaa;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+  }
+  .blog-page-header .title-underline {
+    width: 60px;
+    height: 3px;
+    background: #e74c3c;
+    margin: 12px 0 16px;
+  }
+  .blog-main {
+    padding: 50px 0 60px;
+    background: #f8f8f8;
+  }
+  /* Tarjeta de artículo */
+  .blog-card {
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .blog-card:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.13);
+    transform: translateY(-3px);
+  }
+  .blog-card-img {
+    position: relative;
+    overflow: hidden;
+    height: 260px;
+  }
+  .blog-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .blog-card:hover .blog-card-img img {
+    transform: scale(1.05);
+  }
+  .blog-category-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: #e74c3c;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 2px;
+  }
+  .blog-category-badge.consejos { background: #2980b9; }
+  .blog-category-badge.mercado { background: #27ae60; }
+  .blog-category-badge.inversion { background: #8e44ad; }
+  .blog-category-badge.legal { background: #e67e22; }
+  .blog-card-body {
+    padding: 26px 28px 22px;
+  }
+  .blog-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: #999;
+  }
+  .blog-card-meta i {
+    margin-right: 5px;
+    color: #e74c3c;
+  }
+  .blog-card-meta .meta-author {
+    font-weight: 600;
+    color: #e74c3c;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+  .blog-card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 12px;
+    line-height: 1.35;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .blog-card-title a {
+    color: #1a1a1a;
+    text-decoration: none;
+  }
+  .blog-card-title a:hover {
+    color: #e74c3c;
+  }
+  .blog-card-excerpt {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    padding: 0;
+  }
+  .blog-read-more {
+    display: inline-block;
+    background: #e74c3c;
+    color: #fff !important;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 9px 22px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+  }
+  .blog-read-more:hover {
+    background: #c0392b;
+    color: #fff !important;
+    text-decoration: none;
+  }
+  /* Sidebar */
+  .blog-sidebar {
+    padding-left: 20px;
+  }
+  .sidebar-widget {
+    background: #fff;
+    border-radius: 4px;
+    padding: 24px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  }
+  .sidebar-widget h5 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #1a1a1a;
+    margin: 0 0 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e74c3c;
+  }
+  .sidebar-categories li {
+    padding: 7px 0;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+  }
+  .sidebar-categories li:last-child { border-bottom: none; }
+  .sidebar-categories li a {
+    color: #555;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .sidebar-categories li a:hover { color: #e74c3c; }
+  .sidebar-categories li .count {
+    background: #f0f0f0;
+    color: #777;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+  .recent-post-item {
+    display: flex;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .recent-post-item:last-child { border-bottom: none; }
+  .recent-post-img {
+    width: 64px;
+    height: 56px;
+    border-radius: 3px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .recent-post-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .recent-post-info h6 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 4px;
+    line-height: 1.4;
+    text-transform: none;
+  }
+  .recent-post-info h6 a { color: #333; text-decoration: none; }
+  .recent-post-info h6 a:hover { color: #e74c3c; }
+  .recent-post-info span {
+    font-size: 11px;
+    color: #aaa;
+  }
+  .tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+  }
+  .tags-list li a {
+    display: block;
+    background: #f0f0f0;
+    color: #555;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 2px;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: all 0.2s;
+  }
+  .tags-list li a:hover {
+    background: #e74c3c;
+    color: #fff;
+  }
+  /* Paginación */
+  .blog-pagination {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .blog-pagination .pagination > li > a {
+    color: #e74c3c;
+    border-color: #ddd;
+    font-weight: 600;
+  }
+  .blog-pagination .pagination > li.active > a,
+  .blog-pagination .pagination > li.active > span {
+    background: #e74c3c;
+    border-color: #e74c3c;
+    color: #fff;
+  }
+  /* Banner propiedad destacada en sidebar */
+  .sidebar-property-banner {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    border-radius: 4px;
+    padding: 22px;
+    text-align: center;
+    color: #fff;
+  }
+  .sidebar-property-banner .price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #e74c3c;
+    margin: 8px 0;
+  }
+  .sidebar-property-banner p {
+    font-size: 12px;
+    color: #aaa;
+    padding: 0;
+    margin-bottom: 14px;
+  }
+  .sidebar-property-banner h6 {
+    font-size: 13px;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .btn-ver-propiedad {
+    display: inline-block;
+    background: #e74c3c;
+    color: #fff !important;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  .btn-ver-propiedad:hover { background: #c0392b; }
+
+  /* Page title section */
+  .page-title-section {
+    background: #2d2d2d;
+    padding: 35px 0;
+    border-bottom: 3px solid #e74c3c;
+  }
+  .page-title-section h2 {
+    color: #fff;
+    margin: 0;
+    font-size: 26px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  .page-title-section .breadcrumb {
+    background: transparent;
+    margin: 6px 0 0;
+    padding: 0;
+    font-size: 12px;
+  }
+  .page-title-section .breadcrumb li a { color: #e74c3c; }
+  .page-title-section .breadcrumb li.active { color: #aaa; }
+  .page-title-section .breadcrumb > li + li:before { color: #666; }
+</style>
 </head>
 <body>
-<div id="preloader">
-<div id="status"> </div>
-</div>
-<!-- Contenido principal -->
+<div id="preloader"><div id="status"> </div></div>
+
+<!-- Encabezado superior -->
 <div class="header-connect">
 <div class="container">
 <div class="row">
@@ -62,7 +374,8 @@
 </div>
 </div>
 </div>
-<!--Fin del encabezado superior -->
+
+<!-- Barra de navegación -->
 <nav class="navbar navbar-default">
 <div class="container">
 <div class="navbar-header">
@@ -91,226 +404,253 @@
 <li><a href="user-profile.html">Asesoría inmobiliaria</a></li>
 </ul>
 </li>
-<li class="wow fadeInDown" data-wow-delay="0.4s"><a href="blog.html">Blog</a></li>
+<li class="active wow fadeInDown" data-wow-delay="0.4s"><a href="blog.html">Blog</a></li>
 <li class="wow fadeInDown" data-wow-delay="0.45s"><a href="faq.html">FAQ</a></li>
 <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="contact.html">Contacto</a></li>
 </ul>
 </div>
 </div>
 </nav>
-<!-- Fin de la barra de navegación -->
-<div class="page-head">
+
+<!-- Título de página -->
+<div class="page-title-section">
 <div class="container">
 <div class="row">
-<div class="page-head-content">
-<h1 class="page-title">Página de Preguntas Frecuentes</h1>
+<div class="col-md-8">
+<h2>Blog Inmobiliario</h2>
+<ol class="breadcrumb">
+<li><a href="index.html">Inicio</a></li>
+<li class="active">Blog</li>
+</ol>
 </div>
 </div>
 </div>
 </div>
-<!-- Fin del encabezado de página -->
-<div class="content-area blog-page padding-top-40" style="background-color: #FCFCFC; padding-bottom: 55px;">
+
+<!-- Contenido principal del blog -->
+<div class="blog-main">
 <div class="container">
 <div class="row">
-<div class="blog-lst col-md-12 pl0">
-<section class="post">
-<div class="text-center padding-b-50">
-<h2 class="wow fadeInLeft animated">MODA AHORA 2026</h2>
-<div class="title-line wow fadeInRight animated"></div>
-</div>
-<div class="row">
-<div class="col-sm-6">
-<p class="author-category">
-                                        Por <a href="#">Jesus Vilchez</a>
-                                        en <a href="blog.html">Diseño Web</a>
-</p>
-</div>
-<div class="col-sm-6 right">
-<p class="date-comments">
-<a href="single.html"><i class="fa fa-calendar-o"></i> 20 de mayo, 2026</a>
-<a href="single.html"><i class="fa fa-comment-o"></i> 8 Comentarios</a>
-</p>
-</div>
-</div>
-<div class="image wow fadeInLeft animated">
-<a href="single.html">
-<img alt="Ejemplo de imagen de publicación de blog" class="img-responsive" src="assets/img/blog2.jpg"/>
-</a>
-</div>
-<p class="intro">El hogar del ser humano se construye entre las alegrías y dificultades de la vida: la juventud y la vejez, la salud y las pruebas que fortalecen el espíritu. El curso de la existencia, lleno de energía y experiencias, fluye constantemente a través del tiempo y el espacio, dejando huellas que dan sentido a cada momento. Con equilibrio y serenidad, cada etapa se convierte en parte esencial de nuestra historia y crecimiento personal.
-</p>
-<p class="read-more">
-<a class="btn btn-default btn-border" href="single.html">Continuar leyendo</a>
-</p>
-</section>
-<section class="post">
-<div class="text-center padding-b-50">
-<h2 class="wow fadeInLeft animated">MODA AHORA 2026</h2>
-<div class="title-line wow fadeInRight animated"></div>
-</div>
-<div class="row">
-<div class="col-sm-6">
-<p class="author-category">
-                                        Por <a href="#">Jesus Vilchez</a>
-                                        en <a href="blog.html">Diseño Web</a>
-</p>
-</div>
-<div class="col-sm-6 right">
-<p class="date-comments">
-<a href="single.html"><i class="fa fa-calendar-o"></i> 20 de mayo, 2026</a>
-<a href="single.html"><i class="fa fa-comment-o"></i> 8 Comentarios</a>
-</p>
-</div>
-</div>
-<div class="image wow fadeInLeft animated">
-<a href="single.html">
-<img alt="Ejemplo de imagen de publicación de blog" class="img-responsive" src="assets/img/blog2.jpg"/>
-</a>
-</div>
-<p class="intro">El hogar del ser humano se construye entre las alegrías y dificultades de la vida: la juventud y la vejez, la salud y las pruebas que fortalecen el espíritu. El curso de la existencia, lleno de energía y experiencias, fluye constantemente a través del tiempo y el espacio, dejando huellas que dan sentido a cada momento. Con equilibrio y serenidad, cada etapa se convierte en parte esencial de nuestra historia y crecimiento personal.
-</p>
-<p class="read-more">
-<a class="btn btn-default btn-border" href="single.html">Continuar leyendo</a>
-</p>
-</section>
-<section class="post">
-<div class="text-center padding-b-50">
-<h2 class="wow fadeInLeft animated">MODA AHORA 2026</h2>
-<div class="title-line wow fadeInRight animated"></div>
-</div>
-<div class="row">
-<div class="col-sm-6">
-<p class="author-category">
-                                        Por <a href="#">Jesus Vilchez</a>
-                                        en <a href="blog.html">Diseño Web</a>
-</p>
-</div>
-<div class="col-sm-6 right">
-<p class="date-comments">
-<a href="single.html"><i class="fa fa-calendar-o"></i> 20 de mayo, 2026</a>
-<a href="single.html"><i class="fa fa-comment-o"></i> 8 Comentarios</a>
-</p>
-</div>
-</div>
-<div class="image wow fadeInLeft animated">
-<a href="single.html">
-<img alt="Ejemplo de imagen de publicación de blog" class="img-responsive" src="assets/img/blog1.jpg"/>
-</a>
-</div>
-<p class="intro">El hogar del ser humano se construye entre las alegrías y dificultades de la vida: la juventud y la vejez, la salud y las pruebas que fortalecen el espíritu. El curso de la existencia, lleno de energía y experiencias, fluye constantemente a través del tiempo y el espacio, dejando huellas que dan sentido a cada momento. Con equilibrio y serenidad, cada etapa se convierte en parte esencial de nuestra historia y crecimiento personal.
-</p>
-<p class="read-more">
-<a class="btn btn-default btn-border" href="single.html">Continuar leyendo</a>
-</p>
-</section>
-</div>
-</div>
-</div>
-</div>
-<!-- Área del pie de página-->
-<div class="footer-area">
-<div class="footer">
-<div class="container">
-<div class="row">
-<div class="col-md-3 col-sm-6 wow fadeInRight animated">
-<div class="single-footer">
-<h4>Acerca de nosotros </h4>
-<div class="footer-title-line"></div>
-<img alt="" class="wow pulse" data-wow-delay="1s" src="assets/img/footer-logo.png"/>
-<p>Tu socio de confianza en bienes raíces. Más de 10 años de experiencia en el mercado.</p>
-<ul class="footer-adress">
-<li><i class="pe-7s-map-marker strong"> </i> Av. José Pardo 908, Nuevo Chimbote, Perú</li>
-<li><i class="pe-7s-mail strong"> </i> inmobiliaria@sofbe.com</li>
-<li><i class="pe-7s-call strong"> </i> +51 900 000 000</li>
-</ul>
-</div>
-</div>
-<div class="col-md-3 col-sm-6 wow fadeInRight animated">
-<div class="single-footer">
-<h4>Enlaces rápidos </h4>
-<div class="footer-title-line"></div>
-<ul class="footer-menu">
-<li><a href="properties.html">Propiedades</a> </li>
-<li><a href="#">Servicios</a> </li>
-<li><a href="submit-property.html">Publicar propiedad </a></li>
-<li><a href="contact.html">Contáctanos</a></li>
-<li><a href="faq.html">FAQ</a> </li>
-<li><a href="faq.html">Términos </a> </li>
-</ul>
-</div>
-</div>
-<div class="col-md-3 col-sm-6 wow fadeInRight animated">
-<div class="single-footer">
-<h4>Últimas Noticias</h4>
-<div class="footer-title-line"></div>
-<ul class="footer-blog">
-<li>
-<div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
-<a href="single.html">
-<img src="assets/img/demo/small-proerty-2.jpg"/>
-</a>
-<span class="blg-date">12-12-2026</span>
-</div>
-<div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
-<h6> <a href="single.html">Nuevas funciones disponibles </a></h6>
-<p style="line-height: 17px; padding: 8px 2px;">Nuevas propiedades disponibles en las mejores...</p>
-</div>
-</li>
-<li>
-<div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
-<a href="single.html">
-<img src="assets/img/demo/small-proerty-2.jpg"/>
-</a>
-<span class="blg-date">12-12-2026</span>
-</div>
-<div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
-<h6> <a href="single.html">Nuevas funciones disponibles </a></h6>
-<p style="line-height: 17px; padding: 8px 2px;">Nuevas propiedades disponibles en las mejores...</p>
-</div>
-</li>
-<li>
-<div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
-<a href="single.html">
-<img src="assets/img/demo/small-proerty-2.jpg"/>
-</a>
-<span class="blg-date">12-12-2026</span>
-</div>
-<div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
-<h6> <a href="single.html">Nuevas funciones disponibles </a></h6>
-<p style="line-height: 17px; padding: 8px 2px;">Nuevas propiedades disponibles en las mejores...</p>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="col-md-3 col-sm-6 wow fadeInRight animated">
-<div class="single-footer news-letter">
-<h4>Mantente en contacto</h4>
-<div class="footer-title-line"></div>
-<p>Suscríbete para recibir las últimas noticias y ofertas de propiedades.</p>
-<form>
-<div class="input-group">
-<input class="form-control" placeholder="Correo electrónico..." type="text"/>
-<span class="input-group-btn">
-<button class="btn btn-primary subscribe" type="button"><i class="pe-7s-paper-plane pe-2x"></i></button>
-</span>
-</div>
-<!-- /input-group -->
-</form>
-<div class="social pull-right">
-<ul>
-<li><a class="wow fadeInUp animated" href="https://www.facebook.com/sofbe" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a></li>
-<li><a class="wow fadeInUp animated" data-wow-delay="0.2s" href="https://www.instagram.com/sofbe" target="_blank" rel="noopener"><i class="fa fa-instagram"></i></a></li>
-<li><a class="wow fadeInUp animated" data-wow-delay="0.3s" href="https://www.linkedin.com/company/sofbe" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a></li>
-<li><a class="wow fadeInUp animated" data-wow-delay="0.4s" href="https://wa.me/51900000000" target="_blank" rel="noopener"><i class="fa fa-whatsapp"></i></a></li>
-<li><a class="wow fadeInUp animated" data-wow-delay="0.6s" href="https://www.youtube.com/@sofbe" target="_blank" rel="noopener"><i class="fa fa-youtube"></i></a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+  <!-- Columna de artículos -->
+  <div class="col-md-8">
+
+    <!-- Artículo 1 -->
+    <div class="blog-card wow fadeInUp" data-wow-delay="0.1s">
+      <div class="blog-card-img">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="Cómo elegir la mejor ubicación para tu vivienda"/>
+        <span class="blog-category-badge consejos">Consejos</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="meta-author"><i class="fa fa-user"></i> Equipo SOFBE</span>
+          <span><i class="fa fa-calendar"></i> 28 de mayo, 2026</span>
+          <span><i class="fa fa-comments"></i> 4 Comentarios</span>
+        </div>
+        <h4 class="blog-card-title"><a href="single.html">Cómo elegir la mejor ubicación para comprar tu vivienda en Chimbote</a></h4>
+        <p class="blog-card-excerpt">La ubicación es el factor más determinante en el valor de una propiedad. Antes de tomar una decisión, es fundamental evaluar la cercanía a centros educativos, accesos viales, zonas comerciales y la proyección de desarrollo urbano del sector. En Nuevo Chimbote, los distritos con mayor crecimiento en 2026 ofrecen oportunidades únicas para compradores e inversores.</p>
+        <a class="blog-read-more" href="single.html">Continuar leyendo</a>
+      </div>
+    </div>
+
+    <!-- Artículo 2 -->
+    <div class="blog-card wow fadeInUp" data-wow-delay="0.2s">
+      <div class="blog-card-img">
+        <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&q=80" alt="Tendencias del mercado inmobiliario 2026"/>
+        <span class="blog-category-badge mercado">Mercado</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="meta-author"><i class="fa fa-user"></i> Jesús Vílchez</span>
+          <span><i class="fa fa-calendar"></i> 20 de mayo, 2026</span>
+          <span><i class="fa fa-comments"></i> 7 Comentarios</span>
+        </div>
+        <h4 class="blog-card-title"><a href="single.html">Tendencias del mercado inmobiliario en el norte del Perú — 2026</a></h4>
+        <p class="blog-card-excerpt">El mercado de bienes raíces en el norte peruano muestra señales de recuperación sólida este año. Los precios por metro cuadrado en Nuevo Chimbote han subido un 8% en comparación con 2025, impulsados por nuevos proyectos de infraestructura vial y la expansión del sector comercial en la Av. José Pardo y alrededores del centro cívico.</p>
+        <a class="blog-read-more" href="single.html">Continuar leyendo</a>
+      </div>
+    </div>
+
+    <!-- Artículo 3 -->
+    <div class="blog-card wow fadeInUp" data-wow-delay="0.3s">
+      <div class="blog-card-img">
+        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&q=80" alt="Guía para invertir en propiedades"/>
+        <span class="blog-category-badge inversion">Inversión</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="meta-author"><i class="fa fa-user"></i> Carla Mendoza</span>
+          <span><i class="fa fa-calendar"></i> 12 de mayo, 2026</span>
+          <span><i class="fa fa-comments"></i> 2 Comentarios</span>
+        </div>
+        <h4 class="blog-card-title"><a href="single.html">Guía completa para invertir en bienes raíces por primera vez en Perú</a></h4>
+        <p class="blog-card-excerpt">Invertir en propiedades es una de las formas más seguras de proteger y hacer crecer tu patrimonio a largo plazo. Pero para quienes se inician, el proceso puede parecer complejo. Esta guía cubre desde la evaluación de créditos hipotecarios hasta la revisión de partidas registrales, para que tu primera inversión inmobiliaria sea un éxito.</p>
+        <a class="blog-read-more" href="single.html">Continuar leyendo</a>
+      </div>
+    </div>
+
+    <!-- Artículo 4 -->
+    <div class="blog-card wow fadeInUp" data-wow-delay="0.1s">
+      <div class="blog-card-img">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Documentos para comprar una casa"/>
+        <span class="blog-category-badge legal">Legal</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="meta-author"><i class="fa fa-user"></i> Equipo SOFBE</span>
+          <span><i class="fa fa-calendar"></i> 5 de mayo, 2026</span>
+          <span><i class="fa fa-comments"></i> 5 Comentarios</span>
+        </div>
+        <h4 class="blog-card-title"><a href="single.html">¿Qué documentos necesitas para comprar una propiedad en Perú en 2026?</a></h4>
+        <p class="blog-card-excerpt">El proceso de compraventa de inmuebles en Perú involucra una serie de documentos indispensables que debes tener listos antes de firmar cualquier contrato. Desde la minuta de compraventa hasta la inscripción en Registros Públicos (SUNARP), te explicamos paso a paso qué papeles gestionar y en qué orden para cerrar la operación sin contratiempos.</p>
+        <a class="blog-read-more" href="single.html">Continuar leyendo</a>
+      </div>
+    </div>
+
+    <!-- Artículo 5 -->
+    <div class="blog-card wow fadeInUp" data-wow-delay="0.2s">
+      <div class="blog-card-img">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80" alt="Cómo aumentar el valor de tu propiedad"/>
+        <span class="blog-category-badge">Propiedades</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="meta-author"><i class="fa fa-user"></i> Marco Reyes</span>
+          <span><i class="fa fa-calendar"></i> 28 de abril, 2026</span>
+          <span><i class="fa fa-comments"></i> 9 Comentarios</span>
+        </div>
+        <h4 class="blog-card-title"><a href="single.html">10 mejoras que aumentan el valor de venta de tu casa hasta en un 30%</a></h4>
+        <p class="blog-card-excerpt">Si estás pensando en vender tu propiedad, pequeñas mejoras estratégicas pueden hacer una gran diferencia en el precio de cierre. Desde remodelar la cocina y los baños hasta mejorar la pintura exterior y la iluminación, existen inversiones de bajo costo con alto retorno que atraen más compradores y aceleran la venta.</p>
+        <a class="blog-read-more" href="single.html">Continuar leyendo</a>
+      </div>
+    </div>
+
+    <!-- Artículo 6 -->
+    <div class="blog-card wow fadeInUp" data-wow-delay="0.3s">
+      <div class="blog-card-img">
+        <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80" alt="Alquiler vs Compra"/>
+        <span class="blog-category-badge consejos">Consejos</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-meta">
+          <span class="meta-author"><i class="fa fa-user"></i> Jesús Vílchez</span>
+          <span><i class="fa fa-calendar"></i> 15 de abril, 2026</span>
+          <span><i class="fa fa-comments"></i> 11 Comentarios</span>
+        </div>
+        <h4 class="blog-card-title"><a href="single.html">¿Alquilar o comprar en 2026? Análisis del mercado en Chimbote</a></h4>
+        <p class="blog-card-excerpt">La decisión entre alquilar y comprar depende de múltiples factores: estabilidad laboral, capacidad de endeudamiento, planes a futuro y la dinámica del mercado local. En Chimbote, donde los alquileres han subido cerca del 12% anual, la compra se posiciona como la opción más rentable para quienes planean quedarse más de tres años en la zona.</p>
+        <a class="blog-read-more" href="single.html">Continuar leyendo</a>
+      </div>
+    </div>
+
+    <!-- Paginación -->
+    <div class="blog-pagination">
+      <ul class="pagination">
+        <li class="disabled"><a href="#">&laquo;</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">&raquo;</a></li>
+      </ul>
+    </div>
+
+  </div><!-- /col-md-8 -->
+
+  <!-- Sidebar -->
+  <div class="col-md-4 blog-sidebar">
+
+    <!-- Búsqueda -->
+    <div class="sidebar-widget">
+      <h5>Buscar artículos</h5>
+      <div class="input-group">
+        <input class="form-control" placeholder="Buscar en el blog..." type="text" style="border:1px solid #ddd; border-radius:2px; padding:8px 12px; font-size:13px;"/>
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="button" style="border-radius:0 2px 2px 0;"><i class="fa fa-search"></i></button>
+        </span>
+      </div>
+    </div>
+
+    <!-- Categorías -->
+    <div class="sidebar-widget">
+      <h5>Categorías</h5>
+      <ul class="sidebar-categories" style="padding:0; margin:0;">
+        <li><a href="#">Consejos para compradores</a><span class="count">8</span></li>
+        <li><a href="#">Mercado inmobiliario</a><span class="count">5</span></li>
+        <li><a href="#">Inversión en propiedades</a><span class="count">4</span></li>
+        <li><a href="#">Legal y documentación</a><span class="count">6</span></li>
+        <li><a href="#">Alquiler</a><span class="count">3</span></li>
+        <li><a href="#">Proyectos nuevos</a><span class="count">7</span></li>
+      </ul>
+    </div>
+
+    <!-- Artículos recientes -->
+    <div class="sidebar-widget">
+      <h5>Artículos recientes</h5>
+      <div class="recent-post-item">
+        <div class="recent-post-img">
+          <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=200&q=80" alt="Artículo reciente"/>
+        </div>
+        <div class="recent-post-info">
+          <h6><a href="single.html">Cómo elegir la mejor ubicación en Chimbote</a></h6>
+          <span>28 mayo, 2026</span>
+        </div>
+      </div>
+      <div class="recent-post-item">
+        <div class="recent-post-img">
+          <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=200&q=80" alt="Artículo reciente"/>
+        </div>
+        <div class="recent-post-info">
+          <h6><a href="single.html">Tendencias del mercado norte del Perú 2026</a></h6>
+          <span>20 mayo, 2026</span>
+        </div>
+      </div>
+      <div class="recent-post-item">
+        <div class="recent-post-img">
+          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=200&q=80" alt="Artículo reciente"/>
+        </div>
+        <div class="recent-post-info">
+          <h6><a href="single.html">Guía para invertir en bienes raíces por primera vez</a></h6>
+          <span>12 mayo, 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Propiedad destacada -->
+    <div class="sidebar-widget" style="padding:0; overflow:hidden;">
+      <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&q=80" alt="Propiedad destacada" style="width:100%; height:180px; object-fit:cover;"/>
+      <div style="padding:20px;">
+        <div style="font-size:11px; font-weight:700; letter-spacing:1px; color:#e74c3c; text-transform:uppercase; margin-bottom:6px;">Propiedad destacada</div>
+        <h6 style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px; text-transform:none;">Casa Familiar — Nuevo Chimbote</h6>
+        <p style="font-size:12px; color:#888; margin:0 0 8px; padding:0;">Urb. Las Casuarinas · 180 m² · 4 hab.</p>
+        <div style="font-size:22px; font-weight:700; color:#e74c3c; margin-bottom:14px;">S/ 320,000</div>
+        <a class="btn-ver-propiedad" href="properties.html">Ver propiedad</a>
+      </div>
+    </div>
+
+    <!-- Tags -->
+    <div class="sidebar-widget">
+      <h5>Etiquetas</h5>
+      <ul class="tags-list">
+        <li><a href="#">Compraventa</a></li>
+        <li><a href="#">Alquiler</a></li>
+        <li><a href="#">Hipoteca</a></li>
+        <li><a href="#">Inversión</a></li>
+        <li><a href="#">SUNARP</a></li>
+        <li><a href="#">Nuevo Chimbote</a></li>
+        <li><a href="#">Tasación</a></li>
+        <li><a href="#">Departamentos</a></li>
+        <li><a href="#">Casas</a></li>
+        <li><a href="#">Comercial</a></li>
+      </ul>
+    </div>
+
+  </div><!-- /sidebar -->
+
+</div><!-- /row -->
+</div><!-- /container -->
+</div><!-- /blog-main -->
+
+<!-- Solo footer-copy (sin el bloque footer-area completo) -->
 <div class="footer-copy text-center">
 <div class="container">
 <div class="row">
@@ -319,72 +659,26 @@
 </div>
 <div class="bottom-menu pull-right">
 <ul>
-<li><a class="wow fadeInUp animated" data-wow-delay="0.2s" href="#">Inicio</a></li>
-<li><a class="wow fadeInUp animated" data-wow-delay="0.3s" href="#">Propiedad</a></li>
-<li><a class="wow fadeInUp animated" data-wow-delay="0.4s" href="#">FAQ</a></li>
-<li><a class="wow fadeInUp animated" data-wow-delay="0.6s" href="#">Contacto</a></li>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="properties.html">Propiedades</a></li>
+<li><a href="faq.html">FAQ</a></li>
+<li><a href="contact.html">Contacto</a></li>
 </ul>
 </div>
 </div>
 </div>
 </div>
-</div>
+
 <script src="assets/js/modernizr-2.6.2.min.js"></script>
 <script src="assets/js/jquery-1.10.2.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/bootstrap-select.min.js"></script>
 <script src="assets/js/bootstrap-hover-dropdown.js"></script>
-<script src="assets/js/easypiechart.min.js"></script>
-<script src="assets/js/jquery.easypiechart.min.js"></script>
 <script src="assets/js/owl.carousel.min.js"></script>
 <script src="assets/js/wow.js"></script>
-<script src="assets/js/icheck.min.js"></script>
-<script src="assets/js/price-range.js"></script>
 <script src="assets/js/main.js"></script>
 <!-- Cursor personalizado SOFBE -->
 <div id="sofbe-cursor"></div>
 <div id="sofbe-cursor-ring"></div>
-<script>
-(function() {
-    var dot  = document.getElementById('sofbe-cursor');
-    var ring = document.getElementById('sofbe-cursor-ring');
-    if (!dot || !ring) return;
-    var mx = 0, my = 0, rx = 0, ry = 0, activated = false;
-    document.addEventListener('mousemove', function(e) {
-        mx = e.clientX; my = e.clientY;
-        dot.style.left = mx + 'px';
-        dot.style.top  = my + 'px';
-        if (!activated) {
-            document.body.classList.add('sofbe-cursor-active');
-            activated = true;
-        }
-    });
-    (function loop() {
-        rx += (mx - rx) * 0.12;
-        ry += (my - ry) * 0.12;
-        ring.style.left = rx + 'px';
-        ring.style.top  = ry + 'px';
-        requestAnimationFrame(loop);
-    })();
-    document.querySelectorAll('a, button, .proerty-item, .navbar-brand, .btn, input[type="submit"]').forEach(function(el) {
-        el.addEventListener('mouseenter', function() {
-            dot.classList.add('on-link');
-            ring.classList.add('on-link');
-        });
-        el.addEventListener('mouseleave', function() {
-            dot.classList.remove('on-link');
-            ring.classList.remove('on-link');
-        });
-    });
-    document.addEventListener('mousedown', function() {
-        dot.classList.add('expanded');
-        ring.classList.add('expanded');
-    });
-    document.addEventListener('mouseup', function() {
-        dot.classList.remove('expanded');
-        ring.classList.remove('expanded');
-    });
-})();
-</script>
 </body>
 </html>
