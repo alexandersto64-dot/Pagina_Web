@@ -1,404 +1,604 @@
 <!DOCTYPE html>
-
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="es"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="es"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang="es"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="es"> <!--<![endif]-->
+<html lang="es">
 <head>
 <meta charset="utf-8"/>
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<title>SOFBE | Blog - Entrada</title>
-<meta content="SOFBE es una plantilla de bienes raíces" name="description"/>
-<meta content="SOFBE Inmobiliaria" name="author"/>
-<meta content="html5, css, bootstrap, propiedad, tema de bienes raíces, plantilla bootstrap" name="keyword"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800" rel="stylesheet" type="text/css"/>
-<!-- Place favicon.ico and apple-touch-icon.png en the root directory -->
-<link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
-<link href="favicon.ico" rel="icon" type="image/x-icon"/>
-<link href="assets/css/normalize.css" rel="stylesheet"/>
-<link href="assets/css/font-awesome.min.css" rel="stylesheet"/>
-<link href="assets/css/fontello.css" rel="stylesheet"/>
-<link href="assets/fonts/icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet"/>
-<link href="assets/fonts/icon-7-stroke/css/helper.css" rel="stylesheet"/>
-<link href="assets/css/animate.css" media="screen" rel="stylesheet"/>
-<link href="assets/css/bootstrap-select.min.css" rel="stylesheet"/>
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-<link href="assets/css/icheck.min_all.css" rel="stylesheet"/>
-<link href="assets/css/price-range.css" rel="stylesheet"/>
-<link href="assets/css/owl.carousel.css" rel="stylesheet"/>
-<link href="assets/css/owl.theme.css" rel="stylesheet"/>
-<link href="assets/css/owl.transitions.css" rel="stylesheet"/>
-<link href="assets/css/style.css" rel="stylesheet"/>
-<link href="assets/css/responsive.css" rel="stylesheet"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SOFBE | Tendencias Inmobiliarias 2026 — Blog</title>
+<meta name="description" content="Descubre las tendencias del mercado inmobiliario en el norte del Perú para 2026. Consejos, análisis y noticias de SOFBE Inmobiliaria."/>
+<meta name="author" content="SOFBE Inmobiliaria"/>
+<meta property="og:title" content="Tendencias Inmobiliarias 2026 — SOFBE Blog"/>
+<meta property="og:description" content="Descubre las tendencias del mercado inmobiliario en el norte del Perú para 2026."/>
+<meta property="og:type" content="article"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+<link rel="stylesheet" href="assets/css/normalize.css"/>
+<link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+<link rel="stylesheet" href="assets/css/fontello.css"/>
+<link rel="stylesheet" href="assets/fonts/icon-7-stroke/css/pe-icon-7-stroke.css"/>
+<link rel="stylesheet" href="assets/fonts/icon-7-stroke/css/helper.css"/>
+<link rel="stylesheet" href="assets/css/animate.css" media="screen"/>
+<link rel="stylesheet" href="assets/css/bootstrap-select.min.css"/>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="assets/css/icheck.min_all.css"/>
+<link rel="stylesheet" href="assets/css/price-range.css"/>
+<link rel="stylesheet" href="assets/css/owl.carousel.css"/>
+<link rel="stylesheet" href="assets/css/owl.theme.css"/>
+<link rel="stylesheet" href="assets/css/owl.transitions.css"/>
+<link rel="stylesheet" href="assets/css/style.css"/>
+<link rel="stylesheet" href="assets/css/responsive.css"/>
+<link rel="stylesheet" href="assets/css/sofbe-fixes.css"/>
+<style>
+  /* Comentarios inline */
+  .comment-list { list-style: none; padding: 0; margin: 0 0 30px; }
+  .comment-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid #eee; }
+  .comment-item:last-child { border-bottom: none; }
+  .comment-avatar img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; }
+  .comment-body { flex: 1; }
+  .comment-meta { font-size: 12px; color: #888; margin-bottom: 6px; }
+  .comment-meta strong { font-size: 14px; color: #333; margin-right: 10px; text-transform: uppercase; }
+  .comment-text { font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 8px; }
+  .btn-reply {
+    background: none; border: none; padding: 0;
+    color: #d27e04; font-size: 13px; cursor: pointer;
+  }
+  .btn-reply:hover { color: #b86c03; }
+  /* Formulario de reply inline */
+  .reply-form {
+    display: none;
+    background: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 16px;
+    margin-top: 12px;
+  }
+  .reply-form textarea { resize: vertical; }
+  /* Nuevo comentario */
+  .add-comments { padding-top: 30px; }
+  .comment-feedback { display:none; margin-top:10px; padding:10px 14px; border-radius:3px; font-size:14px; }
+  .comment-feedback.success { background:#dff0d8; color:#3c763d; border:1px solid #d6e9c6; }
+  .comment-feedback.error   { background:#f2dede; color:#a94442; border:1px solid #ebccd1; }
+  /* ---- STICKY NAVBAR ---- */
+  .navbar-default.navbar-sticky {
+    position: fixed !important;
+    top: 0; left: 0; right: 0;
+    z-index: 1030; width: 100%;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.15);
+    animation: slideDownNav 0.35s ease;
+  }
+  @keyframes slideDownNav {
+    from { transform: translateY(-100%); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+  body.nav-is-sticky > *:not(.navbar) { margin-top: 0; }
+</style>
 </head>
 <body>
-<div id="preloader">
-<div id="status"> </div>
+<div id="preloader"><div id="status"> </div></div>
+
+<!-- Barra superior -->
+<div class="header-connect" role="banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-8 col-xs-12">
+        <div class="header-half header-call">
+          <p>
+            <span><i class="pe-7s-call" aria-hidden="true"></i> <a href="tel:+51900000000" style="color:inherit">+51 900 000 000</a></span>
+            <span><i class="pe-7s-mail" aria-hidden="true"></i> <a href="mailto:contacto@sofbe.com" style="color:inherit">contacto@sofbe.com</a></span>
+          </p>
+        </div>
+      </div>
+      <div class="col-md-3 col-md-offset-3 col-sm-4 col-xs-12">
+        <div class="header-half header-social">
+          <ul class="list-inline" aria-label="Redes sociales">
+            <li><a href="https://www.facebook.com/sofbe" target="_blank" rel="noopener noreferrer" title="Facebook SOFBE"><i class="fa fa-facebook" aria-hidden="true"></i><span class="sr-only">Facebook</span></a></li>
+            <li><a href="https://www.instagram.com/sofbe" target="_blank" rel="noopener noreferrer" title="Instagram SOFBE"><i class="fa fa-instagram" aria-hidden="true"></i><span class="sr-only">Instagram</span></a></li>
+            <li><a href="https://www.linkedin.com/company/sofbe" target="_blank" rel="noopener noreferrer" title="LinkedIn SOFBE"><i class="fa fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a></li>
+            <li><a href="https://wa.me/51900000000" target="_blank" rel="noopener noreferrer" title="WhatsApp SOFBE"><i class="fa fa-whatsapp" aria-hidden="true"></i><span class="sr-only">WhatsApp</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<!-- Body content -->
-<div class="header-connect">
-<div class="container">
-<div class="row">
-<div class="col-md-6 col-sm-8 col-xs-12">
-<div class="header-half header-call">
-<p>
-<span><i class="pe-7s-call"></i> +51 900 000 000</span>
-<span><i class="pe-7s-mail"></i> inmobiliaria@sofbe.com</span>
-</p>
-</div>
-</div>
-<div class="col-md-3 col-md-offset-3 col-sm-4 col-xs-12">
-<div class="header-half header-social">
-<ul class="list-inline">
-<li><a href="https://www.facebook.com/sofbe" target="_blank" rel="noopener" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-<li><a href="https://www.instagram.com/sofbe" target="_blank" rel="noopener" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-<li><a href="https://www.linkedin.com/company/sofbe" target="_blank" rel="noopener" title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
-<li><a href="https://wa.me/51900000000" target="_blank" rel="noopener" title="WhatsApp"><i class="fa fa-whatsapp"></i></a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!--Fin del encabezado superior -->
-<nav class="navbar navbar-default">
-<div class="container">
-<div class="navbar-header">
-<button class="navbar-toggle collapsed" data-target="#navigation" data-toggle="collapse" type="button">
-<span class="sr-only">Abrir navegación</span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-<a class="navbar-brand" href="index.html"><img alt="SOFBE Inmobiliaria" src="assets/img/logo.png"/></a>
-</div>
-<div class="collapse navbar-collapse" id="navigation">
-<div class="button navbar-right">
-<button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.45s" onclick="window.location.href='register.html'">Iniciar sesión</button>
-<button class="navbar-btn nav-button wow fadeInRight" data-wow-delay="0.48s" onclick="window.location.href='submit-property.html'">Publicar propiedad</button>
-</div>
-<ul class="main-nav nav navbar-nav navbar-right">
-<li class="wow fadeInDown" data-wow-delay="0.1s"><a href="index.html">Inicio</a></li>
-<li class="wow fadeInDown" data-wow-delay="0.2s"><a href="properties.html">Propiedades</a></li>
-<li class="dropdown wow fadeInDown" data-wow-delay="0.3s">
-<a class="dropdown-toggle" data-toggle="dropdown" href="#">Servicios <b class="caret"></b></a>
-<ul class="dropdown-menu navbar-nav">
-<li><a href="properties.html">Compra de propiedades</a></li>
-<li><a href="properties.html">Alquiler de propiedades</a></li>
-<li><a href="submit-property.html">Publicar mi propiedad</a></li>
-<li><a href="user-profile.html">Asesoría inmobiliaria</a></li>
-</ul>
-</li>
-<li class="wow fadeInDown" data-wow-delay="0.4s"><a href="blog.html">Blog</a></li>
-<li class="wow fadeInDown" data-wow-delay="0.45s"><a href="faq.html">FAQ</a></li>
-<li class="wow fadeInDown" data-wow-delay="0.5s"><a href="contact.html">Contacto</a></li>
-</ul>
-</div>
-</div>
+
+<!-- Navegación principal -->
+<nav class="navbar navbar-default" role="navigation" aria-label="Navegación principal">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" data-target="#navigation" data-toggle="collapse" type="button" aria-expanded="false" aria-controls="navigation">
+        <span class="sr-only">Abrir navegación</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">
+        <img alt="SOFBE Inmobiliaria" src="assets/img/logo.png" width="120" height="40"/>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="navigation">
+      <div class="button navbar-right">
+        <a class="navbar-btn nav-button login" href="register.html#login">Iniciar sesión</a>
+        <a class="navbar-btn nav-button" href="submit-property.html">Publicar propiedad</a>
+      </div>
+      <ul class="main-nav nav navbar-nav navbar-right">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="properties.html">Propiedades</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">Servicios <b class="caret"></b></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="properties.html">Compra de propiedades</a></li>
+            <li><a href="properties.html">Alquiler de propiedades</a></li>
+            <li><a href="submit-property.html">Publicar mi propiedad</a></li>
+            <li><a href="user-profile.html">Asesoría inmobiliaria</a></li>
+          </ul>
+        </li>
+        <li class="active"><a href="blog.html">Blog</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
-<!-- Fin de la barra de navegación -->
+
 <div class="page-head">
-<div class="container">
-<div class="row">
-<div class="page-head-content">
-<h1 class="page-title">Entradas del Blog</h1>
+  <div class="container">
+    <div class="row">
+      <div class="page-head-content">
+        <h1 class="page-title">Blog Inmobiliario</h1>
+      </div>
+    </div>
+  </div>
 </div>
+
+<div class="content-area blog-page padding-top-40" style="background-color:#FCFCFC; padding-bottom:55px;">
+  <div class="container">
+    <div class="row">
+      <div class="blog-lst col-md-12 pl0">
+
+        <!-- Artículo -->
+        <article class="post single" id="id-100">
+          <div class="post-header single">
+            <div>
+              <h2 class="wow fadeInLeft animated">TENDENCIAS INMOBILIARIAS 2026</h2>
+              <div class="title-line wow fadeInRight animated"></div>
+            </div>
+            <div class="row wow fadeInRight animated">
+              <div class="col-sm-6">
+                <p class="author-category">
+                  Por Jesús Vílchez en <a href="blog.html">Mercado Inmobiliario</a>
+                </p>
+              </div>
+              <div class="col-sm-6 right">
+                <p class="date-comments">
+                  <span><i class="fa fa-calendar-o"></i> 20 de mayo, 2026</span>
+                  <a href="#comments"><i class="fa fa-comment-o"></i> <span id="comment-count">2</span> Comentarios</a>
+                </p>
+              </div>
+            </div>
+            <div class="image wow fadeInRight animated">
+              <img alt="Tendencias del mercado inmobiliario 2026 en Áncash" class="img-responsive" src="assets/img/blog2.jpg"/>
+            </div>
+          </div>
+
+          <div class="post-body single wow fadeInLeft animated" id="post-content">
+            <p>
+              <strong>En SOFBE, cada propiedad es presentada con información detallada y verificada para facilitar tu decisión.</strong>
+              Encontrar el hogar ideal es una experiencia única que combina emociones, expectativas y decisiones importantes. En SOFBE, acompañamos a cada familia en ese proceso con dedicación, transparencia y profesionalismo. Nuestro equipo de asesores está comprometido en ofrecerte las mejores opciones del mercado inmobiliario peruano, garantizando que cada paso sea claro y seguro.
+            </p>
+            <p><img alt="Tendencias inmobiliarias SOFBE 2026" class="img-responsive" src="assets/img/blog1.jpg"/></p>
+
+            <h2>¿Por qué elegir SOFBE?</h2>
+            <ol>
+              <li>Encontrarás el hogar que siempre soñaste, con asesoría personalizada en cada paso.</li>
+              <li>Brindamos atención profesional y transparente en toda la región Áncash.</li>
+            </ol>
+
+            <blockquote>
+              <p>Acompañamos a cada familia con dedicación, transparencia y profesionalismo. Nuestro equipo garantiza que cada paso sea claro y seguro. La confianza de nuestros clientes es nuestra mayor motivación.</p>
+              <footer>— Equipo SOFBE Inmobiliaria</footer>
+            </blockquote>
+
+            <!-- Título correcto para el párrafo que sigue -->
+            <h3>El mercado inmobiliario en el norte del Perú: oportunidades para 2026</h3>
+            <p>
+              La región Áncash registra un crecimiento sostenido en la demanda de viviendas residenciales, impulsado por el desarrollo económico de Chimbote y Nuevo Chimbote. Los expertos de SOFBE identifican oportunidades clave en urbanizaciones consolidadas y proyectos de expansión urbana que ofrecen excelente rentabilidad para compradores e inversionistas a mediano plazo.
+            </p>
+          </div>
+
+          <div class="post-footer single wow fadeInBottum animated">
+            <ul class="pager">
+              <li class="previous"><a href="blog.html"><i class="fa fa-arrow-left"></i> Anterior</a></li>
+              <li class="next"><a href="blog.html">Siguiente <i class="fa fa-arrow-right"></i></a></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- ─── SECCIÓN DE COMENTARIOS ─── -->
+        <section class="comments wow fadeInRight animated" id="comments" aria-label="Comentarios">
+          <h4 class="text-uppercase wow fadeInLeft animated">
+            <span id="comment-count-heading">2</span> Comentarios
+          </h4>
+
+          <!-- Lista de comentarios -->
+          <ul class="comment-list" id="comments-list">
+
+            <li class="comment-item" id="comment-1">
+              <div class="comment-avatar">
+                <img alt="Julie Alma" src="assets/img/client-face1.png"/>
+              </div>
+              <div class="comment-body">
+                <div class="comment-meta">
+                  <strong>Julie Alma</strong>
+                  <i class="fa fa-clock-o" aria-hidden="true"></i> 23 de Septiembre, 2024
+                </div>
+                <p class="comment-text">Excelente artículo. El equipo de SOFBE realmente entiende el mercado local y los consejos son muy prácticos para quienes estamos buscando primera vivienda.</p>
+                <button class="btn-reply" data-target="reply-1" type="button">
+                  <i class="fa fa-reply" aria-hidden="true"></i> Responder
+                </button>
+                <div class="reply-form" id="reply-1">
+                  <textarea class="form-control" rows="3" placeholder="Escribe tu respuesta a Julie Alma..."></textarea>
+                  <div style="margin-top:8px; display:flex; gap:8px;">
+                    <button class="btn btn-primary btn-sm btn-send-reply" type="button">Publicar respuesta</button>
+                    <button class="btn btn-default btn-sm btn-cancel-reply" type="button">Cancelar</button>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="comment-item" id="comment-2">
+              <div class="comment-avatar">
+                <img alt="Louise Armero" src="assets/img/client-face2.png"/>
+              </div>
+              <div class="comment-body">
+                <div class="comment-meta">
+                  <strong>Louise Armero</strong>
+                  <i class="fa fa-clock-o" aria-hidden="true"></i> 23 de Septiembre, 2024
+                </div>
+                <p class="comment-text">Muy buena perspectiva sobre el crecimiento en Nuevo Chimbote. La información sobre tasaciones fue especialmente útil para evaluar mi inversión.</p>
+                <button class="btn-reply" data-target="reply-2" type="button">
+                  <i class="fa fa-reply" aria-hidden="true"></i> Responder
+                </button>
+                <div class="reply-form" id="reply-2">
+                  <textarea class="form-control" rows="3" placeholder="Escribe tu respuesta a Louise Armero..."></textarea>
+                  <div style="margin-top:8px; display:flex; gap:8px;">
+                    <button class="btn btn-primary btn-sm btn-send-reply" type="button">Publicar respuesta</button>
+                    <button class="btn btn-default btn-sm btn-cancel-reply" type="button">Cancelar</button>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+        </section>
+
+        <!-- ─── FORMULARIO DE COMENTARIO NUEVO ─── -->
+        <section class="add-comments" id="comment-form" aria-label="Dejar un comentario">
+          <h4 class="text-uppercase wow fadeInLeft animated">Deja un comentario</h4>
+          <form id="new-comment-form" novalidate>
+            <div class="row wow fadeInLeft animated">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="comment-name">Nombre <span class="required" aria-hidden="true">*</span></label>
+                  <input class="form-control" id="comment-name" name="comment-name" type="text" placeholder="Tu nombre" required aria-required="true"/>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="comment-email">Correo electrónico <span class="required" aria-hidden="true">*</span></label>
+                  <input class="form-control" id="comment-email" name="comment-email" type="email" placeholder="correo@ejemplo.com" required aria-required="true"/>
+                </div>
+              </div>
+            </div>
+            <div class="row wow fadeInLeft animated">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="comment-text">Comentario <span class="required" aria-hidden="true">*</span></label>
+                  <textarea class="form-control" id="comment-text" name="comment-text" rows="4" placeholder="Escribe tu comentario..." required aria-required="true"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="comment-feedback" id="comment-feedback" role="alert"></div>
+            <div class="row wow fadeInLeft animated">
+              <div class="col-sm-12 text-right">
+                <button class="btn btn-primary" type="submit">
+                  <i class="fa fa-comment-o" aria-hidden="true"></i> Publicar comentario
+                </button>
+              </div>
+            </div>
+          </form>
+        </section>
+
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-<!-- End page header -->
-<div class="content-area blog-page padding-top-40" style="background-color: #FCFCFC; padding-bottom: 55px;">
-<div class="container">
-<div class="row">
-<div class="blog-lst col-md-12 pl0">
-<section class="post single" id="id-100">
-<div class="post-header single">
-<div class="">
-<h2 class="wow fadeInLeft animated">TENDENCIAS INMOBILIARIAS 2026</h2>
-<div class="title-line wow fadeInRight animated"></div>
-</div>
-<div class="row wow fadeInRight animated">
-<div class="col-sm-6">
-<p class="author-category">
-                                            Por <a href="#">Jesus Vilchez</a>
-                                            en <a href="blog.html">Diseño Web</a>
-</p>
-</div>
-<div class="col-sm-6 right">
-<p class="date-comments">
-<a href="single.html"><i class="fa fa-calendar-o"></i> 20 de mayo, 2026</a>
-<a href="single.html"><i class="fa fa-comment-o"></i> 8 Comentarios</a>
-</p>
-</div>
-</div>
-<div class="image wow fadeInRight animated">
-<img alt="Example blog post alt" class="img-responsive" src="assets/img/blog2.jpg"/>
-</div>
-</div>
-<div class="post-body single wow fadeInLeft animated" id="post-content">
-<p>
-<strong>En SOFBE, cada propiedad es presentada con información detallada y verificada para facilitar tu decisión.</strong> 
-                                    Encontrar el hogar ideal es una experiencia única que combina emociones, expectativas y decisiones importantes. En SOFBE, acompañamos a cada familia en ese proceso con dedicación, transparencia y profesionalismo. Nuestro equipo de asesores está comprometido en ofrecerte las mejores opciones del mercado inmobiliario peruano, garantizando que cada paso sea claro y seguro. La confianza de nuestros clientes es nuestra mayor motivación.</p>
-<p>
-<img alt="Tendencias inmobiliarias SOFBE" class="img-responsive" src="assets/img/blog1.jpg"/>
-</p>
-<h2>¿Por qué elegir SOFBE?</h2>
-<ol>
-<li>En SOFBE encontrarás el hogar que siempre soñaste, con asesoría personalizada en cada paso.</li>
-<li>Brindamos asesoría personalizada y profesional en cada etapa del proceso.</li>
-</ol>
-<blockquote>
-<p>Encontrar el hogar ideal es una experiencia única que combina emociones, expectativas y decisiones importantes. En SOFBE, acompañamos a cada familia en ese proceso con dedicación, transparencia y profesionalismo. Nuestro equipo de asesores está comprometido en ofrecerte las mejores opciones del mercado inmobiliario peruano, garantizando que cada paso sea claro y seguro. La confianza de nuestros clientes es nuestra mayor motivación.</p>
-<footer>— Equipo SOFBE Inmobiliaria</footer>
-</blockquote>
-<h3>Subtítulo de Nivel 3</h3>
-<p>Encontrar el hogar ideal es una experiencia única que combina emociones, expectativas y decisiones importantes. En SOFBE, acompañamos a cada familia en ese proceso con dedicación, transparencia y profesionalismo. Nuestro equipo de asesores está comprometido en ofrecerte las mejores opciones del mercado inmobiliario peruano, garantizando que cada paso sea claro y seguro. La confianza de nuestros clientes es nuestra mayor motivación.</p>
-                                </p>
-</p></div>
-<div class="post-footer single wow fadeInBottum animated">
-<ul class="pager">
-<li class="previous"><a href="#"><i class=""></i>← Anterior</a></li>
-<li class="next disabled"><a href="#">Siguiente →<i class=""></i> </a></li>
-</ul>
-</div>
-</section>
-<section class="about-autor">
-</section>
-<section class="comments wow fadeInRight animated" id="comments">
-<h4 class="text-uppercase wow fadeInLeft animated">3 Comentarios</h4>
-<div class="row comment">
-<div class="col-sm-3 col-md-2 text-center-xs">
-<p>
-<img alt="" class="img-responsive img-circle" src="assets/img/client-face1.png"/>
-</p>
-</div>
-<div class="col-sm-9 col-md-10">
-<h5 class="text-uppercase">Julie Alma</h5>
-<p class="posted"><i class="fa fa-clock-o"></i> 23 de Septiembre, 2024</p>
-<p>Encontrar el hogar ideal es una experiencia única que combina emociones, expectativas y decisiones importantes. En SOFBE, acompañamos a cada familia en ese proceso con dedicación, transparencia y profesionalismo. Nuestro equipo de asesores está comprometido en ofrecerte las mejores opciones del mercado inmobiliario peruano, garantizando que cada paso sea claro y seguro. La confianza de nuestros clientes es nuestra mayor motivación.</p>
-<p class="reply"><a href="#"><i class="fa fa-reply"></i> Responder</a>
-</p>
-</div>
-</div>
-<!-- /.comment -->
-<div class="row comment last">
-<div class="col-sm-3 col-md-2 text-center-xs">
-<p>
-<img alt="" class="img-responsive img-circle" src="assets/img/client-face2.png"/>
-</p>
-</div>
-<div class="col-sm-9 col-md-10">
-<h5 class="text-uppercase">Louise Armero</h5>
-<p class="posted"><i class="fa fa-clock-o"></i> 23 de Septiembre, 2024</p>
-<p>Encontrar el hogar ideal es una experiencia única que combina emociones, expectativas y decisiones importantes. En SOFBE, acompañamos a cada familia en ese proceso con dedicación, transparencia y profesionalismo. Nuestro equipo de asesores está comprometido en ofrecerte las mejores opciones del mercado inmobiliario peruano, garantizando que cada paso sea claro y seguro. La confianza de nuestros clientes es nuestra mayor motivación.</p>
-<p class="reply"><a href="#"><i class="fa fa-reply"></i> Responder</a>
-</p>
-</div>
-</div>
-<!-- /.comment -->
-</section>
-<section class="add-comments" id="comment-form">
-<h4 class="text-uppercase wow fadeInLeft animated">Deja un comentario</h4>
-<form>
-<div class="row wow fadeInLeft animated">
-<div class="col-sm-6">
-<div class="form-group">
-<label for="name">Nombre <span class="required">*</span>
-</label>
-<input class="form-control" id="name" type="text"/>
-</div>
-</div>
-</div>
-<div class="row wow fadeInLeft animated">
-<div class="col-sm-6">
-<div class="form-group">
-<label for="email">Correo electrónico <span class="required">*</span>
-</label>
-<input class="form-control" id="email" type="text"/>
-</div>
-</div>
-</div>
-<div class="row wow fadeInLeft animated">
-<div class="col-sm-12">
-<div class="form-group">
-<label for="comment">Comentario <span class="required">*</span>
-</label>
-<textarea class="form-control" id="comment" rows="4"></textarea>
-</div>
-</div>
-</div>
-<div class="row wow fadeInLeft animated">
-<div class="col-sm-12 text-right">
-<button class="btn btn-primary"><i class="fa fa-comment-o"></i> Publicar comentario</button>
-</div>
-</div>
-</form>
-</section>
-</div>
-</div>
-</div>
-</div>
-<!-- Footer area-->
-<div class="footer-area">
-<div class="footer">
-<div class="container">
-<div class="row">
-<div class="col-md-3 col-sm-6 wow fadeInRight animated">
-<div class="single-footer">
-<h4>Acerca de nosotros </h4>
-<div class="footer-title-line"></div>
-<img alt="" class="wow pulse" data-wow-delay="1s" src="assets/img/footer-logo.png"/>
-<p>Tu socio de confianza en bienes raíces. Más de 10 años de experiencia en el mercado.</p>
-<ul class="footer-adress">
-<li><i class="pe-7s-map-marker strong"> </i> Av. José Pardo 908, Nuevo Chimbote, Perú</li>
-<li><i class="pe-7s-mail strong"> </i> inmobiliaria@sofbe.com</li>
-<li><i class="pe-7s-call strong"> </i> +51 900 000 000</li>
-</ul>
-</div>
-</div>
-<div class="col-md-3 col-sm-6 wow fadeInRight animated">
-<div class="single-footer">
-<h4>Enlaces rápidos </h4>
-<div class="footer-title-line"></div>
-<ul class="footer-menu">
-<li><a href="properties.html">Propiedades</a> </li>
-<li><a href="#">Servicios</a> </li>
-<li><a href="submit-property.html">Publicar propiedad </a></li>
-<li><a href="contact.html">Contáctanos</a></li>
-<li><a href="faq.html">FAQ</a> </li>
-<li><a href="faq.html">Términos </a> </li>
-</ul>
-</div>
-</div>
-<div class="col-md-3 col-sm-6 wow fadeInRight animated">
-<div class="single-footer">
-<h4>Últimas Noticias</h4>
-<div class="footer-title-line"></div>
-<ul class="footer-blog">
-<li>
-<div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
-<a href="single.html">
-<img src="assets/img/demo/small-proerty-2.jpg"/>
-</a>
-<span class="blg-date">12-12-2026</span>
-</div>
-<div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
-<h6> <a href="single.html">Nuevas propiedades disponibles </a></h6>
-<p style="line-height: 17px; padding: 8px 2px;">Nuevas propiedades disponibles en las mejores...</p>
-</div>
-</li>
-<li>
-<div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
-<a href="single.html">
-<img src="assets/img/demo/small-proerty-2.jpg"/>
-</a>
-<span class="blg-date">12-12-2026</span>
-</div>
-<div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
-<h6> <a href="single.html">Nuevas propiedades disponibles </a></h6>
-<p style="line-height: 17px; padding: 8px 2px;">Nuevas propiedades disponibles en las mejores...</p>
-</div>
-</li>
-<li>
-<div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
-<a href="single.html">
-<img src="assets/img/demo/small-proerty-2.jpg"/>
-</a>
-<span class="blg-date">12-12-2026</span>
-</div>
-<div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
-<h6> <a href="single.html">Nuevas propiedades disponibles </a></h6>
-<p style="line-height: 17px; padding: 8px 2px;">Nuevas propiedades disponibles en las mejores...</p>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="col-md-3 col-sm-6 wow fadeInRight animated">
-<div class="single-footer news-letter">
-<h4>Mantente en contacto</h4>
-<div class="footer-title-line"></div>
-<p>Suscríbete para recibir las últimas noticias y ofertas de propiedades.</p>
-<form>
-<div class="input-group">
-<input class="form-control" placeholder="Correo electrónico..." type="text"/>
-<span class="input-group-btn">
-<button class="btn btn-primary subscribe" type="button"><i class="pe-7s-paper-plane pe-2x"></i></button>
-</span>
-</div>
-<!-- /input-group -->
-</form>
-<div class="social pull-right">
-<ul>
-<li><a class="wow fadeInUp animated" href="https://www.facebook.com/sofbe" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a></li>
-<li><a class="wow fadeInUp animated" data-wow-delay="0.2s" href="https://www.instagram.com/sofbe" target="_blank" rel="noopener"><i class="fa fa-instagram"></i></a></li>
-<li><a class="wow fadeInUp animated" data-wow-delay="0.3s" href="https://www.linkedin.com/company/sofbe" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a></li>
-<li><a class="wow fadeInUp animated" data-wow-delay="0.4s" href="https://wa.me/51900000000" target="_blank" rel="noopener"><i class="fa fa-whatsapp"></i></a></li>
-<li><a class="wow fadeInUp animated" data-wow-delay="0.6s" href="https://www.youtube.com/@sofbe" target="_blank" rel="noopener"><i class="fa fa-youtube"></i></a></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<!-- Pie de página -->
+<footer class="footer-area" role="contentinfo">
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="single-footer">
+            <h4>Acerca de SOFBE</h4>
+            <div class="footer-title-line"></div>
+            <img alt="Logo SOFBE Inmobiliaria" src="assets/img/footer-logo.png"/>
+            <p>Tu socio de confianza en bienes raíces. Más de 10 años de experiencia en el mercado del norte del Perú.</p>
+            <ul class="footer-adress">
+              <li><i class="pe-7s-map-marker" aria-hidden="true"></i> Av. José Pardo 908, Nuevo Chimbote, Áncash</li>
+              <li><i class="pe-7s-mail" aria-hidden="true"></i> <a href="mailto:contacto@sofbe.com" style="color:inherit">contacto@sofbe.com</a></li>
+              <li><i class="pe-7s-call" aria-hidden="true"></i> <a href="tel:+51900000000" style="color:inherit">+51 900 000 000</a></li>
+              <li><i class="pe-7s-clock" aria-hidden="true"></i> Lun – Sáb: 9:00 am – 6:00 pm</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="single-footer">
+            <h4>Navegación rápida</h4>
+            <div class="footer-title-line"></div>
+            <ul class="footer-menu">
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="properties.html">Propiedades</a></li>
+              <li><a href="submit-property.html">Publicar propiedad</a></li>
+              <li><a href="blog.html">Blog inmobiliario</a></li>
+              <li><a href="contact.html">Contáctanos</a></li>
+              <li><a href="faq.html">Preguntas frecuentes</a></li>
+              <li><a href="register.html">Iniciar sesión / Registrarse</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="single-footer">
+            <h4>Últimas noticias</h4>
+            <div class="footer-title-line"></div>
+            <ul class="footer-blog">
+              <li>
+                <div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
+                  <a href="single.html"><img src="assets/img/demo/small-proerty-2.jpg" alt="Nuevas propiedades en Chimbote"/></a>
+                  <span class="blg-date">15-03-2026</span>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
+                  <h6><a href="single.html">Nuevas propiedades en Chimbote</a></h6>
+                  <p>Incorporamos nuevos inmuebles en las zonas más exclusivas.</p>
+                </div>
+              </li>
+              <li>
+                <div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
+                  <a href="single.html"><img src="assets/img/demo/small-proerty-2.jpg" alt="Consejos para comprar tu primer hogar"/></a>
+                  <span class="blg-date">02-04-2026</span>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
+                  <h6><a href="single.html">Consejos para comprar tu primer hogar</a></h6>
+                  <p>Todo lo que debes saber antes de dar el paso más importante.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="single-footer news-letter">
+            <h4>Mantente informado</h4>
+            <div class="footer-title-line"></div>
+            <p>Suscríbete para recibir las últimas noticias y ofertas de propiedades de SOFBE.</p>
+            <form class="newsletter-form" novalidate>
+              <div class="input-group">
+                <label for="footer-email" class="sr-only">Tu correo electrónico</label>
+                <input class="form-control" id="footer-email" placeholder="Tu correo electrónico..." type="email" required/>
+                <span class="input-group-btn">
+                  <button class="btn btn-primary subscribe" type="submit" title="Suscribirse" aria-label="Suscribirse">
+                    <i class="pe-7s-paper-plane pe-2x" aria-hidden="true"></i>
+                  </button>
+                </span>
+              </div>
+              <div class="newsletter-msg" role="alert"></div>
+            </form>
+            <div class="social" style="margin-top:20px;">
+              <ul>
+                <li><a href="https://www.facebook.com/sofbe" target="_blank" rel="noopener noreferrer" title="Facebook SOFBE"><i class="fa fa-facebook" aria-hidden="true"></i><span class="sr-only">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/sofbe" target="_blank" rel="noopener noreferrer" title="Instagram SOFBE"><i class="fa fa-instagram" aria-hidden="true"></i><span class="sr-only">Instagram</span></a></li>
+                <li><a href="https://www.linkedin.com/company/sofbe" target="_blank" rel="noopener noreferrer" title="LinkedIn SOFBE"><i class="fa fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a></li>
+                <li><a href="https://wa.me/51900000000" target="_blank" rel="noopener noreferrer" title="WhatsApp SOFBE"><i class="fa fa-whatsapp" aria-hidden="true"></i><span class="sr-only">WhatsApp</span></a></li>
+                <li><a href="https://www.youtube.com/@sofbe" target="_blank" rel="noopener noreferrer" title="YouTube SOFBE"><i class="fa fa-youtube" aria-hidden="true"></i><span class="sr-only">YouTube</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copy text-center">
+    <div class="container">
+      <div class="row">
+        <div class="pull-left">
+          <span>&copy; 2026 <a href="index.html">SOFBE Inmobiliaria</a> — Todos los derechos reservados</span>
+        </div>
+        <nav class="bottom-menu pull-right" aria-label="Menú inferior">
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="properties.html">Propiedades</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <script src="assets/js/modernizr-2.6.2.min.js"></script>
 <script src="assets/js/jquery-1.10.2.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/bootstrap-select.min.js"></script>
 <script src="assets/js/bootstrap-hover-dropdown.js"></script>
-<script src="assets/js/easypiechart.min.js"></script>
-<script src="assets/js/jquery.easypiechart.min.js"></script>
 <script src="assets/js/owl.carousel.min.js"></script>
 <script src="assets/js/wow.js"></script>
 <script src="assets/js/icheck.min.js"></script>
-<script src="assets/js/price-range.js"></script>
 <script src="assets/js/main.js"></script>
-<!-- Cursor personalizado SOFBE -->
-<div id="sofbe-cursor"></div>
-<div id="sofbe-cursor-ring"></div>
+<script src="assets/js/sofbe-fixes.js"></script>
+<div id="sofbe-cursor" aria-hidden="true"></div>
+<div id="sofbe-cursor-ring" aria-hidden="true"></div>
+
+<script>
+(function ($) {
+  'use strict';
+
+  /* ── Contador de comentarios ── */
+  function updateCommentCount() {
+    var n = $('#comments-list .comment-item').length;
+    $('#comment-count, #comment-count-heading').text(n);
+  }
+
+  /* ── Botón Responder: toggle reply form SIN subir al tope ── */
+  $(document).on('click', '.btn-reply', function (e) {
+    e.preventDefault();   /* CRÍTICO: evita que href="#" suba la página */
+    var targetId = $(this).data('target');
+    var $form = $('#' + targetId);
+    // Cierra otros replies abiertos
+    $('.reply-form').not($form).slideUp(200);
+    $form.slideToggle(250);
+    if ($form.is(':visible')) {
+      $form.find('textarea').focus();
+    }
+  });
+
+  /* ── Cancelar respuesta ── */
+  $(document).on('click', '.btn-cancel-reply', function (e) {
+    e.preventDefault();
+    $(this).closest('.reply-form').slideUp(200);
+  });
+
+  /* ── Publicar respuesta inline ── */
+  $(document).on('click', '.btn-send-reply', function (e) {
+    e.preventDefault();
+    var $replyForm = $(this).closest('.reply-form');
+    var $textarea  = $replyForm.find('textarea');
+    var text = $textarea.val().trim();
+    var $parentItem = $replyForm.closest('.comment-item');
+
+    if (!text) {
+      $textarea.addClass('input-error').focus();
+      return;
+    }
+    $textarea.removeClass('input-error');
+
+    /* Construir reply HTML */
+    var replyId = 'reply-inline-' + Date.now();
+    var $reply = $(
+      '<li class="comment-item" style="margin-left:56px; border-left:3px solid #d27e04; padding-left:12px;">' +
+        '<div class="comment-avatar"><img alt="Tú" src="assets/img/client-face1.png" style="width:40px;height:40px;border-radius:50%;"/></div>' +
+        '<div class="comment-body">' +
+          '<div class="comment-meta"><strong>Tú</strong> <i class="fa fa-clock-o"></i> Ahora</div>' +
+          '<p class="comment-text">' + $('<div>').text(text).html() + '</p>' +
+        '</div>' +
+      '</li>'
+    );
+
+    /* Insertar después del comentario padre */
+    $parentItem.after($reply);
+    $reply.hide().slideDown(300);
+
+    $textarea.val('');
+    $replyForm.slideUp(200);
+    updateCommentCount();
+
+    /* Scroll suave al reply nuevo, no al tope */
+    $('html, body').animate({ scrollTop: $reply.offset().top - 100 }, 400);
+  });
+
+  /* ── Publicar comentario nuevo ── */
+  $('#new-comment-form').on('submit', function (e) {
+    e.preventDefault();
+    var $form    = $(this);
+    var name     = $('#comment-name').val().trim();
+    var email    = $('#comment-email').val().trim();
+    var text     = $('#comment-text').val().trim();
+    var $feedback = $('#comment-feedback');
+
+    /* Limpiar errores previos */
+    $form.find('.input-error').removeClass('input-error');
+    $feedback.hide().removeClass('success error');
+
+    var errors = [];
+    if (!name)  { $('#comment-name').addClass('input-error');  errors.push('nombre'); }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      $('#comment-email').addClass('input-error'); errors.push('correo válido');
+    }
+    if (!text)  { $('#comment-text').addClass('input-error');  errors.push('comentario'); }
+
+    if (errors.length) {
+      $feedback.addClass('error')
+               .text('Por favor completa: ' + errors.join(', ') + '.')
+               .slideDown(200);
+      return;
+    }
+
+    /* Construir comentario nuevo */
+    var newId = 'comment-new-' + Date.now();
+    var initial = name.charAt(0).toUpperCase();
+    var $newComment = $(
+      '<li class="comment-item" id="' + newId + '">' +
+        '<div class="comment-avatar">' +
+          '<div style="width:56px;height:56px;border-radius:50%;background:#d27e04;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:22px;color:#fff;">' +
+            initial +
+          '</div>' +
+        '</div>' +
+        '<div class="comment-body">' +
+          '<div class="comment-meta"><strong>' + $('<div>').text(name).html() + '</strong> <i class="fa fa-clock-o"></i> Ahora</div>' +
+          '<p class="comment-text">' + $('<div>').text(text).html() + '</p>' +
+          '<button class="btn-reply" data-target="reply-' + newId + '" type="button"><i class="fa fa-reply" aria-hidden="true"></i> Responder</button>' +
+          '<div class="reply-form" id="reply-' + newId + '">' +
+            '<textarea class="form-control" rows="3" placeholder="Escribe tu respuesta..."></textarea>' +
+            '<div style="margin-top:8px;display:flex;gap:8px;">' +
+              '<button class="btn btn-primary btn-sm btn-send-reply" type="button">Publicar respuesta</button>' +
+              '<button class="btn btn-default btn-sm btn-cancel-reply" type="button">Cancelar</button>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</li>'
+    );
+
+    /* Agregar al final de la lista */
+    $('#comments-list').append($newComment);
+    $newComment.hide().slideDown(350);
+
+    /* Actualizar contador */
+    updateCommentCount();
+
+    /* Feedback de éxito */
+    $feedback.addClass('success')
+             .text('¡Comentario publicado! Gracias por participar.')
+             .slideDown(200);
+    setTimeout(function () { $feedback.slideUp(300); }, 4000);
+
+    /* Reset form */
+    $form[0].reset();
+
+    /* Scroll suave al comentario nuevo — NO al tope */
+    setTimeout(function () {
+      $('html, body').animate({ scrollTop: $newComment.offset().top - 120 }, 500);
+    }, 100);
+  });
+
+})(jQuery);
+</script>
+
 <script>
 (function() {
-    var dot  = document.getElementById('sofbe-cursor');
-    var ring = document.getElementById('sofbe-cursor-ring');
-    if (!dot || !ring) return;
-    var mx = 0, my = 0, rx = 0, ry = 0, activated = false;
-    document.addEventListener('mousemove', function(e) {
-        mx = e.clientX; my = e.clientY;
-        dot.style.left = mx + 'px';
-        dot.style.top  = my + 'px';
-        if (!activated) {
-            document.body.classList.add('sofbe-cursor-active');
-            activated = true;
-        }
-    });
-    (function loop() {
-        rx += (mx - rx) * 0.12;
-        ry += (my - ry) * 0.12;
-        ring.style.left = rx + 'px';
-        ring.style.top  = ry + 'px';
-        requestAnimationFrame(loop);
-    })();
-    document.querySelectorAll('a, button, .proerty-item, .navbar-brand, .btn, input[type="submit"]').forEach(function(el) {
-        el.addEventListener('mouseenter', function() {
-            dot.classList.add('on-link');
-            ring.classList.add('on-link');
-        });
-        el.addEventListener('mouseleave', function() {
-            dot.classList.remove('on-link');
-            ring.classList.remove('on-link');
-        });
-    });
-    document.addEventListener('mousedown', function() {
-        dot.classList.add('expanded');
-        ring.classList.add('expanded');
-    });
-    document.addEventListener('mouseup', function() {
-        dot.classList.remove('expanded');
-        ring.classList.remove('expanded');
-    });
+  var navbar = document.querySelector(".navbar.navbar-default");
+  if (!navbar) return;
+  var navbarOffsetTop = navbar.getBoundingClientRect().top + window.pageYOffset;
+  window.addEventListener("scroll", function() {
+    if (window.pageYOffset > navbarOffsetTop) {
+      navbar.classList.add("navbar-sticky");
+      document.body.classList.add("nav-is-sticky");
+    } else {
+      navbar.classList.remove("navbar-sticky");
+      document.body.classList.remove("nav-is-sticky");
+    }
+  }, { passive: true });
 })();
 </script>
 </body>

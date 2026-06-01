@@ -2,6 +2,19 @@
 <html class="no-js" lang="es">
 <head>
 <style>
+  /* ---- STICKY NAVBAR ---- */
+  .navbar-default.navbar-sticky {
+    position: fixed !important;
+    top: 0; left: 0; right: 0;
+    z-index: 1030; width: 100%;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.15);
+    animation: slideDownNav 0.35s ease;
+  }
+  @keyframes slideDownNav {
+    from { transform: translateY(-100%); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+  body.nav-is-sticky > *:not(.navbar) { margin-top: 0; }
 </style>
 <meta charset="utf-8"/>
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
@@ -216,6 +229,19 @@
     color: #1f2222;
     text-decoration: none;
   }
+  /* ---- STICKY NAVBAR ---- */
+  .navbar-default.navbar-sticky {
+    position: fixed !important;
+    top: 0; left: 0; right: 0;
+    z-index: 1030; width: 100%;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.15);
+    animation: slideDownNav 0.35s ease;
+  }
+  @keyframes slideDownNav {
+    from { transform: translateY(-100%); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+  body.nav-is-sticky > *:not(.navbar) { margin-top: 0; }
 </style>
 </head>
 <body>
@@ -979,5 +1005,21 @@
 })(jQuery);
 </script>
 
+<script>
+(function() {
+  var navbar = document.querySelector(".navbar.navbar-default");
+  if (!navbar) return;
+  var navbarOffsetTop = navbar.getBoundingClientRect().top + window.pageYOffset;
+  window.addEventListener("scroll", function() {
+    if (window.pageYOffset > navbarOffsetTop) {
+      navbar.classList.add("navbar-sticky");
+      document.body.classList.add("nav-is-sticky");
+    } else {
+      navbar.classList.remove("navbar-sticky");
+      document.body.classList.remove("nav-is-sticky");
+    }
+  }, { passive: true });
+})();
+</script>
 </body>
 </html>

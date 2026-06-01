@@ -60,15 +60,34 @@
   .nav-template-menu { display: none !important; }
 
   /* Hero / Slider */
+  /* ---- SLIDER CONTENT: anclar al fondo del hero ---- */
+  .slider-area {
+    position: relative;
+  }
+  .slider-content {
+    position: absolute !important;
+    top: auto !important;
+    bottom: 0 !important;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding-bottom: 0;
+  }
   .slider-content h2 {
     font-size: 36px;
     font-weight: 700;
     text-shadow: 1px 2px 6px rgba(0,0,0,0.55);
     line-height: 1.2;
+    margin-bottom: 10px;
   }
   .slider-content p {
     font-size: 16px;
     text-shadow: 0 1px 4px rgba(0,0,0,0.45);
+    margin-bottom: 18px;
+  }
+  .slider-content .search-form {
+    border-radius: 0 0 5px 5px;
+    margin: 0;
   }
 
   /* Sección "Acerca de SOFBE" */
@@ -157,6 +176,25 @@
 
   .social ul li a { color: #ccc; }
   .social ul li a:hover { color: var(--sofbe-primary); }
+
+  /* ---- STICKY NAVBAR ---- */
+  .navbar-default.navbar-sticky {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    width: 100%;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.15);
+    animation: slideDownNav 0.35s ease;
+  }
+  @keyframes slideDownNav {
+    from { transform: translateY(-100%); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+  }
+  body.nav-is-sticky .slider-area {
+    margin-top: 68px;
+  }
 
   /* Responsive ajustes */
   @media(max-width: 767px) {
@@ -629,7 +667,7 @@
             <div class="item">
               <div class="client-text">
                 <p>"Excelente atención y gran profesionalismo. El equipo de SOFBE nos asesoró durante todo el proceso de compra y fue una experiencia totalmente satisfactoria."</p>
-                <h4><strong>Carlos Mendoza</strong> &nbsp;–&nbsp; <i>Cliente satisfecho, Nuevo Chimbote</i></h4>
+                <h4><strong>Gonzales Gomez</strong> &nbsp;–&nbsp; <i>Cliente satisfecho, Nuevo Chimbote</i></h4>
               </div>
               <div class="client-face wow fadeInRight" data-wow-delay=".9s">
                 <img alt="Carlos Mendoza - Cliente SOFBE" src="assets/img/client-face1.png"/>
@@ -638,7 +676,7 @@
             <div class="item">
               <div class="client-text">
                 <p>"Encontré el departamento ideal gracias a SOFBE. Siempre estuvieron atentos y dispuestos a resolver cada consulta. Los recomiendo sin dudarlo."</p>
-                <h4><strong>Ana Torres</strong> &nbsp;–&nbsp; <i>Compradora de vivienda, Chimbote</i></h4>
+                <h4><strong>Alegre Ethan</strong> &nbsp;–&nbsp; <i>Compradora de vivienda, Chimbote</i></h4>
               </div>
               <div class="client-face">
                 <img alt="Ana Torres - Cliente SOFBE" src="assets/img/client-face2.png"/>
@@ -898,6 +936,43 @@
 <script src="assets/js/icheck.min.js"></script>
 <script src="assets/js/price-range.js"></script>
 <script src="assets/js/main.js"></script>
+<!-- ===== INTRO GATE: mostrar intro en primera visita de la sesión ===== -->
+<script>
+(function() {
+  // Si venimos desde intro.html, marcar la sesión como vista
+  if (document.referrer && document.referrer.indexOf('intro.html') !== -1) {
+    sessionStorage.setItem('sofbe_intro_seen', '1');
+  }
+  // Si aún no hemos visto la intro en esta sesión, redirigir
+  if (!sessionStorage.getItem('sofbe_intro_seen')) {
+    sessionStorage.setItem('sofbe_intro_seen', '1');
+    window.location.replace('intro.html');
+  }
+})();
+</script>
+
+<!-- ===== STICKY NAVBAR ===== -->
+<script>
+(function() {
+  var navbar = document.querySelector('.navbar.navbar-default');
+  var headerConnect = document.querySelector('.header-connect');
+  if (!navbar) return;
+  var navbarOffsetTop = navbar.getBoundingClientRect().top + window.pageYOffset;
+
+  function onScroll() {
+    if (window.pageYOffset > navbarOffsetTop) {
+      navbar.classList.add('navbar-sticky');
+      document.body.classList.add('nav-is-sticky');
+    } else {
+      navbar.classList.remove('navbar-sticky');
+      document.body.classList.remove('nav-is-sticky');
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // run once on load
+})();
+</script>
+
 <!-- Cursor personalizado SOFBE -->
 <div id="sofbe-cursor"></div>
 <div id="sofbe-cursor-ring"></div>

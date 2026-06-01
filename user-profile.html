@@ -366,5 +366,21 @@
     });
 })();
 </script>
+<script>
+(function() {
+  var navbar = document.querySelector(".navbar.navbar-default");
+  if (!navbar) return;
+  var navbarOffsetTop = navbar.getBoundingClientRect().top + window.pageYOffset;
+  window.addEventListener("scroll", function() {
+    if (window.pageYOffset > navbarOffsetTop) {
+      navbar.classList.add("navbar-sticky");
+      document.body.classList.add("nav-is-sticky");
+    } else {
+      navbar.classList.remove("navbar-sticky");
+      document.body.classList.remove("nav-is-sticky");
+    }
+  }, { passive: true });
+})();
+</script>
 </body>
 </html>
