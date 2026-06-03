@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title id="page-title">SOFBE | Blog Inmobiliario</title>
+<meta name="description" content="Blog inmobiliario SOFBE"/>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="assets/css/normalize.css" rel="stylesheet"/>
+<link href="assets/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="assets/css/fontello.css" rel="stylesheet"/>
+<link href="assets/fonts/icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet"/>
+<link href="assets/fonts/icon-7-stroke/css/helper.css" rel="stylesheet"/>
+<link href="assets/css/animate.css" media="screen" rel="stylesheet"/>
+<link href="assets/css/bootstrap-select.min.css" rel="stylesheet"/>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="assets/css/owl.carousel.css" rel="stylesheet"/>
+<link href="assets/css/owl.theme.css" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<link href="assets/css/responsive.css" rel="stylesheet"/>
+<style>
+  /* ====== STICKY NAVBAR ====== */
+  .navbar-default.navbar-sticky {
+    position: fixed !important;
+    top: 0; left: 0; right: 0;
+    z-index: 1030; width: 100%;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.18);
+    animation: slideDownNav 0.3s ease;
+  }
+  @keyframes slideDownNav {
+    from { transform: translateY(-100%); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+  }
+
+  /* ====== PAGE HEAD ====== */
+  .page-head {
+    background: #2d2d2d;
+    padding: 30px 0;
+    border-bottom: 3px solid #e74c3c;
+  }
+  .page-head .page-title {
+    color: #fff;
+    font-size: 24px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0 0 6px;
+  }
+  .page-head .breadcrumb {
+    background: transparent; padding: 0; margin: 0; font-size: 12px;
+  }
+  .page-head .breadcrumb li a { color: #e74c3c; }
+  .page-head .breadcrumb li.active { color: #aaa; }
+  .page-head .breadcrumb > li + li:before { color: #666; }
+
+  /* ====== ARTICLE ====== */
+  .single-article {
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+    margin-bottom: 40px;
+  }
+  .article-hero {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+  }
+  .article-body { padding: 36px 40px 30px; }
+
+  .article-category-badge {
+    display: inline-block;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 2px;
+    color: #fff; margin-bottom: 18px;
+  }
+  .cat-consejos  { background: #2980b9; }
+  .cat-mercado   { background: #27ae60; }
+  .cat-inversion { background: #8e44ad; }
+  .cat-legal     { background: #e67e22; }
+  .cat-alquiler  { background: #e74c3c; }
+  .cat-nuevos    { background: #27ae60; }
+
+  .article-title {
+    font-size: 28px; font-weight: 700;
+    color: #1a1a1a; line-height: 1.3;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    margin: 0 0 14px;
+  }
+  .article-meta {
+    display: flex; flex-wrap: wrap; gap: 16px;
+    font-size: 12px; color: #999;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 28px;
+  }
+  .article-meta i { color: #e74c3c; margin-right: 5px; }
+  .article-meta .meta-author { font-weight: 700; color: #e74c3c; text-transform: uppercase; }
+
+  .article-content p {
+    font-size: 15px; color: #555; line-height: 1.85;
+    margin-bottom: 20px;
+  }
+  .article-content h2 {
+    font-size: 22px; font-weight: 700; color: #1a1a1a;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    margin: 32px 0 16px;
+    padding-left: 14px;
+    border-left: 4px solid #e74c3c;
+  }
+  .article-content h3 {
+    font-size: 18px; font-weight: 600; color: #333;
+    margin: 24px 0 12px;
+  }
+  .article-content img {
+    width: 100%; border-radius: 4px;
+    margin: 20px 0; display: block;
+    max-height: 360px; object-fit: cover;
+  }
+  .article-content blockquote {
+    border-left: 4px solid #e74c3c;
+    background: #fdf8f3;
+    padding: 18px 24px;
+    margin: 28px 0;
+    border-radius: 0 4px 4px 0;
+  }
+  .article-content blockquote p {
+    font-size: 16px; color: #555; font-style: italic;
+    margin: 0 0 8px;
+  }
+  .article-content blockquote footer {
+    font-size: 12px; color: #e74c3c; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .article-content ol, .article-content ul {
+    font-size: 15px; color: #555; line-height: 1.8;
+    padding-left: 24px; margin-bottom: 20px;
+  }
+  .article-content li { margin-bottom: 6px; }
+
+  /* Two-image grid */
+  .img-grid-2 {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0;
+  }
+  .img-grid-2 img { margin: 0; height: 220px; }
+
+  /* Tags */
+  .article-tags {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-top: 28px; padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .article-tags span { font-size: 12px; color: #777; font-weight: 600; }
+  .article-tags a {
+    display: inline-block;
+    background: #f0f0f0; color: #555;
+    font-size: 11px; font-weight: 600;
+    padding: 4px 12px; border-radius: 2px;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .article-tags a:hover { background: #e74c3c; color: #fff; }
+
+  /* Prev/Next */
+  .article-nav {
+    display: flex; justify-content: space-between;
+    flex-wrap: wrap; gap: 10px;
+    padding: 20px 0; margin-top: 10px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .article-nav a {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 13px; font-weight: 600; color: #555;
+    text-decoration: none; transition: color 0.2s;
+  }
+  .article-nav a:hover { color: #e74c3c; }
+  .article-nav a i { color: #e74c3c; }
+
+  /* ====== COMMENTS ====== */
+  .comments-section { margin-top: 40px; }
+  .comments-section h4 {
+    font-size: 16px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    color: #1a1a1a; margin-bottom: 24px;
+    padding-bottom: 12px; border-bottom: 2px solid #e74c3c;
+  }
+  .comment-list { list-style: none; padding: 0; margin: 0 0 30px; }
+  .comment-item {
+    display: flex; gap: 16px;
+    padding: 20px 0; border-bottom: 1px solid #f0f0f0;
+  }
+  .comment-item:last-child { border-bottom: none; }
+  .comment-avatar img {
+    width: 52px; height: 52px; border-radius: 50%; object-fit: cover;
+  }
+  .comment-body { flex: 1; }
+  .comment-meta { font-size: 12px; color: #aaa; margin-bottom: 6px; }
+  .comment-meta strong { font-size: 13px; color: #333; margin-right: 10px; text-transform: uppercase; }
+  .comment-text { font-size: 14px; color: #555; line-height: 1.7; margin-bottom: 8px; }
+  .btn-reply {
+    background: none; border: none; padding: 0;
+    color: #e74c3c; font-size: 12px; cursor: pointer; font-weight: 600;
+  }
+  .btn-reply:hover { color: #c0392b; }
+  .reply-form {
+    display: none; background: #f9f9f9;
+    border: 1px solid #eee; border-radius: 4px;
+    padding: 16px; margin-top: 12px;
+  }
+  .reply-form textarea { resize: vertical; }
+
+  /* Comment form */
+  .add-comment-section { margin-top: 40px; }
+  .add-comment-section h4 {
+    font-size: 16px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    color: #1a1a1a; margin-bottom: 24px;
+    padding-bottom: 12px; border-bottom: 2px solid #e74c3c;
+  }
+  .add-comment-section .form-control {
+    border: 1px solid #e0e0e0; border-radius: 2px;
+    font-size: 13px; margin-bottom: 4px;
+  }
+  .add-comment-section .form-control:focus { border-color: #e74c3c; box-shadow: none; }
+  .comment-feedback {
+    display: none; margin-top: 10px;
+    padding: 10px 14px; border-radius: 3px; font-size: 14px;
+  }
+  .comment-feedback.success { background: #dff0d8; color: #3c763d; border: 1px solid #d6e9c6; }
+  .comment-feedback.error   { background: #f2dede; color: #a94442; border: 1px solid #ebccd1; }
+  .btn-submit-comment {
+    background: #e74c3c; color: #fff; border: none;
+    padding: 10px 28px; border-radius: 2px;
+    font-size: 13px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1px;
+    cursor: pointer; transition: background 0.3s;
+  }
+  .btn-submit-comment:hover { background: #c0392b; }
+
+  /* ====== SIDEBAR ====== */
+  .single-sidebar { padding-left: 20px; }
+  .sidebar-widget {
+    background: #fff; border-radius: 4px;
+    padding: 24px; margin-bottom: 28px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  }
+  .sidebar-widget h5 {
+    font-size: 13px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 1.5px;
+    color: #1a1a1a; margin: 0 0 16px; padding-bottom: 12px;
+    border-bottom: 2px solid #e74c3c;
+  }
+  .related-article {
+    display: flex; gap: 12px; padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0; cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .related-article:last-child { border-bottom: none; }
+  .related-article:hover { opacity: 0.8; }
+  .related-article img {
+    width: 72px; height: 60px;
+    border-radius: 3px; object-fit: cover; flex-shrink: 0;
+  }
+  .related-article-info h6 {
+    font-size: 12px; font-weight: 600; color: #333;
+    margin: 0 0 4px; line-height: 1.4; text-transform: none;
+  }
+  .related-article-info a { color: #333; text-decoration: none; }
+  .related-article-info a:hover { color: #e74c3c; }
+  .related-article-info span { font-size: 11px; color: #aaa; }
+
+  .sidebar-prop-img {
+    width: 100%; height: 180px; object-fit: cover;
+    display: block; border-radius: 4px 4px 0 0;
+  }
+  .sidebar-prop-body { padding: 16px 20px; }
+  .prop-badge-small {
+    font-size: 10px; font-weight: 800; letter-spacing: 1.5px;
+    color: #e74c3c; text-transform: uppercase; margin-bottom: 5px;
+  }
+  .prop-price-small { font-size: 20px; font-weight: 800; color: #e74c3c; margin-bottom: 12px; }
+  .btn-ver-prop {
+    display: inline-block; background: #e74c3c; color: #fff !important;
+    font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase; padding: 8px 18px; border-radius: 2px;
+    text-decoration: none; transition: background 0.3s;
+  }
+  .btn-ver-prop:hover { background: #c0392b; }
+
+  .tags-list-small {
+    display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0;
+  }
+  .tags-list-small li a {
+    display: block; background: #f0f0f0; color: #555;
+    font-size: 11px; font-weight: 600; padding: 4px 10px;
+    border-radius: 2px; text-decoration: none; transition: all 0.2s;
+  }
+  .tags-list-small li a:hover { background: #e74c3c; color: #fff; }
+</style>
+</head>
+<body>
+<div id="preloader"><div id="status"></div></div>
+
+<!-- Barra superior -->
+<div class="header-connect">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-8 col-xs-12">
+        <div class="header-half header-call">
+          <p>
+            <span><i class="pe-7s-call"></i> +51 900 000 000</span>
+            <span><i class="pe-7s-mail"></i> inmobiliaria@sofbe.com</span>
+          </p>
+        </div>
+      </div>
+      <div class="col-md-3 col-md-offset-3 col-sm-4 col-xs-12">
+        <div class="header-half header-social">
+          <ul class="list-inline">
+            <li><a href="https://www.facebook.com/sofbe" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/sofbe" target="_blank" rel="noopener"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="https://www.linkedin.com/company/sofbe" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://wa.me/51900000000" target="_blank" rel="noopener"><i class="fa fa-whatsapp"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Navegación -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" data-target="#navigation" data-toggle="collapse" type="button">
+        <span class="sr-only">Abrir navegación</span>
+        <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"><img alt="SOFBE" src="assets/img/logo.png"/></a>
+    </div>
+    <div class="collapse navbar-collapse" id="navigation">
+      <div class="button navbar-right">
+        <button class="navbar-btn nav-button login" onclick="window.location.href='register.html'">Iniciar sesión</button>
+        <button class="navbar-btn nav-button" onclick="window.location.href='submit-property.html'">Publicar propiedad</button>
+      </div>
+      <ul class="main-nav nav navbar-nav navbar-right">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="properties.html">Propiedades</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Servicios <b class="caret"></b></a>
+          <ul class="dropdown-menu navbar-nav">
+            <li><a href="properties.html">Compra de propiedades</a></li>
+            <li><a href="properties.html">Alquiler de propiedades</a></li>
+            <li><a href="submit-property.html">Publicar mi propiedad</a></li>
+            <li><a href="user-profile.html">Asesoría inmobiliaria</a></li>
+          </ul>
+        </li>
+        <li class="active"><a href="blog.html">Blog</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Cabecera de página -->
+<div class="page-head">
+  <div class="container">
+    <h1 class="page-title" id="breadcrumb-title">Blog Inmobiliario</h1>
+    <ol class="breadcrumb">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li class="active" id="breadcrumb-article">Artículo</li>
+    </ol>
+  </div>
+</div>
+
+<!-- Contenido -->
+<div style="background:#f8f8f8; padding: 50px 0 60px;">
+  <div class="container">
+    <div class="row">
+
+      <!-- Artículo principal -->
+      <div class="col-md-8">
+        <div class="single-article">
+          <img id="art-hero" class="article-hero" src="" alt=""/>
+          <div class="article-body">
+            <span id="art-badge" class="article-category-badge"></span>
+            <h1 id="art-title" class="article-title"></h1>
+            <div class="article-meta">
+              <span class="meta-author"><i class="fa fa-user"></i> <span id="art-author"></span></span>
+              <span><i class="fa fa-calendar"></i> <span id="art-date"></span></span>
+              <span><i class="fa fa-comments"></i> <span id="art-comments"></span> Comentarios</span>
+            </div>
+            <div class="article-content" id="art-content"></div>
+            <div class="article-tags" id="art-tags"></div>
+            <div class="article-nav" id="art-nav"></div>
+          </div>
+        </div>
+
+        <!-- Comentarios -->
+        <div class="comments-section">
+          <h4><span id="comment-count">2</span> Comentarios</h4>
+          <ul class="comment-list" id="comments-list">
+            <li class="comment-item" id="comment-1">
+              <div class="comment-avatar"><img src="assets/img/client-face1.png" alt="María Torres"/></div>
+              <div class="comment-body">
+                <div class="comment-meta"><strong>María Torres</strong> <i class="fa fa-clock-o"></i> 15 de mayo, 2026</div>
+                <p class="comment-text" id="default-comment-1">Excelente artículo, muy útil y bien explicado. Me ayudó mucho a entender el proceso.</p>
+                <button class="btn-reply" data-target="reply-1"><i class="fa fa-reply"></i> Responder</button>
+                <div class="reply-form" id="reply-1">
+                  <textarea class="form-control" rows="3" placeholder="Escribe tu respuesta..."></textarea>
+                  <div style="margin-top:8px; display:flex; gap:8px;">
+                    <button class="btn btn-primary btn-sm btn-send-reply">Publicar respuesta</button>
+                    <button class="btn btn-default btn-sm btn-cancel-reply">Cancelar</button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="comment-item" id="comment-2">
+              <div class="comment-avatar"><img src="assets/img/client-face2.png" alt="Carlos Ruiz"/></div>
+              <div class="comment-body">
+                <div class="comment-meta"><strong>Carlos Ruiz</strong> <i class="fa fa-clock-o"></i> 18 de mayo, 2026</div>
+                <p class="comment-text" id="default-comment-2">Muy buen contenido. La información sobre el mercado local de Chimbote es muy valiosa para tomar decisiones.</p>
+                <button class="btn-reply" data-target="reply-2"><i class="fa fa-reply"></i> Responder</button>
+                <div class="reply-form" id="reply-2">
+                  <textarea class="form-control" rows="3" placeholder="Escribe tu respuesta..."></textarea>
+                  <div style="margin-top:8px; display:flex; gap:8px;">
+                    <button class="btn btn-primary btn-sm btn-send-reply">Publicar respuesta</button>
+                    <button class="btn btn-default btn-sm btn-cancel-reply">Cancelar</button>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Formulario comentario -->
+        <div class="add-comment-section">
+          <h4>Deja un comentario</h4>
+          <form id="comment-form" novalidate>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="c-name">Nombre *</label>
+                  <input class="form-control" id="c-name" type="text" placeholder="Tu nombre" required/>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="c-email">Correo electrónico *</label>
+                  <input class="form-control" id="c-email" type="email" placeholder="correo@ejemplo.com" required/>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="c-text">Comentario *</label>
+              <textarea class="form-control" id="c-text" rows="4" placeholder="Escribe tu comentario..." required></textarea>
+            </div>
+            <div class="comment-feedback" id="comment-feedback"></div>
+            <div class="text-right" style="margin-top:12px;">
+              <button class="btn-submit-comment" type="submit"><i class="fa fa-comment-o"></i> Publicar comentario</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="col-md-4 single-sidebar">
+
+        <!-- Artículos relacionados -->
+        <div class="sidebar-widget">
+          <h5>Artículos relacionados</h5>
+          <div id="related-articles"></div>
+        </div>
+
+        <!-- Propiedad destacada -->
+        <div class="sidebar-widget" style="padding:0; overflow:hidden;">
+          <img class="sidebar-prop-img" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&q=80" alt="Propiedad"/>
+          <div class="sidebar-prop-body">
+            <div class="prop-badge-small">Propiedad destacada</div>
+            <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin-bottom:3px;">Casa Familiar — Nuevo Chimbote</div>
+            <div style="font-size:12px; color:#999; margin-bottom:8px;">Urb. Las Casuarinas · 180 m² · 4 hab.</div>
+            <div class="prop-price-small">S/ 320,000</div>
+            <a class="btn-ver-prop" href="properties.html">Ver propiedad</a>
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="sidebar-widget">
+          <h5>Etiquetas</h5>
+          <ul class="tags-list-small">
+            <li><a href="blog.html">Compraventa</a></li>
+            <li><a href="blog.html">Alquiler</a></li>
+            <li><a href="blog.html">Hipoteca</a></li>
+            <li><a href="blog.html">Inversión</a></li>
+            <li><a href="blog.html">SUNARP</a></li>
+            <li><a href="blog.html">Nuevo Chimbote</a></li>
+            <li><a href="blog.html">Tasación</a></li>
+            <li><a href="blog.html">Departamentos</a></li>
+            <li><a href="blog.html">Casas</a></li>
+            <li><a href="blog.html">Comercial</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer-area">
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="single-footer">
+            <h4>Acerca de SOFBE</h4>
+            <div class="footer-title-line"></div>
+            <img alt="SOFBE" src="assets/img/footer-logo.png"/>
+            <p>Tu socio de confianza en bienes raíces. Más de 10 años de experiencia.</p>
+            <ul class="footer-adress">
+              <li><i class="pe-7s-map-marker"></i> Av. José Pardo 908, Nuevo Chimbote</li>
+              <li><i class="pe-7s-mail"></i> inmobiliaria@sofbe.com</li>
+              <li><i class="pe-7s-call"></i> +51 900 000 000</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="single-footer">
+            <h4>Navegación rápida</h4>
+            <div class="footer-title-line"></div>
+            <ul class="footer-menu">
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="properties.html">Propiedades</a></li>
+              <li><a href="blog.html">Blog inmobiliario</a></li>
+              <li><a href="contact.html">Contáctanos</a></li>
+              <li><a href="faq.html">Preguntas frecuentes</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="single-footer">
+            <h4>Últimas noticias</h4>
+            <div class="footer-title-line"></div>
+            <ul class="footer-blog">
+              <li>
+                <div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
+                  <a href="single.html?id=0"><img src="assets/img/demo/small-proerty-2.jpg" alt=""/></a>
+                  <span class="blg-date">28-05-2026</span>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
+                  <h6><a href="single.html?id=0">Cómo elegir la mejor ubicación</a></h6>
+                  <p style="line-height:17px; padding:8px 2px;">Chimbote y sus zonas de mayor crecimiento...</p>
+                </div>
+              </li>
+              <li>
+                <div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
+                  <a href="single.html?id=2"><img src="assets/img/demo/small-proerty-2.jpg" alt=""/></a>
+                  <span class="blg-date">12-05-2026</span>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
+                  <h6><a href="single.html?id=2">Guía para invertir en bienes raíces</a></h6>
+                  <p style="line-height:17px; padding:8px 2px;">Primera inversión paso a paso...</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="single-footer news-letter">
+            <h4>Mantente informado</h4>
+            <div class="footer-title-line"></div>
+            <p>Suscríbete para recibir las últimas noticias y ofertas.</p>
+            <form>
+              <div class="input-group">
+                <input class="form-control" placeholder="Tu correo electrónico..." type="email"/>
+                <span class="input-group-btn">
+                  <button class="btn btn-primary subscribe" type="button"><i class="pe-7s-paper-plane pe-2x"></i></button>
+                </span>
+              </div>
+            </form>
+            <div class="social pull-right" style="margin-top:16px;">
+              <ul>
+                <li><a href="https://www.facebook.com/sofbe" target="_blank" rel="noopener"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/sofbe" target="_blank" rel="noopener"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/sofbe" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://wa.me/51900000000" target="_blank" rel="noopener"><i class="fa fa-whatsapp"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="assets/js/modernizr-2.6.2.min.js"></script>
+<script src="assets/js/jquery-1.10.2.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap-select.min.js"></script>
+<script src="assets/js/bootstrap-hover-dropdown.js"></script>
+<script src="assets/js/wow.js"></script>
+<script src="assets/js/main.js"></script>
+
+<!-- Cursor SOFBE -->
+<div id="sofbe-cursor"></div>
+<div id="sofbe-cursor-ring"></div>
+<script>
+(function() {
+  var dot = document.getElementById('sofbe-cursor');
+  var ring = document.getElementById('sofbe-cursor-ring');
+  if (!dot || !ring) return;
+  var mx=0, my=0, rx=0, ry=0, activated=false;
+  document.addEventListener('mousemove', function(e) {
+    mx = e.clientX; my = e.clientY;
+    dot.style.left = mx+'px'; dot.style.top = my+'px';
+    if (!activated) { document.body.classList.add('sofbe-cursor-active'); activated=true; }
+  });
+  (function loop() {
+    rx += (mx-rx)*0.12; ry += (my-ry)*0.12;
+    ring.style.left = rx+'px'; ring.style.top = ry+'px';
+    requestAnimationFrame(loop);
+  })();
+  function addHover(el) {
+    el.addEventListener('mouseenter', function() { dot.classList.add('on-link'); ring.classList.add('on-link'); });
+    el.addEventListener('mouseleave', function() { dot.classList.remove('on-link'); ring.classList.remove('on-link'); });
+  }
+  document.querySelectorAll('a, button, .btn').forEach(addHover);
+  var obs = new MutationObserver(function(ms) {
+    ms.forEach(function(m) { m.addedNodes.forEach(function(n) {
+      if (n.querySelectorAll) n.querySelectorAll('a, button, .btn').forEach(addHover);
+    });});
+  });
+  obs.observe(document.body, { childList: true, subtree: true });
+  document.addEventListener('mousedown', function() { dot.classList.add('expanded'); ring.classList.add('expanded'); });
+  document.addEventListener('mouseup', function() { dot.classList.remove('expanded'); ring.classList.remove('expanded'); });
+})();
+</script>
+
+<!-- Sticky Navbar -->
+<script>
+(function() {
+  var nav = document.querySelector('.navbar.navbar-default');
+  if (!nav) return;
+  var off = nav.getBoundingClientRect().top + window.pageYOffset;
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > off) { nav.classList.add('navbar-sticky'); document.body.classList.add('nav-is-sticky'); }
+    else { nav.classList.remove('navbar-sticky'); document.body.classList.remove('nav-is-sticky'); }
+  }, { passive: true });
+})();
+</script>
+
+<!-- ===== ARTICLE DATA + RENDERER ===== -->
+<script>
+var ARTICLES = [
+  {
+    id: 0,
+    cat: 'consejos', catLabel: 'Consejos', badgeClass: 'cat-consejos',
+    img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1200&q=85',
+    imgAlt: 'Elegir ubicación para comprar vivienda en Chimbote',
+    author: 'Equipo SOFBE', date: '28 de mayo, 2026', comments: 4,
+    title: 'Cómo elegir la mejor ubicación para comprar tu vivienda en Chimbote',
+    tags: ['Compraventa', 'Nuevo Chimbote', 'Casas'],
+    content: `
+      <p><strong>La ubicación es, sin duda, el factor más determinante en el valor presente y futuro de cualquier propiedad.</strong> No importa cuán moderno sea el acabado o cuán amplio sea el terreno: una mala ubicación puede depreciar una inversión en cuestión de años, mientras que un sector en crecimiento puede multiplicar el valor de un inmueble modesto.</p>
+
+      <h2>¿Qué factores definen una buena ubicación?</h2>
+      <p>Antes de firmar cualquier documento, evalúa estos aspectos con calma y, si es posible, visita la zona en diferentes horarios del día:</p>
+      <ol>
+        <li><strong>Accesibilidad vial:</strong> distancia a avenidas principales, tiempo en transporte público y privado al centro laboral.</li>
+        <li><strong>Servicios educativos:</strong> colegios, institutos y universidades a menos de 15 minutos.</li>
+        <li><strong>Comercio y salud:</strong> mercados, supermercados, farmacias y clínicas en el radio inmediato.</li>
+        <li><strong>Seguridad:</strong> consulta índices del INEI y conversa con vecinos sobre la percepción de seguridad.</li>
+        <li><strong>Zonificación futura:</strong> revisa el Plan de Desarrollo Urbano Municipal para anticipar cambios.</li>
+      </ol>
+
+      <div class="img-grid-2">
+        <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=600&q=80" alt="Urbanización residencial"/>
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80" alt="Desarrollo urbano Chimbote"/>
+      </div>
+
+      <h2>Las zonas de mayor crecimiento en Nuevo Chimbote 2026</h2>
+      <p>Según el análisis de SOFBE, las urbanizaciones con mayor plusvalía proyectada son <strong>Las Casuarinas, Los Pinos y Bruces</strong>. Estas zonas combinan infraestructura consolidada, acceso a la Panamericana Norte y expansión de servicios comerciales en la Av. José Pardo.</p>
+      <p>En contraste, sectores como el casco antiguo de Chimbote requieren mayor investigación: si bien los precios son menores, la rentabilidad por alquiler puede ser alta en zonas comerciales, pero la revalorización es más lenta en áreas residenciales tradicionales.</p>
+
+      <blockquote>
+        <p>Comprar bien no es comprar barato, es comprar en el lugar correcto en el momento correcto.</p>
+        <footer>— Jesús Vílchez, Asesor Senior SOFBE</footer>
+      </blockquote>
+
+      <h3>Checklist antes de elegir zona</h3>
+      <ul>
+        <li>Visitar el sector a las 7am, 12pm y 7pm un día de semana.</li>
+        <li>Revisar el precio por m² histórico de los últimos 3 años.</li>
+        <li>Preguntar a la municipalidad sobre proyectos de obra pública planificados.</li>
+        <li>Consultar con SOFBE un análisis de mercado comparativo gratuito.</li>
+      </ul>
+    `
+  },
+  {
+    id: 1,
+    cat: 'mercado', catLabel: 'Mercado', badgeClass: 'cat-mercado',
+    img: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1200&q=85',
+    imgAlt: 'Mercado inmobiliario norte del Perú 2026',
+    author: 'Jesús Vílchez', date: '20 de mayo, 2026', comments: 7,
+    title: 'Tendencias del mercado inmobiliario en el norte del Perú — 2026',
+    tags: ['Tasación', 'Departamentos', 'Nuevo Chimbote'],
+    content: `
+      <p><strong>El norte del Perú vive uno de los momentos más dinámicos de su historia inmobiliaria reciente.</strong> Después de dos años de ajuste post-pandémico, el mercado de Áncash —y particularmente el eje Chimbote–Nuevo Chimbote— registra cifras que superan las proyecciones más optimistas del sector.</p>
+
+      <h2>Variación de precios: +8% en promedio</h2>
+      <p>El precio promedio por metro cuadrado en Nuevo Chimbote pasó de S/ 1,840 en 2025 a S/ 1,987 en el primer trimestre de 2026, según datos internos de SOFBE validados con operaciones cerradas. Las zonas con mayor incremento son las urbanizaciones consolidadas, donde la escasez de lotes vacíos presiona los precios al alza.</p>
+
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1000&q=80" alt="Gráfico crecimiento inmobiliario"/>
+
+      <h2>Factores que explican el boom</h2>
+      <ol>
+        <li><strong>Infraestructura vial:</strong> la culminación del by-pass de la Panamericana Norte redujo tiempos de desplazamiento y revalorizó corredores completos.</li>
+        <li><strong>Demanda insatisfecha:</strong> el déficit habitacional en Áncash supera las 38,000 unidades según el Ministerio de Vivienda.</li>
+        <li><strong>Tasas hipotecarias:</strong> la flexibilización de MiVivienda y Techo Propio incorporó un nuevo segmento de compradores de primera vivienda.</li>
+        <li><strong>Inversión comercial:</strong> la apertura de nuevos centros comerciales atrae servicios, empleo y residentes.</li>
+      </ol>
+
+      <div class="img-grid-2">
+        <img src="https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?w=600&q=80" alt="Construcción de viviendas"/>
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80" alt="Proyecto inmobiliario"/>
+      </div>
+
+      <blockquote>
+        <p>El norte del Perú ya no es una apuesta, es una certeza para el inversionista que mira el mediano plazo.</p>
+        <footer>— Informe de Mercado SOFBE Q1 2026</footer>
+      </blockquote>
+
+      <h3>¿Qué esperar para el segundo semestre?</h3>
+      <p>Los analistas de SOFBE proyectan una moderación del crecimiento entre 3% y 5% para el segundo semestre, impulsada por el aumento en el costo de materiales de construcción. Sin embargo, la demanda seguirá siendo robusta, especialmente en el segmento de departamentos de 70 a 90 m² para primera vivienda.</p>
+    `
+  },
+  {
+    id: 2,
+    cat: 'inversion', catLabel: 'Inversión', badgeClass: 'cat-inversion',
+    img: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&q=85',
+    imgAlt: 'Guía inversión bienes raíces Perú',
+    author: 'Carla Mendoza', date: '12 de mayo, 2026', comments: 2,
+    title: 'Guía completa para invertir en bienes raíces por primera vez en Perú',
+    tags: ['Inversión', 'Hipoteca', 'SUNARP'],
+    content: `
+      <p><strong>Invertir en bienes raíces es una de las decisiones financieras más importantes de tu vida.</strong> A diferencia de otros activos, un inmueble bien elegido genera rentabilidad por dos vías simultáneas: la renta mensual y la plusvalía del capital. Pero para el inversor primerizo, el proceso puede parecer una maraña de términos técnicos, trámites y riesgos.</p>
+
+      <h2>Paso 1: Define tu objetivo de inversión</h2>
+      <p>Antes de ver cualquier propiedad, responde estas preguntas: ¿buscas renta mensual inmediata, plusvalía a largo plazo, o ambas? ¿Cuánto capital tienes disponible sin comprometer tu fondo de emergencia? ¿Estás dispuesto a gestionar inquilinos o prefieres un activo pasivo?</p>
+
+      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1000&q=80" alt="Planificación financiera inversión"/>
+
+      <h2>Paso 2: Evalúa el rendimiento esperado</h2>
+      <p>El indicador clave es el <strong>Rent Yield</strong> o rentabilidad bruta por alquiler: divide la renta anual entre el precio de compra. En Chimbote, un departamento de S/ 180,000 que alquila a S/ 1,400/mes genera un 9.3% bruto anual, muy por encima del promedio limeño (5-6%).</p>
+
+      <blockquote>
+        <p>La mejor inversión que puedes hacer es aquella que entiendes completamente antes de comprometerte.</p>
+        <footer>— Carla Mendoza, Analista de Inversiones SOFBE</footer>
+      </blockquote>
+
+      <h2>Paso 3: Revisa la situación legal del inmueble</h2>
+      <ol>
+        <li>Solicita la <strong>Partida Registral</strong> en SUNARP (puede hacerse online).</li>
+        <li>Verifica que no existan hipotecas, embargos o cargas pendientes.</li>
+        <li>Confirma que el vendedor es el propietario real y tiene DNI vigente.</li>
+        <li>Si es un proyecto en planos, revisa la habilitación urbana y el expediente municipal.</li>
+      </ol>
+
+      <div class="img-grid-2">
+        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" alt="Documentos legales"/>
+        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=600&q=80" alt="Calculadora inversión"/>
+      </div>
+
+      <h3>Financiamiento: opciones disponibles en 2026</h3>
+      <p>El Banco de la Nación, Interbank, BCP y BBVA ofrecen créditos hipotecarios desde 8.5% TEA para primera vivienda. El programa <strong>MiVivienda</strong> permite tasas subsidiadas y bono de buen pagador de hasta S/ 33,000. Consulta con SOFBE qué opción se adapta mejor a tu perfil crediticio.</p>
+    `
+  },
+  {
+    id: 3,
+    cat: 'legal', catLabel: 'Legal', badgeClass: 'cat-legal',
+    img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=85',
+    imgAlt: 'Documentos para comprar propiedad en Perú',
+    author: 'Equipo SOFBE', date: '5 de mayo, 2026', comments: 5,
+    title: '¿Qué documentos necesitas para comprar una propiedad en Perú en 2026?',
+    tags: ['Compraventa', 'SUNARP', 'Legal'],
+    content: `
+      <p><strong>Comprar una propiedad en Perú implica más que acordar un precio y firmar un papel.</strong> El proceso legal es riguroso y protege a ambas partes, pero requiere conocer exactamente qué documentos solicitar, cuáles son los plazos y qué organismos intervienen. Esta guía te llevará paso a paso desde la oferta hasta la inscripción en Registros Públicos.</p>
+
+      <h2>Documentos del vendedor que DEBES exigir</h2>
+      <ul>
+        <li><strong>Partida Registral actualizada (SUNARP):</strong> confirma titularidad y libre de cargas. Vigencia máxima recomendada: 3 días antes de la firma.</li>
+        <li><strong>DNI vigente del vendedor</strong> (si es persona jurídica: ficha RUC, poderes notariales).</li>
+        <li><strong>HR y PU de la municipalidad:</strong> Hoja de Resumen y Predio Urbano del impuesto predial al día.</li>
+        <li><strong>Constancia de no adeudo:</strong> impuesto predial y arbitrios pagados hasta el año en curso.</li>
+        <li><strong>Planos de distribución aprobados</strong> (si es departamento, también el reglamento interno).</li>
+      </ul>
+
+      <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1000&q=80" alt="Documentos legales propiedad"/>
+
+      <h2>El proceso paso a paso</h2>
+      <ol>
+        <li><strong>Oferta y seña:</strong> contrato privado con arras confirmatorias (generalmente 10% del precio).</li>
+        <li><strong>Due diligence legal:</strong> 15 a 30 días para verificar toda la documentación.</li>
+        <li><strong>Minuta de compraventa:</strong> redactada por abogado o notario de confianza.</li>
+        <li><strong>Escritura pública:</strong> firma ante notario, pago de impuestos (Alcabala: 3% del valor).</li>
+        <li><strong>Inscripción SUNARP:</strong> 7 a 15 días hábiles para que el título quede registrado a tu nombre.</li>
+      </ol>
+
+      <blockquote>
+        <p>Un trámite mal hecho hoy puede convertirse en un problema legal costoso mañana. No ahorres en asesoría legal.</p>
+        <footer>— Área Legal SOFBE</footer>
+      </blockquote>
+
+      <div class="img-grid-2">
+        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80" alt="Notaría firma contrato"/>
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="SUNARP inscripción"/>
+      </div>
+
+      <h3>Costos que debes considerar además del precio</h3>
+      <p>El precio de lista es solo el inicio. Suma: Alcabala (3%), honorarios notariales (0.3-0.5%), derechos registrales SUNARP (~S/ 300-600), comisión del agente inmobiliario (2-3%), y posibles gastos de regularización. Un presupuesto realista incluye entre 5% y 8% adicional sobre el precio de compra.</p>
+    `
+  },
+  {
+    id: 4,
+    cat: 'inversion', catLabel: 'Inversión', badgeClass: 'cat-inversion',
+    img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=85',
+    imgAlt: '10 mejoras que aumentan el valor de venta de tu casa',
+    author: 'Marco Reyes', date: '28 de abril, 2026', comments: 9,
+    title: '10 mejoras que aumentan el valor de venta de tu casa hasta en un 30%',
+    tags: ['Compraventa', 'Tasación', 'Casas'],
+    content: `
+      <p><strong>Vender una propiedad al mejor precio posible no es cuestión de suerte: es estrategia.</strong> Las estadísticas del mercado peruano muestran que propiedades con mejoras básicas bien ejecutadas se venden entre 15% y 30% más caro que propiedades similares sin mantenimiento, y se venden en la mitad del tiempo.</p>
+
+      <h2>Las 10 mejoras con mayor retorno de inversión</h2>
+
+      <ol>
+        <li><strong>Pintura exterior e interior:</strong> la mejora de mayor impacto visual por menor costo. Una mano de pintura neutra y moderna puede cambiar completamente la percepción del inmueble. ROI estimado: 200-300%.</li>
+        <li><strong>Cocina actualizada:</strong> cambiar frentes de gabinetes, mesada y grifería sin tocar la estructura puede transformar el espacio por S/ 2,000-4,000. El comprador promedio valora mucho la cocina.</li>
+        <li><strong>Baños en buen estado:</strong> silicona nueva, azulejos limpios, griferías sin goteras y buena iluminación. No es renovar, es presentar bien.</li>
+        <li><strong>Iluminación:</strong> reemplaza todas las bombillas por LED cálido. El ambiente luminoso influye directamente en la decisión de compra.</li>
+        <li><strong>Jardín y fachada:</strong> césped cortado, plantas podadas y entrada limpia. La primera impresión se forma en 8 segundos.</li>
+      </ol>
+
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1000&q=80" alt="Remodelación cocina"/>
+
+      <ol start="6">
+        <li><strong>Pisos en buen estado:</strong> pule y barniza los pisos de madera. Si son cerámicos, reemplaza las piezas rotas.</li>
+        <li><strong>Ventanas y puertas:</strong> bisagras lubricadas, cerraduras funcionales, sin vidrios rotos. Parecen detalles menores pero generan desconfianza.</li>
+        <li><strong>Orden y despersonalización:</strong> retira fotos familiares, souvenirs y exceso de muebles. El comprador necesita imaginar su propia vida en el espacio.</li>
+        <li><strong>Documentación en regla:</strong> tener los papeles al día acelera la decisión. Un inmueble sin deudas prediales y con SUNARP actualizado transmite confianza.</li>
+        <li><strong>Fotografía profesional:</strong> el 87% de los compradores busca en internet antes de visitar. Fotos de calidad multiplican las consultas.</li>
+      </ol>
+
+      <blockquote>
+        <p>No vendas una propiedad, vende un estilo de vida. La presentación lo es todo.</p>
+        <footer>— Marco Reyes, Asesor Senior SOFBE</footer>
+      </blockquote>
+    `
+  },
+  {
+    id: 5,
+    cat: 'consejos', catLabel: 'Consejos', badgeClass: 'cat-consejos',
+    img: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=85',
+    imgAlt: 'Alquilar o comprar en Chimbote 2026',
+    author: 'Jesús Vílchez', date: '15 de abril, 2026', comments: 11,
+    title: '¿Alquilar o comprar en 2026? Análisis del mercado en Chimbote',
+    tags: ['Alquiler', 'Nuevo Chimbote', 'Compraventa'],
+    content: `
+      <p><strong>La pregunta que más nos hacen en SOFBE es: ¿me conviene más alquilar o comprar?</strong> La respuesta depende de tu situación financiera, tu estabilidad laboral y tus planes de vida. Pero hay un contexto de mercado que hace que 2026 sea un año particularmente favorable para dar el salto a la compra en Chimbote.</p>
+
+      <h2>El costo de alquilar ha subido un 12% en 12 meses</h2>
+      <p>En Chimbote y Nuevo Chimbote, el alquiler promedio de un departamento de 2 habitaciones pasó de S/ 1,350 a S/ 1,510 mensual entre abril 2025 y abril 2026. Proyectando esa tendencia, en 5 años habrás pagado más de S/ 100,000 en alquileres sin adquirir ningún patrimonio.</p>
+
+      <div class="img-grid-2">
+        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=80" alt="Departamento en alquiler"/>
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80" alt="Casa propia"/>
+      </div>
+
+      <h2>Cuándo conviene alquilar</h2>
+      <ul>
+        <li>Si tu empleo es temporal o tienes alta probabilidad de cambiar de ciudad en menos de 3 años.</li>
+        <li>Si no tienes ahorros suficientes para la cuota inicial (mínimo 10-20% del valor).</li>
+        <li>Si tus ingresos no superan el umbral para calificar a un crédito hipotecario.</li>
+        <li>Si estás en proceso de planificación familiar y aún no tienes claro cuánto espacio necesitarás.</li>
+      </ul>
+
+      <h2>Cuándo conviene comprar</h2>
+      <ul>
+        <li>Si llevas más de 2 años en la misma ciudad con empleo estable.</li>
+        <li>Si tienes entre 15% y 25% del valor disponible como cuota inicial más gastos.</li>
+        <li>Si la cuota hipotecaria mensual no supera el 30% de tus ingresos netos familiares.</li>
+        <li>Si el mercado local muestra tendencia alcista sostenida (como es el caso de N. Chimbote).</li>
+      </ul>
+
+      <blockquote>
+        <p>En el mercado actual de Chimbote, quien califica para un crédito y tiene la cuota inicial, compra. El alquiler ya no es más barato que la hipoteca en muchos segmentos.</p>
+        <footer>— Jesús Vílchez, Asesor Senior SOFBE</footer>
+      </blockquote>
+    `
+  },
+  {
+    id: 6,
+    cat: 'mercado', catLabel: 'Mercado', badgeClass: 'cat-mercado',
+    img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=85',
+    imgAlt: 'Nuevos proyectos inmobiliarios Nuevo Chimbote 2026',
+    author: 'Carla Mendoza', date: '3 de abril, 2026', comments: 3,
+    title: 'Nuevos proyectos inmobiliarios que transforman Nuevo Chimbote en 2026',
+    tags: ['Nuevo Chimbote', 'Departamentos', 'Inversión'],
+    content: `
+      <p><strong>Nuevo Chimbote vive una transformación urbana sin precedentes en su historia reciente.</strong> Cuatro grandes proyectos en construcción, dos urbanizaciones nuevas en habilitación y una zona comercial en expansión están redibujando el mapa de la ciudad y creando nuevas oportunidades para compradores e inversores.</p>
+
+      <h2>Los proyectos más relevantes de 2026</h2>
+
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1000&q=80" alt="Construcción proyecto inmobiliario"/>
+
+      <ol>
+        <li>
+          <strong>Torres del Pacífico — Urb. Los Cedros:</strong> complejo de 3 torres de 12 pisos con 144 departamentos. Entrega estimada: Q4 2026. Precio desde S/ 195,000. Incluye áreas verdes, gimnasio y estacionamiento subterráneo.
+        </li>
+        <li>
+          <strong>Residencial Casuarinas Norte:</strong> 68 casas de 2 y 3 pisos en urbanización privada con seguridad 24/7. Desde S/ 285,000. A 3 minutos del Real Plaza Chimbote.
+        </li>
+        <li>
+          <strong>Plaza Comercial Pardo:</strong> no es residencial, pero su apertura revaloriza el corredor de la Av. José Pardo y zonas aledañas en un radio de 800 metros.
+        </li>
+        <li>
+          <strong>Habilitación Urb. Vista al Mar — Km 425:</strong> 120 lotes desde 90 m² con servicios básicos. Ideal para inversores a largo plazo o quienes quieren construir su propio diseño.
+        </li>
+      </ol>
+
+      <div class="img-grid-2">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" alt="Edificio moderno"/>
+        <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" alt="Urbanización nueva"/>
+      </div>
+
+      <blockquote>
+        <p>Las ciudades intermedias del norte peruano están captando inversión que antes iba solo a Lima. Chimbote es hoy una de las apuestas más sólidas del mercado nacional.</p>
+        <footer>— Informe Sectorial SOFBE, abril 2026</footer>
+      </blockquote>
+
+      <h3>¿Dónde comprar hoy para vender bien mañana?</h3>
+      <p>Los asesores de SOFBE identifican la zona de expansión sur (entre el cruce de la Panamericana y el sector Bruces) como el punto de mayor potencial de revalorización para los próximos 5 años. El precio actual por m² es aún un 18% más bajo que en zonas consolidadas, con perspectiva de alcanzar paridad en 3 años.</p>
+    `
+  },
+  {
+    id: 7,
+    cat: 'legal', catLabel: 'Legal', badgeClass: 'cat-legal',
+    img: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=85',
+    imgAlt: 'Contrato de alquiler Perú cláusulas importantes',
+    author: 'Equipo SOFBE', date: '20 de marzo, 2026', comments: 6,
+    title: 'Todo lo que debes saber antes de firmar un contrato de alquiler en Perú',
+    tags: ['Alquiler', 'SUNARP', 'Compraventa'],
+    content: `
+      <p><strong>Firmar un contrato de arrendamiento sin leerlo con atención puede costarte caro.</strong> En Perú, el Código Civil regula el arrendamiento, pero deja amplios márgenes a la libre negociación entre partes. Eso significa que muchas cláusulas leoninas se cuelan en contratos que el inquilino firma sin entender.</p>
+
+      <h2>Las 7 cláusulas que siempre debes revisar</h2>
+      <ol>
+        <li><strong>Duración y renovación automática:</strong> verifica si el contrato se renueva solo y en qué condiciones puedes darlo por terminado.</li>
+        <li><strong>Monto y forma de pago:</strong> especifica moneda, fecha límite de pago y consecuencias del retraso.</li>
+        <li><strong>Depósito de garantía:</strong> el máximo legal es 2 meses de renta. Exige recibo por el depósito y condiciones de devolución por escrito.</li>
+        <li><strong>Mantenimiento y reparaciones:</strong> qué cubre el propietario y qué queda bajo responsabilidad del inquilino.</li>
+        <li><strong>Subarrendamiento:</strong> si no está permitido explícitamente, está prohibido. Pero si lo necesitas, negocia que quede en el contrato.</li>
+        <li><strong>Penalidades por desalojo anticipado:</strong> generalmente equivale a 1-2 meses de renta. Asegúrate de que esté claramente definido.</li>
+        <li><strong>Estado de entrega:</strong> incluye un acta de entrega con fotos del estado del inmueble el día que tomas posesión.</li>
+      </ol>
+
+      <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1000&q=80" alt="Firma contrato arrendamiento"/>
+
+      <blockquote>
+        <p>Un contrato de alquiler bien redactado protege tanto al propietario como al inquilino. Cuando hay problemas, el papel siempre manda.</p>
+        <footer>— Área Legal SOFBE</footer>
+      </blockquote>
+
+      <h2>¿Debo inscribir el contrato en SUNARP?</h2>
+      <p>No es obligatorio, pero sí recomendable. Un contrato inscrito en SUNARP es oponible a terceros: si el propietario vende el inmueble, el nuevo dueño debe respetar el arrendamiento hasta su vencimiento. Para contratos de más de 6 meses y donde el inquilino ha invertido en mejoras, la inscripción es altamente recomendada.</p>
+
+      <div class="img-grid-2">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Documentos arrendamiento"/>
+        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=80" alt="Departamento alquilado"/>
+      </div>
+    `
+  },
+  {
+    id: 8,
+    cat: 'alquiler', catLabel: 'Alquiler', badgeClass: 'cat-alquiler',
+    img: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200&q=85',
+    imgAlt: 'Encontrar departamento alquiler Chimbote',
+    author: 'Marco Reyes', date: '8 de marzo, 2026', comments: 4,
+    title: 'Cómo encontrar el departamento ideal en alquiler en Chimbote sin perder tiempo',
+    tags: ['Alquiler', 'Nuevo Chimbote', 'Departamentos'],
+    content: `
+      <p><strong>El mercado de alquiler en Chimbote se mueve rápido.</strong> Un buen departamento a precio justo puede recibir 10 consultas en 48 horas. Si no estás preparado con los documentos y la decisión clara, lo perderás ante otro postulante. Esta guía te ayuda a acortar el proceso y encontrar el departamento correcto sin semanas de búsqueda.</p>
+
+      <h2>Define tu perfil de búsqueda antes de empezar</h2>
+      <p>Antes de hacer la primera llamada, ten claro: zona geográfica de interés, rango de precio máximo, número de habitaciones necesarias, si necesitas estacionamiento, y si admite mascotas o no (muchas propiedades no lo hacen). Con ese filtro, reduce el universo de opciones a un máximo de 10-15 inmuebles.</p>
+
+      <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1000&q=80" alt="Departamento moderno en alquiler"/>
+
+      <h2>Checklist para la visita: 12 puntos clave</h2>
+      <ol>
+        <li>Presión de agua en todos los caños y ducha.</li>
+        <li>Funcionamiento de todas las instalaciones eléctricas.</li>
+        <li>Estado de paredes y techo: manchas de humedad o grietas.</li>
+        <li>Ventilación natural en dormitorios y cocina.</li>
+        <li>Ruido exterior e interior (vecinos, calle, ascensor).</li>
+        <li>Seguridad: cerradura, reja, cámara de vigilancia.</li>
+        <li>Espacio de almacenamiento (closets, depósito).</li>
+        <li>Condición de los pisos y carpintería.</li>
+        <li>Áreas comunes si es edificio o conjunto residencial.</li>
+        <li>Gastos comunes incluidos y no incluidos en el alquiler.</li>
+        <li>Señal de celular e internet disponible en la zona.</li>
+        <li>Distancia real (no en mapa) al trabajo, colegio y supermercado.</li>
+      </ol>
+
+      <div class="img-grid-2">
+        <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=80" alt="Cocina departamento"/>
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&q=80" alt="Sala departamento"/>
+      </div>
+
+      <blockquote>
+        <p>El inquilino que llega preparado con todos sus documentos y una decisión clara tiene 3 veces más probabilidad de conseguir el departamento que busca.</p>
+        <footer>— Marco Reyes, Asesor de Alquileres SOFBE</footer>
+      </blockquote>
+
+      <h3>Documentos que debes tener listos</h3>
+      <ul>
+        <li>DNI vigente (copia y original).</li>
+        <li>3 últimas boletas de pago o declaración de renta.</li>
+        <li>Carta de trabajo o contrato laboral vigente.</li>
+        <li>Referencias de alquileres anteriores (si las tienes).</li>
+        <li>Número de cuenta para el depósito de garantía.</li>
+      </ul>
+    `
+  },
+  {
+    id: 9,
+    cat: 'nuevos', catLabel: 'Proyectos', badgeClass: 'cat-nuevos',
+    img: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=85',
+    imgAlt: 'Vivienda social Techo Propio Áncash 2026',
+    author: 'Jesús Vílchez', date: '18 de febrero, 2026', comments: 8,
+    title: 'Vivienda social y proyectos Techo Propio: oportunidades reales en Áncash 2026',
+    tags: ['Nuevo Chimbote', 'Casas', 'Inversión'],
+    content: `
+      <p><strong>Los programas de vivienda del Estado peruano siguen siendo una vía accesible y real para miles de familias.</strong> En 2026, el programa Techo Propio ha ampliado su cobertura en Áncash, con nuevas habilitaciones en Nuevo Chimbote, Santa y Huarmey. Si aún no tienes casa propia, esto puede ser tu oportunidad.</p>
+
+      <h2>¿Qué es Techo Propio y cómo funciona?</h2>
+      <p>Techo Propio es un programa del Fondo MiVivienda que otorga un <strong>Bono Familiar Habitacional (BFH)</strong> a familias de bajos ingresos para adquirir, construir o mejorar una vivienda. El bono no se devuelve: es un subsidio directo del Estado.</p>
+
+      <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=1000&q=80" alt="Casa nueva programa vivienda social"/>
+
+      <h2>Modalidades disponibles en 2026</h2>
+      <ol>
+        <li>
+          <strong>Adquisición de Vivienda Nueva (AVN):</strong> compra una vivienda nueva de hasta S/ 105,600 (25 UIT). El bono llega a S/ 33,600. Solo debes aportar el ahorro mínimo (S/ 930) y un crédito hipotecario para la diferencia.
+        </li>
+        <li>
+          <strong>Construcción en Sitio Propio (CSP):</strong> si ya tienes un lote registrado, el bono financia la construcción. Hasta S/ 33,600 de subsidio.
+        </li>
+        <li>
+          <strong>Mejoramiento de Vivienda Propia (MVP):</strong> para ampliar o mejorar una vivienda existente. Bono de hasta S/ 10,500.
+        </li>
+      </ol>
+
+      <div class="img-grid-2">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80" alt="Vivienda social fachada"/>
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80" alt="Entrega llaves vivienda nueva"/>
+      </div>
+
+      <h2>Requisitos actualizados para postular</h2>
+      <ul>
+        <li>No ser propietario de otro inmueble a nivel nacional (verifica en SUNARP).</li>
+        <li>Ingresos familiares no mayores a S/ 3,626 mensuales netos.</li>
+        <li>Contar con ahorro mínimo según la modalidad.</li>
+        <li>Estar inscrito en el Registro de Beneficiarios del programa.</li>
+      </ul>
+
+      <blockquote>
+        <p>En SOFBE te ayudamos a verificar si calificas para Techo Propio y a encontrar proyectos habilitados en tu zona de interés, sin costo de consulta.</p>
+        <footer>— Equipo SOFBE Inmobiliaria</footer>
+      </blockquote>
+
+      <h3>Proyectos habilitados en Áncash 2026</h3>
+      <p>Actualmente hay 4 proyectos inscritos en el programa en Nuevo Chimbote y 2 en Santa. Los precios van desde S/ 78,000 hasta S/ 104,900. Consulta a SOFBE para recibir el listado completo actualizado y acompañamiento en el proceso de postulación.</p>
+    `
+  }
+];
+
+// ---- UTILITY ----
+function getParam(key) {
+  var params = new URLSearchParams(window.location.search);
+  return params.get(key);
+}
+
+function buildRelated(currentId) {
+  var current = ARTICLES[currentId];
+  var related = ARTICLES.filter(function(a) {
+    return a.id !== currentId && (a.cat === current.cat || a.tags.some(function(t) { return current.tags.indexOf(t) !== -1; }));
+  }).slice(0, 4);
+  if (related.length === 0) related = ARTICLES.filter(function(a) { return a.id !== currentId; }).slice(0, 4); // fallback
+
+  var html = '';
+  related.forEach(function(a) {
+    html += '<div class="related-article" onclick="window.location.href=\'single.html?id=' + a.id + '\'">' +
+      '<img src="' + a.img.replace('w=1200', 'w=200') + '" alt="' + a.imgAlt + '"/>' +
+      '<div class="related-article-info">' +
+        '<h6><a href="single.html?id=' + a.id + '">' + a.title + '</a></h6>' +
+        '<span><i class="fa fa-calendar" style="color:#e74c3c;margin-right:4px;"></i>' + a.date + '</span>' +
+      '</div>' +
+    '</div>';
+  });
+  return html;
+}
+
+// ---- RENDER ARTICLE ----
+function renderArticle(id) {
+  var a = ARTICLES[id];
+  if (!a) { window.location.href = 'blog.html'; return; }
+
+  // Page title & breadcrumb
+  document.getElementById('page-title').textContent = 'SOFBE | ' + a.title;
+  document.getElementById('breadcrumb-title').textContent = 'Blog Inmobiliario';
+  document.getElementById('breadcrumb-article').textContent = a.title.substring(0, 40) + '…';
+
+  // Hero
+  document.getElementById('art-hero').src = a.img;
+  document.getElementById('art-hero').alt = a.imgAlt;
+
+  // Badge
+  var badge = document.getElementById('art-badge');
+  badge.textContent = a.catLabel;
+  badge.className = 'article-category-badge ' + a.badgeClass;
+
+  // Meta
+  document.getElementById('art-title').textContent = a.title;
+  document.getElementById('art-author').textContent = a.author;
+  document.getElementById('art-date').textContent = a.date;
+  document.getElementById('art-comments').textContent = a.comments;
+
+  // Content
+  document.getElementById('art-content').innerHTML = a.content;
+
+  // Tags
+  var tagsHtml = '<span>Etiquetas:</span> ';
+  a.tags.forEach(function(t) {
+    tagsHtml += '<a href="blog.html">' + t + '</a> ';
+  });
+  document.getElementById('art-tags').innerHTML = tagsHtml;
+
+  // Navigation
+  var prevId = id > 0 ? id - 1 : null;
+  var nextId = id < ARTICLES.length - 1 ? id + 1 : null;
+  var navHtml = '';
+  if (prevId !== null) navHtml += '<a href="single.html?id=' + prevId + '"><i class="fa fa-arrow-left"></i> Artículo anterior</a>';
+  else navHtml += '<span></span>';
+  if (nextId !== null) navHtml += '<a href="single.html?id=' + nextId + '">Siguiente artículo <i class="fa fa-arrow-right"></i></a>';
+  document.getElementById('art-nav').innerHTML = navHtml;
+
+  // Related
+  document.getElementById('related-articles').innerHTML = buildRelated(id);
+
+  // Default comments text tuned to article
+  document.getElementById('default-comment-1').textContent = 'Excelente artículo sobre ' + a.catLabel.toLowerCase() + '. Información muy útil y bien explicada. Gracias al equipo de SOFBE.';
+  document.getElementById('default-comment-2').textContent = 'Muy completo. Justamente estaba buscando información sobre esto para una decisión que tengo que tomar pronto en Chimbote.';
+}
+
+// ---- INIT ----
+var articleId = parseInt(getParam('id'));
+if (isNaN(articleId) || articleId < 0 || articleId >= ARTICLES.length) articleId = 0;
+renderArticle(articleId);
+</script>
+
+<!-- Comment form logic -->
+<script>
+$(document).ready(function() {
+  // Responder
+  $(document).on('click', '.btn-reply', function(e) {
+    e.preventDefault();
+    var targetId = $(this).data('target');
+    var $form = $('#' + targetId);
+    $('.reply-form').not($form).slideUp(200);
+    $form.slideToggle(250);
+    if ($form.is(':visible')) $form.find('textarea').focus();
+  });
+  $(document).on('click', '.btn-cancel-reply', function(e) {
+    e.preventDefault();
+    $(this).closest('.reply-form').slideUp(200);
+  });
+  $(document).on('click', '.btn-send-reply', function(e) {
+    e.preventDefault();
+    var $rf = $(this).closest('.reply-form');
+    var text = $rf.find('textarea').val().trim();
+    if (!text) { $rf.find('textarea').focus(); return; }
+    var $parent = $rf.closest('.comment-item');
+    var $reply = $('<li class="comment-item" style="margin-left:52px;border-left:3px solid #e74c3c;padding-left:12px;">' +
+      '<div class="comment-avatar"><img src="assets/img/client-face1.png" style="width:40px;height:40px;border-radius:50%;"/></div>' +
+      '<div class="comment-body">' +
+        '<div class="comment-meta"><strong>Tú</strong> <i class="fa fa-clock-o"></i> Ahora</div>' +
+        '<p class="comment-text">' + $('<div>').text(text).html() + '</p>' +
+      '</div></li>');
+    $parent.after($reply);
+    $rf.slideUp(200);
+    $rf.find('textarea').val('');
+    updateCount();
+  });
+
+  // Nuevo comentario
+  $('#comment-form').on('submit', function(e) {
+    e.preventDefault();
+    var name = $('#c-name').val().trim();
+    var email = $('#c-email').val().trim();
+    var text = $('#c-text').val().trim();
+    var $fb = $('#comment-feedback');
+
+    if (!name || !email || !text) {
+      $fb.removeClass('success').addClass('error').text('Por favor completa todos los campos.').show();
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      $fb.removeClass('success').addClass('error').text('Ingresa un correo electrónico válido.').show();
+      return;
+    }
+
+    var idx = Date.now();
+    var $newComment = $('<li class="comment-item" id="comment-' + idx + '">' +
+      '<div class="comment-avatar"><img src="assets/img/client-face2.png" style="width:52px;height:52px;border-radius:50%;"/></div>' +
+      '<div class="comment-body">' +
+        '<div class="comment-meta"><strong>' + $('<div>').text(name).html() + '</strong> <i class="fa fa-clock-o"></i> Ahora</div>' +
+        '<p class="comment-text">' + $('<div>').text(text).html() + '</p>' +
+        '<button class="btn-reply" data-target="reply-' + idx + '"><i class="fa fa-reply"></i> Responder</button>' +
+        '<div class="reply-form" id="reply-' + idx + '">' +
+          '<textarea class="form-control" rows="3" placeholder="Escribe tu respuesta..."></textarea>' +
+          '<div style="margin-top:8px;display:flex;gap:8px;">' +
+            '<button class="btn btn-primary btn-sm btn-send-reply">Publicar respuesta</button>' +
+            '<button class="btn btn-default btn-sm btn-cancel-reply">Cancelar</button>' +
+          '</div>' +
+        '</div>' +
+      '</div></li>');
+
+    $('#comments-list').append($newComment);
+    $('#comment-form')[0].reset();
+    $fb.removeClass('error').addClass('success').text('¡Comentario publicado con éxito!').show();
+    setTimeout(function() { $fb.fadeOut(); }, 4000);
+    updateCount();
+    $('html, body').animate({ scrollTop: $newComment.offset().top - 100 }, 400);
+  });
+
+  function updateCount() {
+    var n = $('#comments-list .comment-item').length;
+    $('#comment-count').text(n);
+  }
+});
+</script>
+
+</body>
+</html>

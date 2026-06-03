@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+<head>
+<style>
+  /* ---- STICKY NAVBAR ---- */
+  .navbar-default.navbar-sticky {
+    position: fixed !important;
+    top: 0; left: 0; right: 0;
+    z-index: 1030; width: 100%;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.15);
+    animation: slideDownNav 0.35s ease;
+  }
+  @keyframes slideDownNav {
+    from { transform: translateY(-100%); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+  body.nav-is-sticky > *:not(.navbar) { margin-top: 0; }
+</style>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>SOFBE | Inmobiliaria - Compra, Venta y Alquiler de Propiedades</title>
+<meta name="description" content="SOFBE es tu inmobiliaria de confianza en el norte del Perú. Encuentra propiedades en venta y alquiler en Chimbote, Nuevo Chimbote y toda la región Áncash."/>
+<meta name="author" content="SOFBE Inmobiliaria"/>
+<meta name="keywords" content="inmobiliaria, propiedades, compra, venta, alquiler, Chimbote, Nuevo Chimbote, Áncash, Perú, SOFBE"/>
+<!-- Open Graph para redes sociales -->
+<meta property="og:title" content="SOFBE | Inmobiliaria"/>
+<meta property="og:description" content="Tu socio de confianza en bienes raíces en el norte del Perú."/>
+<meta property="og:type" content="website"/>
+
+<link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet"/>
+<link href="assets/css/normalize.css" rel="stylesheet"/>
+<link href="assets/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="assets/css/fontello.css" rel="stylesheet"/>
+<link href="assets/fonts/icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet"/>
+<link href="assets/fonts/icon-7-stroke/css/helper.css" rel="stylesheet"/>
+<link href="assets/css/animate.css" media="screen" rel="stylesheet"/>
+<link href="assets/css/bootstrap-select.min.css" rel="stylesheet"/>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="assets/css/icheck.min_all.css" rel="stylesheet"/>
+<link href="assets/css/price-range.css" rel="stylesheet"/>
+<link href="assets/css/owl.carousel.css" rel="stylesheet"/>
+<link href="assets/css/owl.theme.css" rel="stylesheet"/>
+<link href="assets/css/owl.transitions.css" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<link href="assets/css/responsive.css" rel="stylesheet"/>
+
+<!-- Mejoras de estilo específicas para SOFBE -->
+<style>
+  /* ===== MEJORAS SOFBE ===== */
+  :root {
+    --sofbe-primary: #d27e04;
+    --sofbe-dark: #1f2222;
+    --sofbe-light-bg: #FCFCFC;
+  }
+
+  /* Barra superior más compacta y profesional */
+  .header-connect {
+    background: #1f2222;
+    padding: 8px 0;
+    font-size: 13px;
+  }
+  .header-connect p span {
+    margin-right: 18px;
+  }
+
+  /* Navbar mejorado */
+  .navbar-default {
+    border-bottom: 2px solid var(--sofbe-primary);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+
+  .nav-template-menu { display: none !important; }
+
+  /* Hero / Slider */
+  .slider-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    text-shadow: 1px 2px 6px rgba(0,0,0,0.55);
+    line-height: 1.2;
+  }
+  .slider-content p {
+    font-size: 16px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.45);
+  }
+
+  /* Sección "Acerca de SOFBE" */
+  .sofbe-about-section {
+    padding: 60px 0;
+    background: #fff;
+  }
+  .sofbe-about-section h2 {
+    color: #1f2222;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .sofbe-about-section p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555;
+  }
+  .sofbe-about-values {
+    margin-top: 30px;
+  }
+  .sofbe-about-values .value-item {
+    text-align: center;
+    padding: 20px 15px;
+    border-left: 3px solid var(--sofbe-primary);
+    margin-bottom: 20px;
+    background: #fafafa;
+    border-radius: 2px;
+  }
+  .sofbe-about-values .value-item i {
+    font-size: 30px;
+    color: var(--sofbe-primary);
+    display: block;
+    margin-bottom: 10px;
+  }
+  .sofbe-about-values .value-item h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2222;
+    margin: 0 0 6px;
+  }
+  .sofbe-about-values .value-item p {
+    font-size: 13px;
+    color: #777;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Sección de servicios */
+  .sofbe-services {
+    background: var(--sofbe-light-bg);
+    padding: 60px 0;
+  }
+  .sofbe-service-card {
+    background: #fff;
+    border-radius: 4px;
+    padding: 30px 20px;
+    margin-bottom: 24px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    transition: box-shadow .3s, transform .3s;
+  }
+  .sofbe-service-card:hover {
+    box-shadow: 0 6px 24px rgba(210,126,4,0.15);
+    transform: translateY(-4px);
+  }
+  .sofbe-service-card i {
+    font-size: 40px;
+    color: var(--sofbe-primary);
+    display: block;
+    margin-bottom: 14px;
+  }
+  .sofbe-service-card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2222;
+    margin-bottom: 8px;
+  }
+  .sofbe-service-card p {
+    font-size: 13px;
+    color: #777;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+  }
+
+
+  .social ul li a { color: #ccc; }
+  .social ul li a:hover { color: var(--sofbe-primary); }
+
+  /* Responsive ajustes */
+  @media(max-width: 767px) {
+    .slider-content h2 { font-size: 24px; }
+    .sofbe-about-values .value-item { border-left: none; border-top: 3px solid var(--sofbe-primary); }
+  }
+
+  /* Sección CTA (Call to Action) */
+  .sofbe-cta {
+    background: linear-gradient(135deg, #1f2222 0%, #2d3232 100%);
+    padding: 50px 0;
+    text-align: center;
+  }
+  .sofbe-cta h2 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 14px;
+  }
+  .sofbe-cta p {
+    color: #ccc;
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+  .sofbe-cta .btn-cta {
+    background: var(--sofbe-primary);
+    color: #fff;
+    padding: 12px 35px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 2px;
+    margin: 0 8px 10px;
+    transition: background .3s;
+  }
+  .sofbe-cta .btn-cta:hover {
+    background: #b86c03;
+    color: #fff;
+  }
+  .sofbe-cta .btn-cta-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 11px 35px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 2px;
+    margin: 0 8px 10px;
+    transition: all .3s;
+    display: inline-block;
+  }
+  .sofbe-cta .btn-cta-outline:hover {
+    background: #fff;
+    color: #1f2222;
+    text-decoration: none;
+  }
+  /* ---- STICKY NAVBAR ---- */
+  .navbar-default.navbar-sticky {
+    position: fixed !important;
+    top: 0; left: 0; right: 0;
+    z-index: 1030; width: 100%;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.15);
+    animation: slideDownNav 0.35s ease;
+  }
+  @keyframes slideDownNav {
+    from { transform: translateY(-100%); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+  body.nav-is-sticky > *:not(.navbar) { margin-top: 0; }
+</style>
+</head>
+<body>
+
+
+<!-- ===== BARRA SUPERIOR ===== -->
+<div class="header-connect">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-8 col-xs-12">
+        <div class="header-half header-call">
+          <p>
+            <span><i class="pe-7s-call"></i> +51 TU-NUMERO-AQUI</span>
+            <span><i class="pe-7s-mail"></i> TU-CORREO@sofbe.com</span>
+          </p>
+        </div>
+      </div>
+      <div class="col-md-3 col-md-offset-3 col-sm-4 col-xs-12">
+        <div class="header-half header-social">
+          <ul class="list-inline">
+            <li><a href="https://www.facebook.com/TU-PAGINA-AQUI" target="_blank" rel="noopener" title="Facebook SOFBE"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://www.instagram.com/TU-CUENTA-AQUI" target="_blank" rel="noopener" title="Instagram SOFBE"><i class="fa fa-instagram"></i></a></li>
+            <li><a href="https://www.linkedin.com/company/TU-EMPRESA-AQUI" target="_blank" rel="noopener" title="LinkedIn SOFBE"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="https://wa.me/51TUNUMEROAQUI" target="_blank" rel="noopener" title="WhatsApp SOFBE"><i class="fa fa-whatsapp"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NAVEGACIÓN PRINCIPAL ===== -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" data-target="#navigation" data-toggle="collapse" type="button">
+        <span class="sr-only">Abrir navegación</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="home.html">
+        <img alt="SOFBE Inmobiliaria" src="assets/img/logo.png"/>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="navigation">
+      <div class="button navbar-right">
+        <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.45s"
+                onclick="window.location.href='register.html'">Iniciar sesión</button>
+        <button class="navbar-btn nav-button wow fadeInRight" data-wow-delay="0.48s"
+                onclick="window.location.href='submit-property.html'">Publicar propiedad</button>
+      </div>
+      <ul class="main-nav nav navbar-nav navbar-right">
+        <li class="active"><a href="home.html">Inicio</a></li>
+        <li><a href="properties.html">Propiedades</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Servicios <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="properties.html">Compra de propiedades</a></li>
+            <li><a href="properties.html">Alquiler de propiedades</a></li>
+            <li><a href="submit-property.html">Publicar mi propiedad</a></li>
+            <li><a href="user-profile.html">Asesoría inmobiliaria</a></li>
+          </ul>
+        </li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== SLIDER HERO ===== -->
+<div class="slider-area">
+  <div class="slider">
+    <div class="owl-carousel owl-theme" id="bg-slider">
+      <div class="item"><img alt="Propiedades de calidad con SOFBE" src="assets/img/slide1/slider-image-1.jpg"/></div>
+      <div class="item"><img alt="Encuentra tu hogar ideal en el norte del Perú" src="assets/img/slide1/slider-image-2.jpg"/></div>
+      <div class="item"><img alt="Las mejores ubicaciones en Chimbote y Áncash" src="assets/img/slide1/slider-image-4.jpg"/></div>
+    </div>
+  </div>
+  <div class="slider-content">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
+        <h2>Tu Propiedad Ideal Te Está Esperando</h2>
+        <p>En SOFBE encontrarás las mejores propiedades en venta y alquiler en Chimbote, Nuevo Chimbote y toda la región Áncash.</p>
+        <div class="search-form wow pulse" data-wow-delay="0.8s">
+          <form action="properties.html" method="get" class="form-inline">
+            <button class="btn toggle-btn" type="button"><i class="fa fa-bars"></i></button>
+            <div class="form-group">
+              <input class="form-control" placeholder="Buscar por palabra clave..." type="text" name="q"/>
+            </div>
+            <div class="form-group">
+              <select class="selectpicker" data-live-search="true" name="ciudad" title="Selecciona tu ciudad">
+                <option>Nuevo Chimbote</option>
+                <option>Chimbote</option>
+                <option>Coishco</option>
+                <option>Santa</option>
+                <option>Huarmey</option>
+                <option>Caraz</option>
+                <option>Yungay</option>
+                <option>Carhuaz</option>
+                <option>Huaraz</option>
+                <option>Casma</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <select class="selectpicker show-tick form-control" name="tipo">
+                <option value="">-Tipo de operación-</option>
+                <option value="venta">En venta</option>
+                <option value="alquiler">En alquiler</option>
+                <option value="usado">Usado</option>
+              </select>
+            </div>
+            <button class="btn search-btn" type="submit"><i class="fa fa-search"></i></button>
+            <div class="search-toggle" style="display: none;">
+              <div class="search-row">
+                <div class="form-group mar-r-20">
+                  <label>Rango de precio (S/):</label>
+                  <input class="span2" data-slider-max="3000000" data-slider-min="50000"
+                         data-slider-step="10000" data-slider-value="[150000,850000]"
+                         id="price-range" type="text"/>
+                  <br/>
+                  <b class="pull-left color">S/ 50,000</b>
+                  <b class="pull-right color">S/ 3,000,000</b>
+                </div>
+                <div class="form-group mar-l-20">
+                  <label>Área (m²):</label>
+                  <input class="span2" data-slider-max="600" data-slider-min="0"
+                         data-slider-step="5" data-slider-value="[50,450]"
+                         id="property-geo" type="text"/>
+                  <br/>
+                  <b class="pull-left color">40 m²</b>
+                  <b class="pull-right color">1,000 m²</b>
+                </div>
+              </div>
+              <div class="search-row">
+                <div class="form-group mar-r-20">
+                  <label>Baños mínimos:</label>
+                  <input class="span2" data-slider-max="10" data-slider-min="1"
+                         data-slider-step="1" data-slider-value="[1,5]"
+                         id="min-baths" type="text"/>
+                  <br/><b class="pull-left color">1</b><b class="pull-right color">10</b>
+                </div>
+                <div class="form-group mar-l-20">
+                  <label>Habitaciones mínimas:</label>
+                  <input class="span2" data-slider-max="12" data-slider-min="1"
+                         data-slider-step="1" data-slider-value="[1,5]"
+                         id="min-bed" type="text"/>
+                  <br/><b class="pull-left color">1</b><b class="pull-right color">12</b>
+                </div>
+              </div>
+              <div class="search-row">
+                <div class="form-group"><div class="checkbox"><label><input type="checkbox"/> Cochera</label></div></div>
+                <div class="form-group"><div class="checkbox"><label><input type="checkbox"/> Piscina</label></div></div>
+                <div class="form-group"><div class="checkbox"><label><input type="checkbox"/> Jardín</label></div></div>
+                <div class="form-group"><div class="checkbox"><label><input type="checkbox"/> Seguridad 24/7</label></div></div>
+                <div class="form-group"><div class="checkbox"><label><input type="checkbox"/> Terraza</label></div></div>
+                <div class="form-group"><div class="checkbox"><label><input type="checkbox"/> Área de parrilla</label></div></div>
+                <div class="form-group"><div class="checkbox"><label><input type="checkbox"/> Sala de estudio</label></div></div>
+                <div class="form-group"><div class="checkbox"><label><input type="checkbox"/> Vista al mar</label></div></div>
+                <div class="form-group"><div class="checkbox"><label><input type="checkbox"/> Pet Friendly</label></div></div>
+              </div>
+              <hr/>
+              <button class="btn search-btn prop-btm-sheaerch" type="submit"><i class="fa fa-search"></i> Buscar propiedades</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PROPIEDADES DESTACADAS ===== -->
+<div class="content-area home-area-1 recent-property" style="background-color: #FCFCFC; padding-bottom: 55px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
+        <h2>Propiedades Destacadas</h2>
+        <p>Explora nuestra selección de propiedades en las mejores ubicaciones de la región Áncash.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="proerty-th">
+
+        <div class="col-sm-6 col-md-3 p0">
+          <div class="box-two proerty-item">
+            <div class="item-thumb">
+              <a href="property.html"><img src="assets/img/demo/property-1.jpg" alt="Hermosa villa con jardín - Nuevo Chimbote"/></a>
+              <small class="proerty-status">Venta</small>
+            </div>
+            <div class="item-entry overflow">
+              <h5><a href="property.html">Hermosa villa con jardín</a></h5>
+              <div class="dot-hr"></div>
+              <span class="pull-left"><i class="fa fa-bed"></i> 3 &nbsp;<i class="fa fa-tint"></i> 2 &nbsp;<b>120 m²</b></span>
+              <span class="proerty-price pull-right">S/ 850,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 p0">
+          <div class="box-two proerty-item">
+            <div class="item-thumb">
+              <a href="property.html"><img src="assets/img/demo/property-2.jpg" alt="Elegante villa moderna - Chimbote"/></a>
+              <small class="proerty-status">Venta</small>
+            </div>
+            <div class="item-entry overflow">
+              <h5><a href="property.html">Elegante villa moderna</a></h5>
+              <div class="dot-hr"></div>
+              <span class="pull-left"><i class="fa fa-bed"></i> 4 &nbsp;<i class="fa fa-tint"></i> 3 &nbsp;<b>150 m²</b></span>
+              <span class="proerty-price pull-right">S/ 1,250,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 p0">
+          <div class="box-two proerty-item">
+            <div class="item-thumb">
+              <a href="property.html"><img src="assets/img/demo/property-3.jpg" alt="Espectacular residencia privada - Nuevo Chimbote"/></a>
+              <small class="proerty-status">Venta</small>
+            </div>
+            <div class="item-entry overflow">
+              <h5><a href="property.html">Espectacular residencia privada</a></h5>
+              <div class="dot-hr"></div>
+              <span class="pull-left"><i class="fa fa-bed"></i> 5 &nbsp;<i class="fa fa-tint"></i> 4 &nbsp;<b>280 m²</b></span>
+              <span class="proerty-price pull-right">S/ 2,100,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 p0">
+          <div class="box-two proerty-item">
+            <div class="item-thumb">
+              <a href="property.html"><img src="assets/img/demo/property-4.jpg" alt="Villa de lujo - Áncash"/></a>
+              <small class="proerty-status">Venta</small>
+            </div>
+            <div class="item-entry overflow">
+              <h5><a href="property.html">Villa de lujo incomparable</a></h5>
+              <div class="dot-hr"></div>
+              <span class="pull-left"><i class="fa fa-bed"></i> 6 &nbsp;<i class="fa fa-tint"></i> 5 &nbsp;<b>420 m²</b></span>
+              <span class="proerty-price pull-right">S/ 3,500,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 p0">
+          <div class="box-two proerty-item">
+            <div class="item-thumb">
+              <a href="property.html"><img src="assets/img/demo/property-2.jpg" alt="Villa en alquiler - Nuevo Chimbote"/></a>
+              <small class="proerty-status alquiler">Alquiler</small>
+            </div>
+            <div class="item-entry overflow">
+              <h5><a href="property.html">Villa sofisticada y acogedora</a></h5>
+              <div class="dot-hr"></div>
+              <span class="pull-left"><i class="fa fa-bed"></i> 3 &nbsp;<i class="fa fa-tint"></i> 2 &nbsp;<b>110 m²</b></span>
+              <span class="proerty-price pull-right">S/ 1,800/mes</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 p0">
+          <div class="box-two proerty-item">
+            <div class="item-thumb">
+              <a href="property.html"><img src="assets/img/demo/property-4.jpg" alt="Villa moderna en alquiler - Chimbote"/></a>
+              <small class="proerty-status alquiler">Alquiler</small>
+            </div>
+            <div class="item-entry overflow">
+              <h5><a href="property.html">Villa moderna rodeada de naturaleza</a></h5>
+              <div class="dot-hr"></div>
+              <span class="pull-left"><i class="fa fa-bed"></i> 4 &nbsp;<i class="fa fa-tint"></i> 2 &nbsp;<b>160 m²</b></span>
+              <span class="proerty-price pull-right">S/ 2,500/mes</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 p0">
+          <div class="box-two proerty-item">
+            <div class="item-thumb">
+              <a href="property.html"><img src="assets/img/demo/property-3.jpg" alt="Villa familiar en venta - Áncash"/></a>
+              <small class="proerty-status">Venta</small>
+            </div>
+            <div class="item-entry overflow">
+              <h5><a href="property.html">Impresionante villa familiar</a></h5>
+              <div class="dot-hr"></div>
+              <span class="pull-left"><i class="fa fa-bed"></i> 4 &nbsp;<i class="fa fa-tint"></i> 3 &nbsp;<b>135 m²</b></span>
+              <span class="proerty-price pull-right">S/ 780,000</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-3 p0">
+          <div class="box-tree more-proerty text-center">
+            <div class="item-tree-icon">
+              <i class="fa fa-th"></i>
+            </div>
+            <div class="more-entry overflow">
+              <h5><a href="properties.html">¿No encuentras lo que buscas?</a></h5>
+              <h5 class="tree-sub-ttl">Ver todas las propiedades</h5>
+              <a href="properties.html" class="btn border-btn more-black">Ver todas</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ACERCA DE SOFBE ===== -->
+<div class="sofbe-about-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 text-center">
+        <h2>¿Quiénes somos?</h2>
+        <div style="width:50px;height:3px;background:#d27e04;margin:10px auto 20px;"></div>
+        <p>
+          <strong>SOFBE</strong> es una inmobiliaria con más de 10 años de experiencia en el mercado del norte del Perú. 
+          Nos especializamos en la compra, venta y alquiler de propiedades en Chimbote, Nuevo Chimbote y toda la región Áncash. 
+          Nuestro compromiso es brindar un servicio transparente, profesional y personalizado a cada uno de nuestros clientes.
+        </p>
+      </div>
+    </div>
+    <div class="row sofbe-about-values">
+      <div class="col-sm-6 col-md-3">
+        <div class="value-item wow fadeInUp" data-wow-delay="0.1s">
+          <i class="pe-7s-home"></i>
+          <h4>Cualquier propiedad</h4>
+          <p>Contamos con un amplio portafolio de casas, departamentos, terrenos y locales comerciales.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="value-item wow fadeInUp" data-wow-delay="0.2s">
+          <i class="pe-7s-users"></i>
+          <h4>Atención personalizada</h4>
+          <p>Cada cliente recibe asesoría dedicada de un agente especializado en la zona de interés.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="value-item wow fadeInUp" data-wow-delay="0.3s">
+          <i class="pe-7s-notebook"></i>
+          <h4>Proceso sencillo</h4>
+          <p>Te guiamos paso a paso en todo el proceso de compra, venta o alquiler de tu propiedad.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="value-item wow fadeInUp" data-wow-delay="0.4s">
+          <i class="pe-7s-help2"></i>
+          <h4>Soporte continuo</h4>
+          <p>Estamos disponibles para responder todas tus dudas antes, durante y después de la transacción.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SERVICIOS SOFBE ===== -->
+<div class="sofbe-services">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
+        <h2>Nuestros Servicios</h2>
+        <p>Ofrecemos soluciones integrales para todas tus necesidades inmobiliarias.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6 col-md-3">
+        <div class="sofbe-service-card wow fadeInUp" data-wow-delay="0.1s">
+          <i class="fa fa-home"></i>
+          <h4>Compra de Propiedades</h4>
+          <p>Te ayudamos a encontrar la propiedad perfecta dentro de tu presupuesto y zona preferida.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="sofbe-service-card wow fadeInUp" data-wow-delay="0.2s">
+          <i class="fa fa-key"></i>
+          <h4>Alquiler de Propiedades</h4>
+          <p>Gestiona el alquiler de tu propiedad o encuentra el inmueble ideal para vivir o tu negocio.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="sofbe-service-card wow fadeInUp" data-wow-delay="0.3s">
+          <i class="fa fa-bar-chart"></i>
+          <h4>Tasación y Valuación</h4>
+          <p>Conoce el valor real de mercado de tu propiedad con nuestro equipo de peritos certificados.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-3">
+        <div class="sofbe-service-card wow fadeInUp" data-wow-delay="0.4s">
+          <i class="fa fa-file-text"></i>
+          <h4>Asesoría Legal</h4>
+          <p>Acompañamiento en todos los trámites legales y documentación notarial de tus transacciones.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TESTIMONIOS ===== -->
+<div class="testimonial-area recent-property" style="background-color: #fff; padding-bottom: 15px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
+        <h2>Lo que dicen nuestros clientes</h2>
+        <p>La satisfacción de nuestros clientes es nuestro mayor logro.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row testimonial">
+        <div class="col-md-12">
+          <div id="testimonial-slider">
+            <div class="item">
+              <div class="client-text">
+                <p>"Excelente atención y gran profesionalismo. El equipo de SOFBE nos asesoró durante todo el proceso de compra y fue una experiencia totalmente satisfactoria."</p>
+                <h4><strong>Carlos Mendoza</strong> &nbsp;–&nbsp; <i>Cliente satisfecho, Nuevo Chimbote</i></h4>
+              </div>
+              <div class="client-face wow fadeInRight" data-wow-delay=".9s">
+                <img alt="Carlos Mendoza - Cliente SOFBE" src="assets/img/client-face1.png"/>
+              </div>
+            </div>
+            <div class="item">
+              <div class="client-text">
+                <p>"Encontré el departamento ideal gracias a SOFBE. Siempre estuvieron atentos y dispuestos a resolver cada consulta. Los recomiendo sin dudarlo."</p>
+                <h4><strong>Ana Torres</strong> &nbsp;–&nbsp; <i>Compradora de vivienda, Chimbote</i></h4>
+              </div>
+              <div class="client-face">
+                <img alt="Ana Torres - Cliente SOFBE" src="assets/img/client-face2.png"/>
+              </div>
+            </div>
+            <div class="item">
+              <div class="client-text">
+                <p>"Como inversionista, valoré mucho la transparencia y la rapidez del equipo de SOFBE. Un servicio profesional que supera las expectativas."</p>
+                <h4><strong>Joseph Quispe</strong> &nbsp;–&nbsp; <i>Inversionista inmobiliario</i></h4>
+              </div>
+              <div class="client-face">
+                <img alt="Joseph Quispe - Cliente SOFBE" src="assets/img/client-face1.png"/>
+              </div>
+            </div>
+            <div class="item">
+              <div class="client-text">
+                <p>"La gestión de mi alquiler con SOFBE fue impecable. Trato cercano, eficiente y completamente transparente. Muy recomendados."</p>
+                <h4><strong>María Paredes</strong> &nbsp;–&nbsp; <i>Arrendataria, Nuevo Chimbote</i></h4>
+              </div>
+              <div class="client-face">
+                <img alt="María Paredes - Cliente SOFBE" src="assets/img/client-face2.png"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ESTADÍSTICAS / CONTADORES ===== -->
+<div class="count-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1 col-sm-12 text-center page-title">
+        <h2>Puedes confiar en SOFBE</h2>
+        <p>Más de una década impulsando el mercado inmobiliario del norte del Perú.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-xs-12 percent-blocks m-main" data-waypoint-scroll="true">
+        <div class="row">
+          <div class="col-sm-3 col-xs-6">
+            <div class="count-item">
+              <div class="count-item-circle"><span class="pe-7s-users"></span></div>
+              <div class="chart" data-percent="5000">
+                <h2 class="percent" id="counter">0</h2>
+                <h5>Clientes satisfechos</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-xs-6">
+            <div class="count-item">
+              <div class="count-item-circle"><span class="pe-7s-home"></span></div>
+              <div class="chart" data-percent="1200">
+                <h2 class="percent" id="counter1">0</h2>
+                <h5>Propiedades disponibles</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-xs-6">
+            <div class="count-item">
+              <div class="count-item-circle"><span class="pe-7s-flag"></span></div>
+              <div class="chart" data-percent="12">
+                <h2 class="percent" id="counter2">0</h2>
+                <h5>Ciudades atendidas</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 col-xs-6">
+            <div class="count-item">
+              <div class="count-item-circle"><span class="pe-7s-graph2"></span></div>
+              <div class="chart" data-percent="3800">
+                <h2 class="percent" id="counter3">0</h2>
+                <h5>Transacciones exitosas</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CALL TO ACTION ===== -->
+<div class="sofbe-cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h2>¿Listo para encontrar tu propiedad ideal?</h2>
+        <p>Nuestro equipo de asesores está disponible para ayudarte a tomar la mejor decisión.</p>
+        <a href="properties.html" class="btn btn-cta">Ver propiedades</a>
+        <a href="contact.html" class="btn-cta-outline">Contáctanos</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CTA COMPRA/VENTA ===== -->
+<div class="boy-sale-area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-10 col-sm-offset-1 col-md-offset-0 col-xs-12">
+        <div class="asks-first">
+          <div class="asks-first-circle"><span class="fa fa-search"></span></div>
+          <div class="asks-first-info">
+            <h2>¿Buscas una propiedad?</h2>
+            <p>Tenemos cientos de inmuebles disponibles en las mejores ubicaciones de Áncash. Encuentra la tuya hoy.</p>
+          </div>
+          <div class="asks-first-arrow">
+            <a href="properties.html"><span class="fa fa-angle-right"></span></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-10 col-sm-offset-1 col-xs-12 col-md-offset-0">
+        <div class="asks-first">
+          <div class="asks-first-circle"><span class="fa fa-usd"></span></div>
+          <div class="asks-first-info">
+            <h2>¿Quieres vender o alquilar?</h2>
+            <p>Publica tu propiedad con SOFBE y llega a miles de compradores y arrendatarios potenciales en todo el país.</p>
+          </div>
+          <div class="asks-first-arrow">
+            <a href="submit-property.html"><span class="fa fa-angle-right"></span></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <p class="asks-call">¿TIENES PREGUNTAS? LLÁMANOS: <span class="strong"> +51 TU-NUMERO-AQUI</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PIE DE PÁGINA ===== -->
+<div class="footer-area">
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+
+        <!-- Columna: Acerca de SOFBE -->
+        <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+          <div class="single-footer">
+            <h4>Acerca de SOFBE</h4>
+            <div class="footer-title-line"></div>
+            <img alt="Logo SOFBE Inmobiliaria" class="wow pulse" data-wow-delay="1s" src="assets/img/footer-logo.png"/>
+            <p>Tu socio de confianza en bienes raíces. Más de 10 años de experiencia en el mercado del norte del Perú.</p>
+            <ul class="footer-adress">
+              <li><i class="pe-7s-map-marker strong"></i> Av. José Pardo 908, Nuevo Chimbote, Áncash</li>
+              <li><i class="pe-7s-mail strong"></i> TU-CORREO@sofbe.com</li>
+              <li><i class="pe-7s-call strong"></i> +51 TU-NUMERO-AQUI</li>
+              <li><i class="pe-7s-clock strong"></i> Lun – Sáb: 9:00 am – 6:00 pm</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Columna: Navegación rápida -->
+        <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+          <div class="single-footer">
+            <h4>Navegación rápida</h4>
+            <div class="footer-title-line"></div>
+            <ul class="footer-menu">
+              <li><a href="home.html">Inicio</a></li>
+              <li><a href="properties.html">Propiedades</a></li>
+              <li><a href="submit-property.html">Publicar propiedad</a></li>
+              <li><a href="blog.html">Blog inmobiliario</a></li>
+              <li><a href="contact.html">Contáctanos</a></li>
+              <li><a href="faq.html">Preguntas frecuentes</a></li>
+              <li><a href="register.html">Iniciar sesión / Registrarse</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Columna: Últimas noticias -->
+        <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+          <div class="single-footer">
+            <h4>Últimas Noticias</h4>
+            <div class="footer-title-line"></div>
+            <ul class="footer-blog">
+              <li>
+                <div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
+                  <a href="single.html"><img src="assets/img/demo/small-proerty-2.jpg" alt="Nuevas propiedades en Chimbote"/></a>
+                  <span class="blg-date">15-03-2026</span>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
+                  <h6><a href="single.html">Nuevas propiedades en Chimbote</a></h6>
+                  <p>Incorporamos nuevos inmuebles en las zonas más exclusivas de la ciudad.</p>
+                </div>
+              </li>
+              <li>
+                <div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
+                  <a href="single.html"><img src="assets/img/demo/small-proerty-2.jpg" alt="Consejos para comprar tu primer hogar"/></a>
+                  <span class="blg-date">02-04-2026</span>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
+                  <h6><a href="single.html">Consejos para comprar tu primer hogar</a></h6>
+                  <p>Todo lo que debes saber antes de tomar la decisión más importante de tu vida.</p>
+                </div>
+              </li>
+              <li>
+                <div class="col-md-3 col-sm-4 col-xs-4 blg-thumb p0">
+                  <a href="single.html"><img src="assets/img/demo/small-proerty-2.jpg" alt="El mercado inmobiliario en Áncash 2026"/></a>
+                  <span class="blg-date">10-05-2026</span>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-8 blg-entry">
+                  <h6><a href="single.html">El mercado inmobiliario en Áncash 2026</a></h6>
+                  <p>Análisis y perspectivas del sector para el presente año en nuestra región.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Columna: Newsletter y redes sociales -->
+        <div class="col-md-3 col-sm-6 wow fadeInRight animated">
+          <div class="single-footer news-letter">
+            <h4>Mantente informado</h4>
+            <div class="footer-title-line"></div>
+            <p>Suscríbete para recibir las últimas noticias y ofertas de propiedades de SOFBE.</p>
+            <form>
+              <div class="input-group">
+                <input class="form-control" placeholder="Tu correo electrónico..." type="email" required/>
+                <span class="input-group-btn">
+                  <button class="btn btn-primary subscribe" type="submit" title="Suscribirse">
+                    <i class="pe-7s-paper-plane pe-2x"></i>
+                  </button>
+                </span>
+              </div>
+            </form>
+            <div class="social pull-right" style="margin-top:20px;">
+              <ul>
+                <li><a href="https://www.facebook.com/TU-PAGINA-AQUI" target="_blank" rel="noopener" title="Facebook SOFBE"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/TU-CUENTA-AQUI" target="_blank" rel="noopener" title="Instagram SOFBE"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.linkedin.com/company/TU-EMPRESA-AQUI" target="_blank" rel="noopener" title="LinkedIn SOFBE"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://wa.me/51TUNUMEROAQUI" target="_blank" rel="noopener" title="WhatsApp SOFBE"><i class="fa fa-whatsapp"></i></a></li>
+                <li><a href="https://www.youtube.com/@sofbe" target="_blank" rel="noopener" title="YouTube SOFBE"><i class="fa fa-youtube"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- ===== SCRIPTS ===== -->
+<script src="assets/js/modernizr-2.6.2.min.js"></script>
+<script src="assets/js/jquery-1.10.2.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap-select.min.js"></script>
+<script src="assets/js/bootstrap-hover-dropdown.js"></script>
+<script src="assets/js/easypiechart.min.js"></script>
+<script src="assets/js/jquery.easypiechart.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/wow.js"></script>
+<script src="assets/js/icheck.min.js"></script>
+<script src="assets/js/price-range.js"></script>
+<script src="assets/js/main.js"></script>
+<!-- Cursor personalizado SOFBE -->
+<div id="sofbe-cursor"></div>
+<div id="sofbe-cursor-ring"></div>
+<script>
+(function() {
+    var dot  = document.getElementById('sofbe-cursor');
+    var ring = document.getElementById('sofbe-cursor-ring');
+    if (!dot || !ring) return;
+    var mx = 0, my = 0, rx = 0, ry = 0, activated = false;
+    document.addEventListener('mousemove', function(e) {
+        mx = e.clientX; my = e.clientY;
+        dot.style.left = mx + 'px';
+        dot.style.top  = my + 'px';
+        if (!activated) {
+            document.body.classList.add('sofbe-cursor-active');
+            activated = true;
+        }
+    });
+    (function loop() {
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        ring.style.left = rx + 'px';
+        ring.style.top  = ry + 'px';
+        requestAnimationFrame(loop);
+    })();
+    document.querySelectorAll('a, button, .proerty-item, .navbar-brand, .btn, input[type="submit"]').forEach(function(el) {
+        el.addEventListener('mouseenter', function() {
+            dot.classList.add('on-link');
+            ring.classList.add('on-link');
+        });
+        el.addEventListener('mouseleave', function() {
+            dot.classList.remove('on-link');
+            ring.classList.remove('on-link');
+        });
+    });
+    document.addEventListener('mousedown', function() {
+        dot.classList.add('expanded');
+        ring.classList.add('expanded');
+    });
+    document.addEventListener('mouseup', function() {
+        dot.classList.remove('expanded');
+        ring.classList.remove('expanded');
+    });
+})();
+</script>
+
+<!-- Script de contadores animados mejorado -->
+<script>
+(function($) {
+  function animateCounter(id, target, duration) {
+    var $el = $('#' + id);
+    var start = 0;
+    var step = Math.ceil(target / (duration / 30));
+    var timer = setInterval(function() {
+      start += step;
+      if (start >= target) {
+        start = target;
+        clearInterval(timer);
+      }
+      $el.text(start.toLocaleString('es-PE'));
+    }, 30);
+  }
+
+  var animated = false;
+  $(window).on('scroll', function() {
+    var countArea = $('.count-area');
+    if (!animated && countArea.length) {
+      var top = countArea.offset().top;
+      var windowBottom = $(window).scrollTop() + $(window).height();
+      if (windowBottom > top + 100) {
+        animated = true;
+        animateCounter('counter',  5000, 2000);
+        animateCounter('counter1', 1200, 1800);
+        animateCounter('counter2', 12,   1000);
+        animateCounter('counter3', 3800, 2000);
+      }
+    }
+  });
+})(jQuery);
+</script>
+
+<script>
+(function() {
+  var navbar = document.querySelector(".navbar.navbar-default");
+  if (!navbar) return;
+  var navbarOffsetTop = navbar.getBoundingClientRect().top + window.pageYOffset;
+  window.addEventListener("scroll", function() {
+    if (window.pageYOffset > navbarOffsetTop) {
+      navbar.classList.add("navbar-sticky");
+      document.body.classList.add("nav-is-sticky");
+    } else {
+      navbar.classList.remove("navbar-sticky");
+      document.body.classList.remove("nav-is-sticky");
+    }
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
