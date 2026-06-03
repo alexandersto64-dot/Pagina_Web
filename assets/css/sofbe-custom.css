@@ -247,3 +247,150 @@
     color: #1f2222;
     text-decoration: none;
   }
+
+  /* ============================================================
+   SOFBE — Fix hero / slider en móvil y tablet
+   Agregar al final de: assets/css/sofbe-custom.css
+   ============================================================ */
+
+/* ── Tablet y móvil (≤ 991px) ── */
+@media (max-width: 991px) {
+
+  /* 1. El área del slider pasa a layout en columna:
+        primero la imagen, luego el contenido */
+  .slider-area {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: unset !important;
+    height: auto !important;
+  }
+
+  /* 2. El slider (imagen) ocupa su altura natural */
+  .slider-area .slider {
+    position: relative !important;
+    width: 100%;
+    max-height: 260px;
+    overflow: hidden;
+  }
+
+  .slider-area .slider img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* 3. El contenido (título + formulario) deja de ser
+        absoluto y se apila debajo de la imagen */
+  .slider-area .slider-content {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: 100%;
+    background: #1a1a2e;          /* fondo oscuro SOFBE */
+    padding: 28px 16px 32px;
+    text-align: center;
+  }
+
+  /* 4. Tipografía del hero */
+  .slider-area .slider-content h2 {
+    font-size: 22px !important;
+    line-height: 1.3;
+    color: #fff !important;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  .slider-area .slider-content p {
+    font-size: 13px !important;
+    color: rgba(255,255,255,0.80) !important;
+    margin-bottom: 20px;
+  }
+
+  /* 5. Formulario de búsqueda en columna */
+  .slider-area .search-form {
+    background: #fff;
+    border-radius: 6px;
+    padding: 16px 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  }
+
+  .slider-area .search-form .form-inline {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .slider-area .search-form .form-group,
+  .slider-area .search-form .btn {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .slider-area .search-form .form-control,
+  .slider-area .search-form .selectpicker,
+  .slider-area .search-form select {
+    width: 100% !important;
+    height: 42px;
+    font-size: 13px;
+  }
+
+  /* Botón de búsqueda rojo ocupa todo el ancho */
+  .slider-area .search-form .search-btn {
+    width: 100% !important;
+    background: #E63946;
+    color: #fff;
+    border: none;
+    height: 44px;
+    border-radius: 4px;
+    font-size: 15px;
+  }
+
+  /* Botón toggle (≡) alineado a la izquierda */
+  .slider-area .search-form .toggle-btn {
+    width: auto !important;
+    align-self: flex-start;
+    background: #E63946;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 14px;
+  }
+
+  /* Panel de filtros avanzados */
+  .slider-area .search-toggle {
+    width: 100%;
+  }
+
+  .slider-area .search-row {
+    flex-direction: column;
+  }
+
+  .slider-area .search-row .form-group {
+    width: 100% !important;
+    margin: 6px 0 !important;
+  }
+}
+
+/* ── Solo móvil (≤ 575px) ── */
+@media (max-width: 575px) {
+
+  .slider-area .slider,
+  .slider-area .slider img {
+    max-height: 200px;
+    height: 200px;
+  }
+
+  .slider-area .slider-content h2 {
+    font-size: 18px !important;
+  }
+
+  .slider-area .slider-content p {
+    font-size: 12px !important;
+  }
+}
